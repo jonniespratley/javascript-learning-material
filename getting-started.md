@@ -116,74 +116,127 @@ var x = 5; // I will be executed
 ```
 var lastname, lastName;
 
-lastName = "Doe";lastname = "Peterson";```
+lastName = "Doe";
+lastname = "Peterson";
+```
 
 #### JavaScript Keywords
 JavaScript statements often start with a keyword to identify the JavaScript action to be performed.
 
 Here is a list of some keywords:
 
-* **break** - Terminates a switch or a loop* **continue** - Jumps out of a loop and starts at the top* **debugger** - Stops the execution of JavaScript, and calls (if available) the debugging function* **do ... while** - Executes a block of statements, and repeats the block, while a condition is true* **for** - Marks a block of statements to be executed, as long as a condition is true* **function** - Declares a function* **if ... else** - Marks a block of statements to be executed, depending on a condition* **return** - Exits a function* **switch** - Marks a block of statements to be executed, depending on different cases* **try ... catch** - Implements error handling to a block of statements* **var** - Declares a variable
+* **break** - Terminates a switch or a loop
+* **continue** - Jumps out of a loop and starts at the top
+* **debugger** - Stops the execution of JavaScript, and calls (if available) the debugging function
+* **do ... while** - Executes a block of statements, and repeats the block, while a condition is true
+* **for** - Marks a block of statements to be executed, as long as a condition is true
+* **function** - Declares a function
+* **if ... else** - Marks a block of statements to be executed, depending on a condition* **return** - Exits a function
+* **switch** - Marks a block of statements to be executed, depending on different cases
+* **try ... catch** - Implements error handling to a block of statements
+* **var** - Declares a variable
 
-### JavaScript Function DefinitionsJavaScript functions are **defined** with the `function` keyword. You can use a function **declaration** or a function **expression**.
 
-#### JavaScript Function DeclarationsFunctions are declared with the following syntax:
+### JavaScript Function Definitions
+JavaScript functions are **defined** with the `function` keyword. You can use a function **declaration** or a function **expression**.
 
-```function functionName(parameters) { code to be executed}```
+#### JavaScript Function Declarations
+Functions are declared with the following syntax:
+
+```
+function functionName(parameters) { 
+    //code to be executed
+}
+```
 
 Functions are create for later use and will be execute when invoked. For example:
 
-```function myFunction(a, b) { return a * b;}```
+```
+function myFunction(a, b) { 
+    return a * b;
+}
+```
 
 ---
 
-## JavaScript ClosuresJavaScript variables can belong to the **local** or **global** scope.
+## JavaScript Closures
+JavaScript variables can belong to the **local** or **global** scope.
 
 Global variables can be made local (private) with **closures**.
 
 > A closure is a function having access to the parent scope, even after the parent function has closed.
 
-#### Global VariablesA function can access all variables defined inside the function, for example:
+#### Global Variables
+A function can access all variables defined inside the function, for example:
 
-```function myFunction() { var a = 4; return a * a;}```
+```
+function myFunction() { var a = 4; return a * a;}
+```
 
 But a function can also access variables defined outside the function, for example:
 
-```var a = 4;function myFunction() { return a * a;}```
+```
+var a = 4;function myFunction() { return a * a;}
+```
 
 > Variables created **without** the keyword **var**, are always global, even if they are created inside a function.
 
-#### Variable LifetimeGlobal variables live as long as your application (your window / your web page) lives.
+
+#### Variable Lifetime
+Global variables live as long as your application (your window / your web page) lives.
 
 Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
 
-#### Closure ExampleSuppose you want to use a variable for counting something, and you want this counter to be available to all functions.
+#### Closure Example
+Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
 
-```var add = (function () { var counter = 0; return function () {return counter += 1;}})();
+```
+var add = (function () { var counter = 0; return function () {return counter += 1;}})();
 
-add();add();add();
+add();
+add();
+add();
 
-// the counter is now 3```
+// the counter is now 3
+```
 
 ---
 
-## JavaScript Best PracticesHere are some best practices to consider when writing in JavaScript.
+
+## JavaScript Best Practices
+Here are some best practices to consider when writing in JavaScript.
 
 Avoid global variables, avoid new, avoid ==, avoid eval()
 
-#### Declarations on TopIt is a good coding practice to put all declarations at the top of each script or function.
+#### Declarations on Top
+It is a good coding practice to put all declarations at the top of each script or function.
 
 This will:
 
-* Give cleaner code* Provide a single place to look for local variables* Make it easier to avoid unwanted (implied) global variables* Reduce the possibility of unwanted re-declarations
+* Give cleaner code
+* Provide a single place to look for local variables
+* Make it easier to avoid unwanted (implied) global variables
+* Reduce the possibility of unwanted re-declarations
 
-#### Initialize VariablesIt is a good coding practice to initialize variables when you declare them.
+#### Initialize Variables
+It is a good coding practice to initialize variables when you declare them.
 
 This will:
 
-* Give cleaner code* Provide a single place to initialize variables* Avoid undefined values
+* Give cleaner code
+* Provide a single place to initialize variables
+* Avoid undefined values
 
-```// Declare and initiate at the beginningvar firstName = "", lastName = "", price = 0, discount = 0, fullPrice = 0, myArray = [], myObject = {};```
+```
+// Declare and initiate at the beginning
+var firstName = "", 
+    lastName = "", 
+    price = 0, 
+    discount = 0, 
+    fullPrice = 0, 
+    myArray = [], 
+    myObject = {};
+```
 
 #### Don't Use new Object()
 
