@@ -1,5 +1,8 @@
-# Modern JavaScript I
+# Modern JavaScript - Part I
 This is an overview of JavaScript, beginner usage and suggested tooling to help streamline development process and learning.
+While the information here is not the full list, the information provided will help you get up to speed quickly as possible
+
+> If you want more in-depth information I suggest you read the JavaScript reference. (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 > Material is borrowed from https://www.w3schools.com
 
