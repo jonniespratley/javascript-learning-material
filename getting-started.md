@@ -23,7 +23,7 @@ JavaScript syntax is the set of rules, how JavaScript programs are constructed. 
 
 JavaScript statements are separated by semicolons:
 
-```
+```js
 var x, y, z;
 
 x = 5;
@@ -36,21 +36,21 @@ JavaScript statements are composed of: Values, Operators, Expressions, Keywords,
 
 #### JavaScript Values
 The JavaScript syntax defines two types of values: Fixed values and variable values.
-* Fixed values are called literals. 
-* Variable values are called variables. 
 
-#### JavaScript Literals 
+* Fixed values are called literals.
+* Variable values are called variables.
+
+#### JavaScript Literals
 Numbers are written with or without decimals:
 
-```
+```js
 10.50
 1001
 ```
 
-
 Strings are text, written within double or single quotes:
 
-```
+```js
 "John Doe"
 'John Doe'
 ```
@@ -62,20 +62,21 @@ JavaScript uses the `var` keyword to **declare** variables. An **equal sign** is
 
 In this example, `x` is defined as a variable. Then, `x` is assigned (given) the value `6`:
 
-```
+```js
 var x;
-
 x = 6;
 ```
 
 #### JavaScript Operators
 JavaScript uses arithmetic operators `( + - * / )` to compute values:
 
-```(5 + 6) * 10```
+```js
+(5 + 6) * 10
+```
 
 JavaScript uses an assignment operator `( = )` to assign values to variables:
 
-```
+```js
 var x, y;
 
 x = 5;
@@ -87,14 +88,14 @@ An expression is a combination of values, variables, and operators, which comput
 
 For example, `5 * 10` evaluates to `50`:
 
-```
+```js
 5 * 10 //50
 ```
 
 #### JavaScript Keywords
 JavaScript **keywords** are used to identify actions to be performed. The `var` keyword tells the browser to create variables:
 
-```
+```js
 var x, y;
 
 x = 5 + 6; //11
@@ -106,14 +107,16 @@ Not all JavaScript statements are "executed". Code after double slashes `//` or 
 
 Comments are ignored, and will not be executed:
 
-```
+```js
 var x = 5; // I will be executed
 // var x = 6; I will NOT be executed
 ```
 
-#### JavaScript is Case SensitiveAll JavaScript identifiers are **case sensitive**. For example the variables `lastName` and `lastname`, are two different variables:
+#### JavaScript is Case Sensitive
+All JavaScript identifiers are **case sensitive**.
+For example the variables `lastName` and `lastname`, are two different variables:
 
-```
+```js
 var lastname, lastName;
 
 lastName = "Doe";
@@ -140,19 +143,20 @@ Here is a list of some keywords:
 ### JavaScript Function Definitions
 JavaScript functions are **defined** with the `function` keyword. You can use a function **declaration** or a function **expression**.
 
+
 #### JavaScript Function Declarations
 Functions are declared with the following syntax:
 
-```
-function functionName(parameters) { 
+```js
+function functionName(parameters) {
     //code to be executed
 }
 ```
 
 Functions are create for later use and will be execute when invoked. For example:
 
-```
-function myFunction(a, b) { 
+```js
+function myFunction(a, b) {
     return a * b;
 }
 ```
@@ -169,14 +173,20 @@ Global variables can be made local (private) with **closures**.
 #### Global Variables
 A function can access all variables defined inside the function, for example:
 
-```
-function myFunction() { var a = 4; return a * a;}
+```js
+function myFunction() {
+  var a = 4;
+  return a * a;
+}
 ```
 
 But a function can also access variables defined outside the function, for example:
 
-```
-var a = 4;function myFunction() { return a * a;}
+```js
+var a = 4;
+function myFunction() {
+  return a * a;
+}
 ```
 
 > Variables created **without** the keyword **var**, are always global, even if they are created inside a function.
@@ -190,51 +200,88 @@ Local variables have short lives. They are created when the function is invoked,
 #### Closure Example
 Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
 
-```
-var add = (function () { var counter = 0; return function () {return counter += 1;}})();
+```js
+var add = (function () {
+  var counter = 0;
+  return function () {
+    return counter += 1;
+  }
+})();
 
 add();
 add();
 add();
-
 // the counter is now 3
 ```
+
+
+---
+
+## JavaScript Scope
+In JavaScript, scope is the set of variables, objects, and functions you have access to. JavaScript has function scope: The scope changes inside functions.
+
+> *Did you know?* Your global variables (or functions) can overwrite window variables (or functions).
+Any function, including the window object, can overwrite your global variables and functions.
+
+#### Local Scope
+Variables declared within a JavaScript function, become LOCAL to the function. Local variables have local scope: They can only be accessed within the function.
+
+```js
+// code here can not use carName
+function myFunction() {
+    var carName = "Volvo";
+    // code here can use carName
+}
+```
+
+> Local variables are created when a function starts, and deleted when the function is completed.
+
+#### Global Scope
+A variable declared outside a function, becomes GLOBAL. A global variable has global scope: All scripts and functions on a web page can access it.
+
+```js
+var carName = " Volvo";
+
+// code here can use carName
+function myFunction() {
+    // code here can use carName
+}
+```
+
 
 ---
 
 
 ## JavaScript Best Practices
-Here are some best practices to consider when writing in JavaScript.
-
-Avoid global variables, avoid new, avoid ==, avoid eval()
+Here are some best practices to consider when writing in JavaScript. Avoid global variables, avoid `new`, avoid `==`, avoid `eval()`.
 
 #### Declarations on Top
 It is a good coding practice to put all declarations at the top of each script or function.
 
 This will:
 
-* Give cleaner code
-* Provide a single place to look for local variables
-* Make it easier to avoid unwanted (implied) global variables
-* Reduce the possibility of unwanted re-declarations
+  * Give cleaner code
+  * Provide a single place to look for local variables
+  * Make it easier to avoid unwanted (implied) global variables
+  * Reduce the possibility of unwanted re-declarations
 
 #### Initialize Variables
 It is a good coding practice to initialize variables when you declare them.
 
 This will:
 
-* Give cleaner code
-* Provide a single place to initialize variables
-* Avoid undefined values
+  * Give cleaner code
+  * Provide a single place to initialize variables
+  * Avoid undefined values
 
-```
+```js
 // Declare and initiate at the beginning
-var firstName = "", 
-    lastName = "", 
-    price = 0, 
-    discount = 0, 
-    fullPrice = 0, 
-    myArray = [], 
+var firstName = "",
+    lastName = "",
+    price = 0,
+    discount = 0,
+    fullPrice = 0,
+    myArray = [],
     myObject = {};
 ```
 
@@ -248,7 +295,7 @@ var firstName = "",
 * Use `/()/` instead of new RegExp()
 * Use `function (){}` instead of new Function()
 
-```
+```js
 var x1 = {}; // new object
 var x2 = ""; // new primitive string
 var x3 = 0; // new primitive number
@@ -259,6 +306,4 @@ var x7 = function(){}; // new function object
 ```
 
 #### Avoid Using eval()
-The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
-
-Because it allows arbitrary code to be run, it also represents a security problem.
+The `eval()` function is used to run text as code. In almost all cases, it should not be necessary to use it. Because it allows arbitrary code to be run, it also represents a security problem.
