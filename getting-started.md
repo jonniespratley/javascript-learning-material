@@ -240,10 +240,25 @@ var firstName = "",
 
 #### Don't Use new Object()
 
-* Use `{}` instead of new Object()* Use `""` instead of new String()* Use `0` instead of new Number()* Use `false` instead of new Boolean()* Use `[]` instead of new Array()* Use `/()/` instead of new RegExp()* Use `function (){}` instead of new Function()
+* Use `{}` instead of new Object()
+* Use `""` instead of new String()
+* Use `0` instead of new Number()
+* Use `false` instead of new Boolean()
+* Use `[]` instead of new Array()
+* Use `/()/` instead of new RegExp()
+* Use `function (){}` instead of new Function()
 
-```var x1 = {}; // new objectvar x2 = ""; // new primitive stringvar x3 = 0; // new primitive numbervar x4 = false; // new primitive booleanvar x5 = []; // new array objectvar x6 = /()/; // new regexp objectvar x7 = function(){}; // new function object```
+```
+var x1 = {}; // new object
+var x2 = ""; // new primitive string
+var x3 = 0; // new primitive number
+var x4 = false; // new primitive boolean
+var x5 = []; // new array object
+var x6 = /()/; // new regexp object
+var x7 = function(){}; // new function object
+```
 
-#### Avoid Using eval()The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
+#### Avoid Using eval()
+The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
 
 Because it allows arbitrary code to be run, it also represents a security problem.
