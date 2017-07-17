@@ -94,16 +94,22 @@ For example, `5 * 10` evaluates to `50`:
 #### JavaScript Keywords
 JavaScript **keywords** are used to identify actions to be performed. The `var` keyword tells the browser to create variables:
 
-```var x, y;
+```
+var x, y;
 
-x = 5 + 6; //11y = x * 10; //110```
+x = 5 + 6; //11
+y = x * 10; //110
+```
 
 #### JavaScript Comments
 Not all JavaScript statements are "executed". Code after double slashes `//` or between `/*` and `*/` is treated as a **comment**.
 
 Comments are ignored, and will not be executed:
 
-```var x = 5; // I will be executed// var x = 6; I will NOT be executed```
+```
+var x = 5; // I will be executed
+// var x = 6; I will NOT be executed
+```
 
 #### JavaScript is Case SensitiveAll JavaScript identifiers are **case sensitive**. For example the variables `lastName` and `lastname`, are two different variables:
 
