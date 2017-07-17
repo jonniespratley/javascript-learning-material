@@ -57,8 +57,7 @@ Strings are text, written within double or single quotes:
 
 #### JavaScript Variables
 In a programming language, **variables** are used to **store** data values.
-JavaScript uses the `var` keyword to **declare** variables. An **equal sign** is used to **assign values** to variables.
-
+JavaScript uses the `var` or `let` keyword to **declare** variables. An **equal sign** is used to **assign values** to variables.
 
 In this example, `x` is defined as a variable. Then, `x` is assigned (given) the value `6`:
 
@@ -66,6 +65,12 @@ In this example, `x` is defined as a variable. Then, `x` is assigned (given) the
 var x;
 x = 6;
 ```
+
+##### Variable naming
+There are two limitations for a variable name in JavaScript:
+
+ * The name must contain only letters, digits, symbols `$` and `_`.
+ * The first character must not be a digit.
 
 #### JavaScript Operators
 JavaScript uses arithmetic operators `( + - * / )` to compute values:
@@ -214,6 +219,11 @@ add();
 // the counter is now 3
 ```
 
+#### The this Keyword
+In JavaScript, the thing called `this`, is the object that "owns" the current code.
+The value of `this`, when used in a `function`, is the object that "owns" the function.
+
+> Note that `this` is not a variable. It is a keyword. You cannot change the value of `this`.
 
 ---
 
