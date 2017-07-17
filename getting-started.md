@@ -7,7 +7,7 @@ This is an overview of JavaScript, beginner usage and suggested tooling to help 
 Some modern tooling is available for download.
 
 1. Atom - Text editor for writing code.
-2. NodeJS - Platform to run code.
+2. Node - Platform to run code.
 3. Google Chrome - Modern web browser.
 
 
@@ -17,6 +17,25 @@ Node.js is a platform that is built on Chrome's JavaScript runtime engine. Node.
 NPM is the official package manager for Node.js, and is bundled and installed automatically with the environment. NPM runs through the command line and manages the dependencies for an application that are available on the npm registry.
 
 > Node.js version used in this is v7.1.1
+
+
+## Overview
+JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with object prototypes, instead of classes (see more about prototypical inheritance and ES2015 Classes). JavaScript also supports functional programming — functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
+
+Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript's types are:
+
+* Number
+* String
+* Boolean
+* Function
+* Symbol (new in ES2015)
+* Object
+  * Function
+  * Array
+  * Date
+  * RegExp
+* null
+* undefined
 
 ## Introduction
 JavaScript syntax is the set of rules, how JavaScript programs are constructed. JavaScript is a programming language.
@@ -31,16 +50,22 @@ y = 6;
 z = x + y;
 ```
 
-#### JavaScript Statements
-JavaScript statements are composed of: Values, Operators, Expressions, Keywords, and Comments.
+### JavaScript Statements
+JavaScript statements are composed of:
 
-#### JavaScript Values
+1. Values
+2. Operators
+3. Expressions
+4. Keywords
+5. Comments
+
+### 1. Values
 The JavaScript syntax defines two types of values: Fixed values and variable values.
 
 * Fixed values are called literals.
 * Variable values are called variables.
 
-#### JavaScript Literals
+##### Literals
 Numbers are written with or without decimals:
 
 ```js
@@ -55,9 +80,37 @@ Strings are text, written within double or single quotes:
 'John Doe'
 ```
 
-#### JavaScript Variables
+### Variables
 In a programming language, **variables** are used to **store** data values.
-JavaScript uses the `var` or `let` keyword to **declare** variables. An **equal sign** is used to **assign values** to variables.
+New variables in JavaScript are declared using one of three keywords: `let`, `const`, or `var`.
+An **equal sign** is used to **assign values** to variables.
+
+`let` allows you to declare block-level variables. The declared variable is available from the block it is enclosed in.
+
+```js
+let age;
+let name = 'jonnie';
+```
+
+The following is an example of scope with a variable declared with `let`:
+
+```js
+// myLetVariable is *not* visible out here
+for (let myLetVariable = 0; myLetVariable < 5; myLetVariable++) {
+  // myLetVariable is only visible in here
+}
+// myLetVariable is *not* visible out here
+```
+
+`const` allows you to declare variables whose values are never intended to change. The variable is available from the block it is declared in.
+
+```js
+const Pi = 3.14; // variable Pi is set
+Pi = 1; // will throw an error because you cannot change a constant variable.
+```
+
+`var` is the most common declarative keyword. It does not have the restrictions that the other two keywords have. This is because it was traditionally the only way to declare a variable in JavaScript. A variable declared with the `var` keyword is available from the function it is declared in.
+
 
 In this example, `x` is defined as a variable. Then, `x` is assigned (given) the value `6`:
 
@@ -66,29 +119,43 @@ var x;
 x = 6;
 ```
 
-##### Variable naming
+#### Variable naming
 There are two limitations for a variable name in JavaScript:
 
  * The name must contain only letters, digits, symbols `$` and `_`.
  * The first character must not be a digit.
 
-#### JavaScript Operators
-JavaScript uses arithmetic operators `( + - * / )` to compute values:
+
+### Operators
+JavaScript's numeric operators are `+`, `-`, `*`, `/` and `%` which is the remainder operator.
+
+JavaScript uses arithmetic operators (`+ - * /`) to compute values:
 
 ```js
 (5 + 6) * 10
 ```
 
-JavaScript uses an assignment operator `( = )` to assign values to variables:
+JavaScript uses an assignment operator (`=`) to assign values to variables, and there are also compound assignment statements such as `+=` and `-=`. For example:
 
 ```js
 var x, y;
 
 x = 5;
 y = 6;
+x += y //11
+x -= y //5
+x -= y //-1
+```
+You can use `++` and `--` to increment and decrement respectively. These can be used as prefix or postfix operators.
+
+The `+` operator also does string concatenation:
+
+```js
+'hello' + ' world'; // "hello world"
 ```
 
-#### JavaScript Expressions
+
+#### Expressions
 An expression is a combination of values, variables, and operators, which computes to a value. The computation is called an **evaluation**.
 
 For example, `5 * 10` evaluates to `50`:
@@ -97,17 +164,8 @@ For example, `5 * 10` evaluates to `50`:
 5 * 10 //50
 ```
 
-#### JavaScript Keywords
-JavaScript **keywords** are used to identify actions to be performed. The `var` keyword tells the browser to create variables:
 
-```js
-var x, y;
-
-x = 5 + 6; //11
-y = x * 10; //110
-```
-
-#### JavaScript Comments
+### Code Comments
 Not all JavaScript statements are "executed". Code after double slashes `//` or between `/*` and `*/` is treated as a **comment**.
 
 Comments are ignored, and will not be executed:
@@ -129,7 +187,14 @@ lastname = "Peterson";
 ```
 
 #### JavaScript Keywords
-JavaScript statements often start with a keyword to identify the JavaScript action to be performed.
+JavaScript statements often start with a keyword to identify the JavaScript action to be performed. JavaScript **keywords** are used to identify actions to be performed. The `var` keyword tells the browser to create variables:
+
+```js
+var x, y;
+
+x = 5 + 6; //11
+y = x * 10; //110
+```
 
 Here is a list of some keywords:
 
