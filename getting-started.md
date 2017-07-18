@@ -226,8 +226,14 @@ Here is a list of some keywords:
 ### JavaScript Function Definitions
 JavaScript functions are **defined** with the `function` keyword. You can use a function **declaration** or a function **expression**.
 
+```js
+//Function Declaration
+function add(a,b) {return a + b};
+//Function Expression
+var add = function(a,b) {return a + b};
+```
 
-#### JavaScript Function Declarations
+#### Function Declarations
 Functions are declared with the following syntax:
 
 ```js
@@ -236,12 +242,33 @@ function functionName(parameters) {
 }
 ```
 
-Functions are create for later use and will be execute when invoked. For example:
+Functions are created for later use and will be execute when invoked. For example:
 
 ```js
 function myFunction(a, b) {
     return a * b;
 }
+```
+
+#### Function Expressions
+A Function Expression defines a function as a part of a larger expression syntax (typically a variable assignment).
+The function name (if any) is not visible outside of it’s scope (contrast with Function Declarations).
+
+```js
+//anonymous function expression
+var a = function() {
+    return 3;
+}
+
+//named function expression
+var a = function bar() {
+    return 3;
+}
+
+//self invoking function expression
+(function sayHello() {
+    alert("hello!");
+})();
 ```
 
 ---
@@ -274,10 +301,7 @@ function myFunction() {
 
 > Variables created **without** the keyword **var**, are always global, even if they are created inside a function.
 
-
-#### Variable Lifetime
 Global variables live as long as your application (your window / your web page) lives.
-
 Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
 
 #### Closure Example
