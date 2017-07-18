@@ -19,7 +19,7 @@ Some modern tooling is available for download.
 ## Resources
 Here are some links to resources that could help build your knowledge.
 
-1. link
+1. https://developer.mozilla.org/en-US/docs/Web/JavaScript
 2. ..
 3. ..
 
@@ -363,6 +363,127 @@ function myFunction() {
 
 ---
 
+
+## JavaScript Classes
+Classes are a way to blueprint functionality. There are many ways to create a class in JavaScript, we will focus on the most comment ways.
+
+
+
+#### Class declarations
+One way to define a class is using a class declaration. To declare a class, you use the class keyword with the name of the class ("Rectangle" here).
+
+```js
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+```
+
+#### Class expressions
+A class expression is another way to define a class. Class expressions can be named or unnamed. The name given to a named class expression is local to the class's body.
+
+```js
+// unnamed
+var Rectangle = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+```
+
+
+
+#### Function Based Class
+
+```js
+function Animal() { }
+
+Animal.prototype.speak = function() {
+  return this;
+}
+
+Animal.eat = function() {
+  return this;
+}
+
+let obj = new Animal();
+let speak = obj.speak;
+speak(); // global object
+
+let eat = Animal.eat;
+eat(); // global object
+```
+
+#### Sub-Classing
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+
+var d = new Dog('Mitzie');
+d.speak(); // Mitzie barks.
+```
+
+One may also extend traditional function-based "classes":
+
+```js
+function Animal (name) {
+  this.name = name;
+}
+
+Animal.prototype.speak = function () {
+  console.log(this.name + ' makes a noise.');
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+
+var d = new Dog('Mitzie');
+d.speak(); // Mitzie barks.
+
+```
+
+Note that classes cannot extend regular (non-constructible) objects. If you want to inherit from a regular object, you can instead use Object.setPrototypeOf():
+
+```js
+var Animal = {
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+};
+
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.setPrototypeOf(Dog.prototype, Animal);// If you do not do this you will get a TypeError when you invoke speak
+
+var d = new Dog('Mitzie');
+d.speak(); // Mitzie makes a noise.
+```
+
+> Reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 ## JavaScript Best Practices
 Here are some best practices to consider when writing in JavaScript. Avoid global variables, avoid `new`, avoid `==`, avoid `eval()`.
