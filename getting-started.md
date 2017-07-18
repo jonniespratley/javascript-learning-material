@@ -6,12 +6,22 @@ While the information here is not the full list, the information provided will h
 
 > Material is borrowed from https://www.w3schools.com
 
+
+
+
 ## Tooling
 Some modern tooling is available for download.
 
 1. Atom - Text editor for writing code.
 2. Node - Platform to run code.
 3. Google Chrome - Modern web browser.
+
+## Resources
+Here are some links to resources that could help build your knowledge.
+
+1. link
+2. ..
+3. ..
 
 
 #### What is Node.js & NPM
