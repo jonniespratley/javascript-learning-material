@@ -4,6 +4,8 @@ This document is going to try and help you understand the JavaScript prototype a
 ## Overview
 JavaScript is dynamic and does not provide a class implementation. *(The `class` keyword is introduced in ES2015, but is syntactical sugar, JavaScript remains prototype-based.)*
 
+JavaScript has always had a reserved word called class in its language, which means you cannot create your own variable by that name. It has never actually been used in the language for anything; the name was simply reserved for later use. (Which is in ES6)
+
 
 ## [[Prototype]]
 Objects in JavaScript have an internal private property `[[Prototype]]` which holds a link to another object called its `prototype`.
@@ -26,27 +28,30 @@ What is important about the `prototype` is something called **dynamic dispatch**
 
 
 ### 'Class' Functions
-Since classes do not exist in JavaScript as it is prototype-based, developers have been simulating something that looks like classes but is simply just a function; since all functions by default get a public, nonenumerable property on them called `prototype`, which points to an arbitrary object.
+In JavaScript, defining a simple function creates some of the same behavior as a class. Since classes do not exist in JavaScript as it is prototype-based, developers have been simulating classes but in reality it is just a function; since all functions by default get a public, nonenumerable property on them called `prototype`, which points to an arbitrary object.
 
 For example:
 
 ```js
-function Foo() {
-    // ...
+function Foo(name) {
+	this.name = name;
 }
 
-var bar = new Foo();
+var bar = new Foo('bar');
 
 Object.getPrototypeOf( bar ) === Foo.prototype; // true
 ```
 
 When `bar` is created by calling `new Foo()` the `bar` gets an internal `[[Prototype]]` linked to the object that `Foo.prototype` is pointing to.
 
-When you put the new keyword in front of a normal function call, that makes that function call a "constructor call". We can use constructor functions (like above) that give us the appearance of creating classes and instances just as we see in class-orientend languages.
+When you put the `new` keyword in front of a normal function call, it makes that function call a "constructor call". We can use constructor functions (like above) that give us the appearance of creating classes and instances just as we see in class-orientend languages.
 
 Remember that in JavaScript we do not make *copies* from an object "class" to another "instance". We make *links* between objects. This mechanism is called ***prototypal inheritance***, which is the dynamic-language version of classical inheritance.
 
-> By convention in the JavaScript world, a "class" is named with a capital letter.
+
+> Tip: By convention in the JavaScript world, a "class" is named with a capital letter.
+
+
 
 ## (Prototypal) Inheritance
 Inheritance implies a copy operation, and JavaScript doesn’t copy object properties (natively, by default). Instead, JS creates a link between two objects, where one object can essentially delegate property/function access to another object.
@@ -79,6 +84,21 @@ console.log(a.myLabel()); //My Label
 console.log(a instanceof Foo); //true
 ```
 
+#### Accessing Properties and Methods Using Prototype
+Every function, and therefore every constructor, created in JavaScript has a `prototype` property. This is an object containing the properties and methods associated with any object instance created from that "class" with the new keyword. We can use dot notation on this prototype object to add our own properties and methods to all associated object instances.
+
+
+For example:
+
+```js
+Foo.prototype.someMethod = function(){
+	return 'Hi ' + this.name;
+};
+```
+
+In the example above we are simply adding a new method to the `Foo` "class", inside this method we are simply returning a string that contains the `name` of the object. Which is passed into the constructor function at creation time.
+
+
 #### What is prototypal inheritance?
 In a nutshell, prototypal inheritance is when an object inherits from another object. In a classical language, classes typically define the structure of objects, but in a prototypal language, the objects themselves define their structure, and this structure can be inherited and modified by other objects at runtime.
 
@@ -100,3 +120,4 @@ While is documents purpose was to serve as a rough guide in helping you understa
 1. [A re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 2. [Object-oriented JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
 3. [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+4. [W3Schools JavaScript](https://www.w3schools.com/js/default.asp)
