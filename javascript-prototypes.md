@@ -96,7 +96,8 @@ Foo.prototype.someMethod = function(){
 };
 ```
 
-In the example above we are simply adding a new method to the `Foo` "class", inside this method we are simply returning a string that contains the `name` of the object. Which is passed into the constructor function at creation time.
+In the example above we are simply adding a new method to the `Foo` "class", inside this method we are simply
+returning a string that contains the `name` of the object. Which is passed into the constructor function at creation time.
 
 
 #### What is prototypal inheritance?
