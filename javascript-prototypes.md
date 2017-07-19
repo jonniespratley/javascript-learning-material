@@ -1,12 +1,85 @@
-# Inheritance and the prototype chain
-JavaScript is dynamic and does not provide a class implementation.
+# JavaScript Prototypes
+This document is going to try and help you understand the JavaScript prototype and prototypal inheritance. It is the foundation of JavaScript and should be understood before writing complex applications.
 
-> Note: The `class` keyword is introduced in ES2015, but is syntactical sugar, JavaScript remains prototype-based.
+## Overview
+JavaScript is dynamic and does not provide a class implementation. *(The `class` keyword is introduced in ES2015, but is syntactical sugar, JavaScript remains prototype-based.)*
 
-Each object has a private property `[[Prototype]]` which holds a link to another object called its prototype.
+
+## [[Prototype]]
+Objects in JavaScript have an internal private property `[[Prototype]]` which holds a link to another object called its `prototype`.
+
+For example:
+
+```js
+var myObject = {
+	name: 'foo'
+};
+
+var someObject = Object.create(myObject);
+someObject.name; //foo
+console.log(someObject.toString()); //"[object Object]"
+```
+
+> `Object.create` - Creates a new object with the specified prototype object and properties.
+
+What is important about the `prototype` is something called **dynamic dispatch**. This happens when you try and access a property or method on an object, if it does not exist, JavaScript **checks the objects prototype** to see if it exists there and goes up the prototype chain until a match is found, if it is not found, then the return result from the operation is `undefined`.
 
 
-#### What is prototype inheritance?
+### 'Class' Functions
+Since classes do not exist in JavaScript as it is prototype-based, developers have been simulating something that looks like classes but is simply just a function; since all functions by default get a public, nonenumerable property on them called `prototype`, which points to an arbitrary object.
+
+For example:
+
+```js
+function Foo() {
+    // ...
+}
+
+var bar = new Foo();
+
+Object.getPrototypeOf( bar ) === Foo.prototype; // true
+```
+
+When `bar` is created by calling `new Foo()` the `bar` gets an internal `[[Prototype]]` linked to the object that `Foo.prototype` is pointing to.
+
+When you put the new keyword in front of a normal function call, that makes that function call a "constructor call". We can use constructor functions (like above) that give us the appearance of creating classes and instances just as we see in class-orientend languages.
+
+Remember that in JavaScript we do not make *copies* from an object "class" to another "instance". We make *links* between objects. This mechanism is called ***prototypal inheritance***, which is the dynamic-language version of classical inheritance.
+
+> By convention in the JavaScript world, a "class" is named with a capital letter.
+
+## (Prototypal) Inheritance
+Inheritance implies a copy operation, and JavaScript doesn’t copy object properties (natively, by default). Instead, JS creates a link between two objects, where one object can essentially delegate property/function access to another object.
+
+For example:
+
+```js
+function Foo( name ) {
+    this.name = name;
+}
+
+Foo.prototype.myName = function() {
+    return this.name;
+};
+
+function Bar( name, label ) {
+    Foo.call( this, name );
+    this.label = label;
+}
+
+Bar.prototype = Object.create( Foo.prototype );
+Bar.prototype.myLabel = function() {
+    return this.label;
+};
+
+var a = new Bar( "My Name", "My Label" );
+
+console.log(a.myName()); //My Name
+console.log(a.myLabel()); //My Label
+console.log(a instanceof Foo); //true
+```
+
+#### What is prototypal inheritance?
 In a nutshell, prototypal inheritance is when an object inherits from another object. In a classical language, classes typically define the structure of objects, but in a prototypal language, the objects themselves define their structure, and this structure can be inherited and modified by other objects at runtime.
 
 
@@ -15,134 +88,15 @@ In a nutshell, prototypal inheritance is when an object inherits from another ob
 
 
 
-## Overview
-
-Every JavaScript object has a prototype, and the prototype is also an object. All JavaScript objects inherit their properties and methods from their prototype. For example:
-
-```js
-var date = new Date();
-console.dir(date.__proto__);
-console.log(date.__proto__ === Date.prototype);
-```
-
-Objects created with `new Date()` inherit the `Date.prototype` and all properties/methods defined. When you refer to methods that are available on instances of a class/object, you are referring to `prototype` methods.
 
 
-We will explore this further in the following sections:
-
-1. Creating a Prototype
-2. Adding a Property to an Object
-3. Adding a Method to an Object
-4. Adding a Property to a Prototype
-5. Adding a Method to a Prototype
-6. Using the prototype Property
 
 
-### Creating a Prototype Object
-The easiest way to create a object prototype is to use an object contructor function:
 
 
-```js
-function Person(first, last, age, sex){
-	this.firstName = first;
-	this.lastName = last;
-	this.age = age;
-	this.sex = sex;
-}
-```
-Prior to the `class` keyword introduced in ES6, to create a class you would create a function that served as the class constructor.
-
-> Note: The `constructor` function is the `prototype` for `Person` objects.
-
-
-Now you can use the `new` keyword and create new objects from the same prototype.
-
-```js
-var myMother = new Person('Sue', 'Doe', 45, 'female');
-var myFather = new Person('Robert', 'Doe', 50, 'male');
-console.log(myMother);
-console.log(myFather);
-```
-
-
-#### Adding a Property to an Object
-Adding a new property to an object is easy, for example:
-
-```js
-myMother.nationality = 'English';
-```
-> Note: This property is only added to `myMother`
-
-
-#### Adding a Method to an Object
-Adding a new method to an object is easy, for example:
-
-```js
-myFather.name = function(){
-	return this.firstName + ' ' + this.lastName;
-};
-```
-> Note: This method will only be added to `myFather`
-
-
-#### Adding Properties to a Prototype
-To add a new property to a `prototype`, you must add it to the `constructor` function:
-
-```js
-function Person(first, last, age, sex){
-	this.firstName = first;
-	this.lastName = last;
-	this.age = age;
-	this.sex = sex;
-	this.nationality = 'English';
-}
-```
-> Note: Prototype properties can have `prototype` values (default values).
-
-#### Adding Methods to a Prototype
-You can also add methods inside of the `constructor` function:
-
-```js
-function Person(first, last, age, sex){
-	//...
-	this.name = function(){
-		return this.firstName + ' ' + this.lastName;
-	};
-}
-```
-
-
-#### Using the `prototype` property
-The JavaScript `prototype` property allows you to add new properties and/or methods to an existing `prototype`:
-
-```js
-function Person(first, last, age, sex){
-	this.firstName = first;
-	this.lastName = last;
-	this.age = age;
-	this.sex = sex;
-}
-Person.prototype.nationality = 'English';
-Person.prototype.name = function(){
-	return this.firstName + ' ' + this.lastName;
-};
-```
-
-## The Prototype
-
-A function’s `prototype` property is important when you create a new instance with the `new` keyword: the newly created object has access to its constructor’s `prototype` object. The object instance stores this in its `__proto__` property.
-
-
-What is very important about the `prototype` is something called dynamic dispatch. This happens when you try and access a property or method on an object, if it does not exist, JavaScript **checks the objects prototype** to see if it exists there. Since all instances of a given class share the same prototype, all instances of that class have access to that property or method.
-
-Another thing to note is that by defining a method or property on an instance will override the version in the prototype; Because JavaScript first checks the instance before checking the prototype.
-
-
-## Conclusion
+## Summary
 While is documents purpose was to serve as a rough guide in helping you understand JavaScripts prototype chain, it is not a full guide, for more in-depth information I suggest you checkout the following links:
 
-1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
-2. https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
-3. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
-
-----
+1. [A re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+2. [Object-oriented JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
+3. [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
