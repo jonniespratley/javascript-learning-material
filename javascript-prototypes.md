@@ -1,6 +1,17 @@
 # JavaScript Prototypes
 This document is going to try and help you understand the JavaScript prototype and prototypal inheritance. It is the foundation of JavaScript and should be understood before writing complex applications.
 
+### Lession Objectives
+When you complete this lesson, you will be able to:
+
+- Use `instanceof` to check the `type` of a specific object.
+- Example the prototype property of a constructor function.
+- Add methods to an objects prototype.
+- Examine an objects prototype chain.
+- Use prototypal inheritance to access properties from up the prototype chain.
+- Determine if a property is defined in an object or an object's prototype with hasOwnProperty().
+
+
 ## Overview
 JavaScript is dynamic and does not provide a class implementation. *(The `class` keyword is introduced in ES2015, but is syntactical sugar, JavaScript remains prototype-based.)*
 
@@ -53,8 +64,10 @@ Remember that in JavaScript we do not make *copies* from an object "class" to an
 
 
 
-## (Prototypal) Inheritance
+## Prototypal Inheritance
 Inheritance implies a copy operation, and JavaScript doesn’t copy object properties (natively, by default). Instead, JS creates a link between two objects, where one object can essentially delegate property/function access to another object.
+
+We call this prototypal inheritance, which means that if you try to access a property in an object, and that property doesn't exist in the object itself, JavaScript looks up the prototype chain to try to find that property. Most objects either have one or two prototypes.
 
 For example:
 
@@ -81,8 +94,36 @@ var a = new Bar( "My Name", "My Label" );
 
 console.log(a.myName()); //My Name
 console.log(a.myLabel()); //My Label
-console.log(a instanceof Foo); //true
+
 ```
+
+#### instanceof
+THe instanceof operator is a binary operator, which takes two arguments. The first argument is the object you want to test, and the second argument is the name of the constructor function used to create the object. For example:
+
+###### Interactive Session:
+
+```js
+var a = new Bar( "My Name", "My Label" );
+console.log(a instanceof Foo); //true
+console.log(a instanceof Bar); //true
+```
+
+
+#### hasOwnProperty
+An object can inherit properties from its prototype chain, but how can you find out if a property is in the object itself, or in one of the object's prototypes? You use the `hasOwnProperty()` method.
+
+###### Interactive Session:
+
+```js
+> a.hasOwnProperty('name');
+true
+> a.hasOwnProperty('bar');
+false
+```
+
+The property name you pass to hasOwnProperty() must be a string (put the property name in quotation marks). The method returns either `true` or `false` depending if the name you passed exists on the object.
+
+
 
 #### Accessing Properties and Methods Using Prototype
 Every function, and therefore every constructor, created in JavaScript has a `prototype` property. This is an object containing the properties and methods associated with any object instance created from that "class" with the new keyword. We can use dot notation on this prototype object to add our own properties and methods to all associated object instances.
