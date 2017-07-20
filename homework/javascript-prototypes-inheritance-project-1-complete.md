@@ -9,7 +9,7 @@ Write a program that uses one constructor:
 
 Create a `window.onload` handler function that creates an array of book objects, and then adds each book to the page using the `addToPage()` function (below).
 
-Create a new file (`assignment-1.html`) in your /homework folder and use the following HTML and JavaScript to get started:
+Create a new file (`books1.html`) in your /homework folder and use the following HTML and JavaScript to get started:
 
 ```html
 <!DOCTYPE html>
@@ -36,11 +36,30 @@ Create a new file (`assignment-1.html`) in your /homework folder and use the fol
   "use strict";
   // your code here for the Book() constructor
   //
-  //
+
+	function Book(title, author, genre, published){
+		this.title = title;
+		this.author = author;
+		this.genre = genre;
+		this.published = published;
+	}
+	Book.prototype.hasMovie = false;
+	Book.prototype.display = function(){
+		console.log(this);
+	};
+	Book.prototype.toString = function(){
+		return this.title + ' by ' + this.author;
+	};
 
   window.onload = function () {
   	var books = [];
+		books.push(new Book('Learning JavaScript', 'john doe', 'biography'));
+		books.push(new Book('My Life', 'john doe', 'mystery'));
+		books.push(new Book('Learning JavaScript', 'john doe', 'biography'));
   	// your code here to create the books and call addToPage()
+		books.forEach(function(book){
+			addToPage(book);
+		});
   };
 
   function addToPage(book) {
@@ -48,7 +67,7 @@ Create a new file (`assignment-1.html`) in your /homework folder and use the fol
   	var bookItem = document.createElement("li");
   	// your code here to figure out how which class to add to the book
   	// bookItem.setAttribute("class", "mystery") to add the mystery class
-  	// bookItem.setAttribute("class", "biography") to add the biography class
+	bookItem.setAttribute("class", book.genre)
   	bookItem.innerHTML = book.toString();
   	booksList.appendChild(bookItem);
   }

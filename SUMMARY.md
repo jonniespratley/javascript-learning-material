@@ -1,10 +1,12 @@
 # Summary
+* [Getting Started](./getting-started.md)
 
 * [Introduction](README.md)
-* [Lesson Format](lesson-format.md)
-* [Getting Started](getting-started.md)
-* [Intro Session](intro-session.md)
-* [JavaScript Fundamentals](javascript-fundamentals.md)
-* [JavaScript Prototypes](javascript-prototypes.md)
-* [Modern JavaScript I](modern-javascript-1.md)
-* [Modern JavaScript II](modern-javascript-2.md)
+	* [Intro](./intro-session.md)
+	* [Lesson Format](./lesson-format.md)
+
+* [Modern JavaScript I](./modern-javascript-1/README.md)
+	* [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
+	* [JavaScript Prototypes](./modern-javascript-1/javascript-prototypes.md)
+
+* [Modern JavaScript II](./modern-javascript-2/README.md)

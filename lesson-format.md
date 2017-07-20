@@ -40,17 +40,47 @@ The paragraph(s) that follow may provide addition details on information that wa
 
 We'll also set especially pertinent information apart in "Note" boxes:
 
-> **Note**	Notes provide information that is useful, but not absolutely necessary for performing the tasks at hand.
 
 
->> **Tip**	Tips provide information that might help make the tools easier for you to use, such as shortcut keys.
+> **[info]** Use this for infomation messages.
+
+---
 
 
->>> **WARNING**	Warnings provide information that can help prevent program crashes and data loss.
+> **[warning]** Use this for warning messages
+
+---
+
+> **[danger]** Use this for danger messages.
+
+---
+
+> **[success] For info**
+>
+> Use this for success messages.
+
+---
+
+## Code Editor
+The following is a code editor that you can modify code and see the results.
+
+{% codeeditor   src='./examples/html-example.html',
+                language='html', theme='github' %}
+{% endcodeeditor %}
+
+
+## JavaScript Console
+The following is a code console that you can modify code and run the example.
+
+<!-- js-console -->
+```js
+1 + 2;
+```
 
 
 
-
+## Exercies
+The following will be exercises that you can test your knowledge with.
 
 {% exercise %}
 Define a variable `x` equal to 10.
@@ -65,9 +95,9 @@ var x = 10;
 assert(x == 10);
 
 {% context %}
-// This is context code available everywhere
-// The user will be able to evaluate `exposedVar`
+// This is context code available everywhere The user will be able to evaluate `exposedVar`
 var exposedVar = 3;
+
 // ... or call `exposedFunction`
 function exposedFunction {
     return 3;

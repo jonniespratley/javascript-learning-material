@@ -2,6 +2,7 @@
 This is an overview of JavaScript, beginner usage and suggested tooling to help streamline development process and learning.
 While the information here is not the full list, the information provided will help you get up to speed quickly as possible
 
+<!-- toc -->
 
 ## Overview
 JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with object prototypes, instead of classes (see more about prototypical inheritance and ES2015 Classes). JavaScript also supports functional programming — functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
@@ -21,10 +22,10 @@ Let's start off by looking at the building blocks of any language: the types. Ja
 * null
 * undefined
 
-## Introduction
-JavaScript syntax is the set of rules, how JavaScript programs are constructed. JavaScript is a programming language.
 
-JavaScript statements are separated by semicolons:
+### JavaScript Statements
+JavaScript statements are composed of values, operators, expressions, keywords, comments and they are separated by semicolons:
+
 
 ```js
 var x, y, z;
@@ -32,18 +33,12 @@ var x, y, z;
 x = 5;
 y = 6;
 z = x + y;
+
+console.log(z);
 ```
 
-### JavaScript Statements
-JavaScript statements are composed of:
 
-1. Values
-2. Operators
-3. Expressions
-4. Keywords
-5. Comments
-
-### 1. Values
+### Values
 The JavaScript syntax defines two types of values: Fixed values and variable values.
 
 * Fixed values are called literals.
