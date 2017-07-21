@@ -19,15 +19,19 @@ My name is Jonnie Spratley. I have been in web development for about 9 years now
 
 ### Experience with Topics
 
-I have experience with a wide range of topics on JavaScript. From getting started with the language to best practices when creating and developing web applications. I have writting many articles on topics such as \(Creating AngularJS components, Testing with Jasmine, Creating MetorJS Applications\). 
+I have experience with a wide range of topics on JavaScript. From getting started with the language to best practices when creating and developing web applications. I have writting many articles on topics such as \(Creating AngularJS components, Testing with Jasmine, Creating MetorJS Applications\).
 
 I am obsessed with modern tooling that enables developers to rapidily start projects with various technologies which encourged me to author a book title Learning Yeoman, which aims to get developers up and running with Yeoman and the modern tooling as quick as possible. The book is now outdated, it was a great learning expierence and I enjoyed the task of writing a book.
-
-
 
 ## Introduce course learning objectives
 
 Some of the skills that you will learn are going to be mostly about front end web development and the tools and technologies used to create modern web applications.
+
+
+
+## Introduce Assignment 1
+
+Assignment 1 will be on the topic of JavaScript prototypes.
 
 
 
