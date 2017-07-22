@@ -197,7 +197,8 @@ console.log(myObject2, myObject2.toString());
 
 
 
-
+## Assignment
+For this lessons assignment you will apply your knowledge about JavaScript prototypes.
 
 
 
