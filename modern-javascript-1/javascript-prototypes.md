@@ -7,7 +7,7 @@ This document is going to try and help you understand the JavaScript prototype a
 When you complete this lesson, you will be able to:
 
 - Use `instanceof` to check the `type` of a specific object.
-- Example the `prototype` property of a constructor function.
+- Examine the `prototype` property of a constructor function.
 - Add methods to an objects `prototype`.
 - Examine an objects prototype chain.
 - Use prototypal inheritance to access properties from up the prototype chain.
