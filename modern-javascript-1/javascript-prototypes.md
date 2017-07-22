@@ -106,8 +106,6 @@ console.log(a instanceof Foo);
 From the code above we create 2 'class' functions, one named `Foo` and one named `Bar`. The `Bar` class inherits the properties and methods from `Foo`. Invoking the `myName` method on the `a` object triggers the prototype lookup and invokes the method declared in the `Foo` class.
 
 
-#### What is prototypal inheritance?
-In a nutshell, prototypal inheritance is when an object inherits from another object. In a classical language, classes typically define the structure of objects, but in a prototypal language, the objects themselves define their structure, and this structure can be inherited and modified by other objects at runtime.
 
 
 #### instanceof
@@ -162,7 +160,7 @@ returning a string that contains the `name` of the object. Which is passed into 
 
 
 
-## Quiz
+## Questions
 Here are some questions you can try and answer about the following code.
 
 <!-- js-console -->
