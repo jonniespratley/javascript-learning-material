@@ -20,7 +20,7 @@ JavaScript is dynamic and does not provide a class implementation. *(The `class`
 JavaScript has always had a reserved word called class in its language, which means you cannot create your own variable by that name. It has never actually been used in the language for anything; the name was simply reserved for later use. (Which is in ES6)
 
 
-## Prototypes
+## Object Prototypes
 Whenever you create an object in JavaScript, you get a second object with it, its `prototype`. The `prototype` is associated with the constructor of an object. Every function has a property, `prototype`, that holds a prototype object.
 
 ###### Interactive Session:
