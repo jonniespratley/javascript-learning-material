@@ -44,8 +44,8 @@ console.log(myObject);
 What is important about the `prototype` is something called **dynamic dispatch**. This happens when you try and access a property or method on an object, if it does not exist, JavaScript **checks the objects prototype** to see if it exists there and goes up the prototype chain until a match is found, if it is not found, then the return result from the operation is `undefined`.
 
 
-## 'Class' Functions
-In JavaScript, defining a simple function creates some of the same behavior as a class. Since classes do not exist in JavaScript as it is prototype-based, developers have been simulating classes but in reality it is just a function; since all functions by default get a public, nonenumerable property on them called `prototype`, which points to an arbitrary object.
+## Constructor Functions
+Objects can be created from a constructor function. Giving JavaScript developers the features that classes provide in other languages; all functions by default get a public, nonenumerable property on them called `prototype`, which points to an arbitrary object.
 
 ###### Interactive Session:
 
