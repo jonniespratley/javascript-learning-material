@@ -28,10 +28,14 @@ Whenever you create an object in JavaScript, you get a second object with it, it
 <!-- js-console -->
 ```js
 var myObject = {
-	name: 'myObject'
+    name: 'myObject'
 };
 
-console.log(myObject.name);
+myObject.type = 'generic'; // add property
+delete myObject.type; // remove property
+
+console.log(myObject.name); //myObject
+console.log('name' in myObject); //true
 console.log(myObject.someProp); //undefined
 console.log(Object.getPrototypeOf( myObject ) === Object.prototype);
 console.log(myObject);
