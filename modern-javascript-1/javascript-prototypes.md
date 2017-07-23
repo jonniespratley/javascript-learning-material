@@ -119,6 +119,10 @@ Another way to perform inheritance is throught the `Object.create` method. This 
 <!-- js-console -->
 
 ```js
+function Parent(name){
+    this.name = name;
+}
+
 var parent = new Parent();
 var child = Object.create(parent);
 ```
