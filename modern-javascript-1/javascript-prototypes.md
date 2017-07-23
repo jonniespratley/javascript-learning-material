@@ -45,7 +45,7 @@ What is important about the `prototype` is something called **dynamic dispatch**
 
 
 ## Constructor Functions
-Objects can be created from a constructor function. Giving JavaScript developers the features that classes provide in other languages; all functions by default get a public, nonenumerable property on them called `prototype`, which points to an arbitrary object.
+Objects can be created from a constructor function. Giving JavaScript developers the features that classes provide in other languages. By convention functions to be used as constructor functions should start with a capital letter. 
 
 ###### Interactive Session:
 
