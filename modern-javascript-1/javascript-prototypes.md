@@ -111,7 +111,7 @@ From the code above we create 2 'class' functions, one named `Foo` and one named
 
 
 
-#### Object.create()
+#### Object.create
 Another way to perform inheritance is throught the `Object.create` method. This method provides a way to implement inheritance by directly inheriting from another object without the use of a constructor function.
 
 ###### Interactive Session:
