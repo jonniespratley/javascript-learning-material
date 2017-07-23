@@ -111,6 +111,19 @@ From the code above we create 2 'class' functions, one named `Foo` and one named
 
 
 
+#### Object.create()
+Another way to perform inheritance is throught the `Object.create` method. This method provides a way to implement inheritance by directly inheriting from another object without the use of a constructor function.
+
+###### Interactive Session:
+
+<!-- js-console -->
+
+```js
+var parent = new Parent();
+var child = Object.create(parent);
+```
+
+
 
 #### instanceof
 The `instanceof` operator is a binary operator, which takes two arguments. The left argument is the object you want to test, and the right argument is the name of the constructor function used to create the object.
