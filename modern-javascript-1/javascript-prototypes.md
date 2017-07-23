@@ -140,6 +140,7 @@ function Bar(name, label){
 	this.name = name;
 	this.label = label;
 }
+
 var a = new Bar( "My Name", "My Label" );
 console.log(a instanceof Bar); //true
 ```
@@ -156,6 +157,7 @@ function Bar(name, label){
 	this.name = name;
 	this.label = label;
 }
+
 var a = new Bar( "My Name", "My Label" );
 console.log(a.hasOwnProperty('name'));
 console.log(a.hasOwnProperty('bar'));
