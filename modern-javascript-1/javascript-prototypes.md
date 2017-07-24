@@ -109,8 +109,6 @@ console.log(a instanceof Foo);
 
 From the code above we create 2 'class' functions, one named `Foo` and one named `Bar`. The `Bar` class inherits the properties and methods from `Foo`. Invoking the `myName` method on the `a` object triggers the prototype lookup and invokes the method declared in the `Foo` class.
 
-
-
 #### Object.create
 Another way to perform inheritance is throught the `Object.create` method. This method provides a way to implement inheritance by directly inheriting from another object without the use of a constructor function.
 
