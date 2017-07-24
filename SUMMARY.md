@@ -14,5 +14,4 @@
 
 * [Modern JavaScript II](./modern-javascript-2/README.md)
 
-
-
+  * [JavaScript Modules](./modern-javascript-2/javascript-modules.md)
