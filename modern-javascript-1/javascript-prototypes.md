@@ -45,7 +45,7 @@ What is important about the `prototype` is something called **dynamic dispatch**
 
 
 ## Constructor Functions
-Objects can be created from a constructor function. Giving JavaScript developers the features that classes provide in other languages. By convention functions to be used as constructor functions should start with a capital letter. 
+Objects can be created from a constructor function. Giving JavaScript developers the features that classes provide in other languages. By convention functions to be used as constructor functions should start with a capital letter.
 
 ###### Interactive Session:
 
@@ -230,3 +230,4 @@ While is documents purpose was to serve as a rough guide in helping you understa
 1. [A re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 2. [Object-oriented JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
 3. [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+4. [Methods Within Constructor vs Prototype in Javascript](https://www.thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/)
