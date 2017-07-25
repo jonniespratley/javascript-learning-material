@@ -13,7 +13,15 @@ When you complete this lesson you will be able to:
 - Use the Singleton pattern to create single instance module
 
 
+# Modules
+Modules are an important piece of any applications architecture because they help in keeping code both organized and seperated. 
 
+In JavaScript there are many ways to create modules, we will cover the most used ways:
+
+- The Module pattern
+- Object literal notation
+- AMD modules
+- CommonJS modules
 
 ## Creating a Module
 First in the Module Pattern is understanding the following expression:
@@ -36,7 +44,7 @@ var Module = (function () {
 
 The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended. 
 
-## Namespacing
+### Namespacing
 Namespacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, it is very easy to wipe out a variable, a function, or even a complete class without even knowing it. These types of errors are extremely time-consuming to find:
 
 ```js
@@ -80,18 +88,6 @@ The preceeding code simply creates an empty object if the `MyNamespace` global i
 > Note: `MyNamespace` is a bar choice for the name for a singleton and is used here only to illustrate that the object literal is being used as a namespace.
 
 
-
----
-
-
-
-# Modules
-Modules are an important piece of any applications architecture because they help in keeping code both organized and seperated. In JavaScript there are many ways to create modules, we will cover the most used ways:
-
-1. The Module pattern
-2. Object literal notation
-3. AMD modules
-4. CommonJS modules
 
 
 
@@ -199,7 +195,7 @@ console.log(MyNamespace.Singleton.publicMethod2([5,6,7]));
 
 This particular singleton pattern is also known as the module pattern, referring to the fact that it modularizes and namespaces a set of related methods and attributes.
 
-### Lazy Initialization
+### Singleton with Lazy Initialization
 So far all of the examples we have covered on Singleton modules is that they all initialize once the script loads, if you want to perform lazy initialization you could do something like for example:
 
 <!-- js-console -->
@@ -257,14 +253,6 @@ MyNamespace.Singleton.getInstance().publicMethod1();
 ```
 
 One downside of a lazy loading singleton is the complexity, if you need a to create a singleton with deeferred instantiaion, is helpful to document why it was done so other developers do not modify it to name it a normal singleton.
-
-
-# TODO -
-
-- Add examples of CommonJS and AMD modules
-- Add descriptions of code and fix any spelling errors.
-
-
 
 
 
