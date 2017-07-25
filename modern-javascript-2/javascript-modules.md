@@ -32,7 +32,7 @@ var Module = (function () {
 })();
 ```
 
-The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended.
+The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended. 
 
 ## Namespacing
 Namespacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, it is very easy to wipe out a variable, a function, or even a complete class without even knowing it. These types of errors are extremely time-consuming to find:
