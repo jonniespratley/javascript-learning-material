@@ -14,7 +14,7 @@ When you complete this lesson you will be able to:
 
 
 ## Creating a Module
-First in the Module Pattern is understanding the following concept:
+First in the Module Pattern is understanding the following expression:
 
 ```js
 (function () {
@@ -22,7 +22,7 @@ First in the Module Pattern is understanding the following concept:
 })();
 ```
 
-The preceding function invokes itself immediately when the script loads. This is also known as a Immediatly-Invoked Function Expression. Where the function creates is own scope keeping its local variables and methods from poluting the global scope.
+The preceding function invokes itself immediately when the script loads. This is also known as a **Immediatly-Invoked Function Expression**. Where the function creates is own scope keeping its local variables and methods from poluting the global scope.
 
 Now the next step is namespace this module so it can be accessed. For example:
 
