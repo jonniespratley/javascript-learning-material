@@ -14,6 +14,7 @@ When you complete this lesson you will be able to:
 
 
 ## Creating a Module
+First in the Module Pattern is understanding the following concept:
 
 ```js
 (function () {
@@ -21,10 +22,17 @@ When you complete this lesson you will be able to:
 })();
 ```
 
+The preceding function invokes itself immediately when the script loads. This is also known as a Immediatly-Invoked Function Expression. Where the function creates is own scope keeping its local variables and methods from poluting the global scope.
 
+Now the next step is namespace this module so it can be accessed. For example:
 
+```js
+var Module = (function () {
+  // code
+})();
+```
 
-
+The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended.
 
 ## Namespacing
 Namespacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, it is very easy to wipe out a variable, a function, or even a complete class without even knowing it. These types of errors are extremely time-consuming to find:
