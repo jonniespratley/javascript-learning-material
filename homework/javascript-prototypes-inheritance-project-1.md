@@ -2,14 +2,14 @@
 
 Write a program that uses one constructor:
 
-- `Book()` - to create book object with the following properties: genre, title, author, published (the year it was published)
-- `hasMovie` - a boolean indicating if the book has been made into a movie or tv show.
-- `display()` - a method that displays the object in the console.
-- `toString()` - a method that returns a string describing the book.
+* `Book()` - to create book object with the following properties: genre, title, author, published \(the year it was published\)
+* `hasMovie` - a boolean indicating if the book has been made into a movie or tv show.
+* `display()` - a method that displays the object in the console.
+* `toString()` - a method that returns a string describing the book.
 
-Create a `window.onload` handler function that creates an array of book objects, and then adds each book to the page using the `addToPage()` function (below).
+Create a `window.onload` handler function that creates an array of book objects, and then adds each book to the page using the `addToPage()` function \(below\).
 
-Create a new file (`assignment-1.html`) in your /homework folder and use the following HTML and JavaScript to get started:
+Create a new file \(`assignment-1.html`\) in your /homework folder and use the following HTML and JavaScript to get started:
 
 ```html
 <!DOCTYPE html>
@@ -39,20 +39,23 @@ Create a new file (`assignment-1.html`) in your /homework folder and use the fol
   //
 
   window.onload = function () {
-  	var books = [];
-  	// your code here to create the books and call addToPage()
+      var books = [];
+      // your code here to create the books and call addToPage()
   };
 
   function addToPage(book) {
-  	var booksList = document.getElementById("books");
-  	var bookItem = document.createElement("li");
-  	// your code here to figure out how which class to add to the book
-  	// bookItem.setAttribute("class", "mystery") to add the mystery class
-  	// bookItem.setAttribute("class", "biography") to add the biography class
-  	bookItem.innerHTML = book.toString();
-  	booksList.appendChild(bookItem);
+      var booksList = document.getElementById("books");
+      var bookItem = document.createElement("li");
+      // your code here to figure out how which class to add to the book
+      // bookItem.setAttribute("class", "mystery") to add the mystery class
+      // bookItem.setAttribute("class", "biography") to add the biography class
+      bookItem.innerHTML = book.toString();
+      booksList.appendChild(bookItem);
   }
   </script>
 </body>
 </html>
 ```
+
+
+

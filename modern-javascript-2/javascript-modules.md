@@ -4,13 +4,22 @@ This lesson will cover the different ways you can create modules in JavaScript. 
 ## Lesson Objectives
 When you complete this lesson you will be able to:
 
-- Use namespacing to prevent poluting the global namespace
+-Creating a Module
+- Use namespacing to prevent polluting the global namespace
 - Create and use an Immediately Invoked Function Expression (IIFE)
-- Use the Module pattern to create modules of code
-- Use the Singleton pattern to create a single instance module
+- Use the Module pattern to create reusable modules
+- Use the Singleton pattern to create single instance module
 
 
 
+
+## Creating a Module
+
+```js
+(function () {
+  // code
+})();
+```
 
 
 
