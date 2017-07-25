@@ -223,7 +223,7 @@ console.log(myObject2, myObject2.toString());
 For this lessons assignment you will apply your knowledge about JavaScript prototypes.
 
 
-
+[View assignment here](../homework/javascript-prototypes-inheritance-project-1.md)
 
 ## Summary
 While is documents purpose was to serve as a rough guide in helping you understand JavaScripts prototype chain, it is not a full guide, for more in-depth information I suggest you checkout the following links:
