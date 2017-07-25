@@ -14,7 +14,6 @@
 	Each object has a private property (referred to as [[Prototype]] ) which holds a link to another object called its prototype.
 */
 
-
 /* set up your anonymous function */
 (function() {
 	/* define a variable inside the function */
@@ -37,8 +36,8 @@ var o = {
 	a: 1,
 	b: 2,
 	m: function() {
-	 return this.a + 1;
- }
+		return this.a + 1;
+	}
 };
 o.__proto__ = {
 	b: 3,
@@ -51,3 +50,43 @@ console.log(o.c);
 console.log(o.d);
 var p = Object.create(o);
 console.log(p.m())
+
+//Namespace for all Code
+var MyNamespace = {};
+
+MyNamespace.Singleton = (function() {
+	var uniqueInstance; // Store the single instance.
+
+	function constructor() {
+		console.log('Singleton');
+
+		//Private members
+		var _privateAttr = 'private attribute';
+		var _privateAttr2 = [1, 2, 3, 4];
+
+		function _privateMethod1() {
+			return _privateAttr;
+		}
+
+		//Public members
+		return {
+			publicAttr: true,
+			publicAttr2: 10,
+			publicMethod1: _privateMethod1,
+			publicMethod2: function(args) {
+				return _privateAttr2.concat(args);
+			}
+		}
+	}
+
+	return {
+		getInstance: function() {
+			if (!uniqueInstance) {
+				uniqueInstance = new constructor();
+			}
+			return uniqueInstance;
+		}
+	}
+})();
+
+console.log(MyNamespace.Singleton.getInstance().publicMethod1());

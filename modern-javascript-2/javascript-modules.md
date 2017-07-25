@@ -13,41 +13,74 @@ When you complete this lesson you will be able to:
 - Use the Singleton pattern to create single instance module
 
 
-# Modules
-Modules are an important piece of any applications architecture because they help in keeping code both organized and seperated. 
+## Overview
+Modules are an important piece of any applications architecture because they help in keeping code both organized and seperated.
 
-In JavaScript there are many ways to create modules, generally a module is just a function that returns a object, how that object is returned is up to the developer. To help out will cover some of the common ways:
-
-- Anonymous Object Literal return
-- The Module pattern
-- Object literal notation
-- AMD modules
-- CommonJS modules
+In JavaScript there are many ways to create modules, generally a module is just a function that returns a object, how that object is returned is up to the developer.
 
 ## Creating a Module
-First in the Module Pattern is understanding the following expression:
+It is important to understanding the following `function` expression:
 
+<!-- js-console -->
 ```js
 (function () {
-  // code
+  // logic
 })();
 ```
 
 The preceding function invokes itself immediately when the script loads. This is also known as a **Immediatly-Invoked Function Expression**. Where the function creates is own scope keeping its local variables and methods from poluting the global scope.
 
-Now the next step is namespace this module so it can be accessed. For example:
+You can also give your module a name so it can be used else where:
 
+<!-- js-console -->
 ```js
 var Module = (function () {
-  // code
+  // logic
 })();
 ```
 
-The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended. 
+The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended.
+
+
+### Private Methods
+JavaScript doesn't excactly have the notion of `private` methods but you can create a working equivalent.
+
+<!-- js-console -->
+```js
+var Module = (function () {
+  // logic
+  var _privateMethod = function(){
+    console.log('im private');
+  };
+})();
+```
+
+The preceding code example declares a function expression inside the methods body.
+
+> Note: Using an underscore (`_`) for private members is generally a best practice.
+
+
+### Public Methods
+Typically Modules in JavaScript will use the `return` keyword and return an `Object` with methods and properties, which will be accessible from the Module's namespace. Take the following example:
+
+<!-- js-console -->
+```js
+var Module = (function () {
+  return {
+    publicMethod: function () {
+      // logic
+    }
+  };
+
+})();
+```
+This module simply returns an object literal that has a single public method.
+
 
 ### Namespacing
 Namespacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, it is very easy to wipe out a variable, a function, or even a complete class without even knowing it. These types of errors are extremely time-consuming to find:
 
+<!-- js-console -->
 ```js
 //global function
 function findProduct(){
@@ -70,7 +103,7 @@ The `findProduct` function is now a method under `MyNamespace`, and is protected
 
 Taking the namespacing further you can then group all of your code and data within objects or singletons under a single global variable:
 
-
+<!-- js-console -->
 ```js
 var MyNamespace = window.MyNamespace || {};
 MyNamespace.Common = {
@@ -92,47 +125,58 @@ The preceeding code simply creates an empty object if the `MyNamespace` global i
 
 
 
-## The Module Pattern
-In JavaScript the module pattern is used to emulate classes in a way that we are able to include both public and private methods and variables inside a single object. Hiding certiain parts of logic from the global scope. This pattern is similar to an immediately-invoked functional expression (IIFE) except an object is returned instead of a function.
+## The Revealing Module Pattern
+The Revealing module pattern is used to emulate classes in a way that we are able to include both public and private methods and variables inside a single object. Hiding certiain parts of logic from the global scope. This pattern is similar to an immediately-invoked functional expression (IIFE) except an object is returned instead of a function.
 
-Since variables cannot technically be declared as either public or private the function scope is used to simulate this concept. In the module pattern variables or methods declared are only available inside the module itself thanks to a closure. Properties and methods defined in the returned object are public and avaiable to everyone.
+Since variables cannot technically be declared as either public or private the function scope is used to simulate this concept. In the module pattern variables or methods declared are only available inside the module itself thanks to a closure.
 
-Here is a simple template that you can use to create a module, with namespacing, public and private variables.
+Here is a simple template that you can use to create a module, with namespacing and exposes public methods that invoke private methods.
 
+<!-- js-console -->
 ```js
-var myNamespace = (function () {
-  var myPrivateVar, myPrivateMethod;
+var myRevealingModule = (function () {
+  var privateVar = "Jonnie Spratley",
+      publicVar = "Hey there!";
 
-  // A private counter variable
-  myPrivateVar = 0;
+  function privateFunction() {
+      console.log( "Name:" + privateVar );
+  }
 
-  // A private function which logs any arguments
-  myPrivateMethod = function( foo ) {
-      console.log( foo );
-  };
+  function publicSetName( strName ) {
+      privateVar = strName;
+  }
 
+  function publicGetName() {
+      privateFunction();
+  }
+
+  // Reveal public pointers to
+  // private functions and properties
   return {
-    // A public variable
-    myPublicVar: "foo",
-    // A public function utilizing privates
-    myPublicFunction: function( bar ) {
-      // Increment our private counter
-      myPrivateVar++;
-      // Call our private method using bar
-      myPrivateMethod( bar );
-    }
+      setName: publicSetName,
+      greeting: publicVar,
+      getName: publicGetName
   };
+
 })();
+
+myRevealingModule.setName( "John Doe" );
 ```
+
+Properties and methods defined in the returned object are public and available to everyone. Hence the name revealing, we are exposing methods we want to be public and hiding the private methods.
+
+This pattern allows the syntax of our scripts to be more consistent. It also makes it more clear at the end of the module which of our functions and variables may be accessed publicly which eases readability.
+
+A disadvantage of this pattern is that if a private function refers to a public function, that public function can't be overridden if a patch is necessary. This is because the private function will continue to refer to the private implementation and the pattern doesn't apply to public members, only to functions.
+
 
 
 ## The Singleton Pattern
 The Singleton pattern is a software design pattern that restricts instantiation of a class to a single object. This is useful when one object is needed to coorinate actions across an entire system.
 
-A singleton consists of two parts: the object itself and the containing members. The singleton is usually global so it can be accessed anywhere in the page.
+In JavaScript, Singletons serve as a shared resource namespace which isolate implementation code from the global namespace so as to provide a single point of access for functions.
 
-### Singleton as an Object Literal
-Take a look at the following example of creating a Singleton as an object literal:
+A singleton consists of two parts: the object itself and the containing members. The singleton is usually global so it can be accessed anywhere in the page.
 
 <!-- js-console -->
 ```js
@@ -203,32 +247,34 @@ So far all of the examples we have covered on Singleton modules is that they all
 //Namespace for all Code
 var MyNamespace = {};
 
-MyNamespace.Singleton = (function(){
+MyNamespace.Singleton = (function() {
+	var uniqueInstance; // Store the single instance.
 
-	//Private members
-	var uniqueInstance; // Private attribute that holds the single instance.
-	var privateAttr = 'private attribute';
-	var privateAttr2 = [1,2,3,4];
-
-	function constructor(){
+	function constructor() {
 		console.log('Singleton');
+
+		//Private members
+		var _privateAttr = 'private attribute';
+		var _privateAttr2 = [1, 2, 3, 4];
+
+		function _privateMethod1() {
+			return _privateAttr;
+		}
 
 		//Public members
 		return {
 			publicAttr: true,
 			publicAttr2: 10,
-			publicMethod1: function(){
-				return privateAttr;
-			},
-			publicMethod2: function(args){
-				return privateAttr2.concat(args);
+			publicMethod1: _privateMethod1,
+			publicMethod2: function(args) {
+				return _privateAttr2.concat(args);
 			}
 		}
 	}
 
 	return {
-		getInstance: function(){
-			if(!uniqueInstance){
+		getInstance: function() {
+			if (!uniqueInstance) {
 				uniqueInstance = new constructor();
 			}
 			return uniqueInstance;
@@ -237,7 +283,6 @@ MyNamespace.Singleton = (function(){
 })();
 
 console.log(MyNamespace.Singleton.getInstance().publicMethod1());
-
 ```
 
 Once the singleton itself has been converted to a lazy loading singleton, you must also convert all calls made to it. In this example, you would replace all method calls like this:
