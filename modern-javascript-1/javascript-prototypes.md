@@ -122,7 +122,8 @@ function Parent(name){
 }
 
 var parent = new Parent();
-var child = Object.create(parent);
+var child = Object.create(Parent);
+console.log(child)
 ```
 
 
