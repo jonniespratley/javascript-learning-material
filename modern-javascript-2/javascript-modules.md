@@ -1,10 +1,12 @@
 # JavaScript Modules
 This lesson will cover the different ways you can create modules in JavaScript. A module is considered a reusable piece of code.
 
+<!-- toc -->
+
 ## Lesson Objectives
 When you complete this lesson you will be able to:
 
--Creating a Module
+- Creating a Module
 - Use namespacing to prevent polluting the global namespace
 - Create and use an Immediately Invoked Function Expression (IIFE)
 - Use the Module pattern to create reusable modules
