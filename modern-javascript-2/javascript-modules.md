@@ -16,8 +16,9 @@ When you complete this lesson you will be able to:
 # Modules
 Modules are an important piece of any applications architecture because they help in keeping code both organized and seperated. 
 
-In JavaScript there are many ways to create modules, we will cover the most used ways:
+In JavaScript there are many ways to create modules, generally a module is just a function that returns a object, how that object is returned is up to the developer. To help out will cover some of the common ways:
 
+- Anonymous Object Literal return
 - The Module pattern
 - Object literal notation
 - AMD modules
@@ -99,7 +100,6 @@ Since variables cannot technically be declared as either public or private the f
 Here is a simple template that you can use to create a module, with namespacing, public and private variables.
 
 ```js
-
 var myNamespace = (function () {
   var myPrivateVar, myPrivateMethod;
 
