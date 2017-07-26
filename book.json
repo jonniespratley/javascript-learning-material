@@ -1,5 +1,9 @@
 {
-    "plugins": ["exercises", "atoc", "code-editor", "js-console", "alerts"],
+    "plugins": [
+      "prism",
+      "-highlight",
+      "exercises",
+      "atoc", "code-editor", "js-console", "alerts"],
     "pluginsConfig": {
         "atoc": {
             "addClass": true,

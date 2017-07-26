@@ -1,58 +1,26 @@
-# JavaScript Modules - Project 1
+# The Module Pattern - Project 1
 
-Write a program that uses one constructor:
+In this project, you'll build an image gallery JavaScript widget.
+Use the Module Pattern to hide all of the internal implementation details of the image gallery:
 
-* `Book()` - to create book object with the following properties: genre, title, author, published \(the year it was published\)
-* `hasMovie` - a boolean indicating if the book has been made into a movie or tv show.
-* `display()` - a method that displays the object in the console.
-* `toString()` - a method that returns a string describing the book.
+1. Expose only the global variable `Gallery` (an object).
+2. Expose one public method, `init()` to initialize the module.
 
-Create a `window.onload` handler function that creates an array of book objects, and then adds each book to the page using the `addToPage()` function \(below\).
+When you click on the link, you'll see the image preview.
+You can build your image gallery to look any way you like, but the functionality should include the following features:
 
-Create a new file \(`assignment-1.html`\) in your /homework folder and use the following HTML and JavaScript to get started:
+- Clicking on a link to open the image preview.
+- The image preview should appear in the same page (that is, you should not navigate to a new page).
+- No links should be clickable while the image is showing.
+- Provide a way to close the image preview, so you can get back to the main part of the page and click on another image link. This could be a button or simply an action (like clicking on the image preview).
 
-```html
-<!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>Prototypes and Inheritance - Project 1</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    .mystery {
-        background-color: purple;
-    }
+[Here is a link you can use to start](http://embed.plnkr.co/9q6w7X/)
 
-    .biography {
-        background-color: crimson;
-    }
-  </style>
-</head>
-<body>
 
-  <ul id="books"></ul>
+Here is what the completed project should look like:
 
-  <script>
-  "use strict";
-  // your code here for the Book() constructor
-  //
-  //
+![Pic 1](https://dl.dropboxusercontent.com/u/26906414/silicon-villas/js-project-2-gallery.png)
 
-  window.onload = function () {
-      var books = [];
-      // your code here to create the books and call addToPage()
-  };
+And clicking on a link displays the following:
 
-  function addToPage(book) {
-      var booksList = document.getElementById("books");
-      var bookItem = document.createElement("li");
-      // your code here to figure out how which class to add to the book
-      // bookItem.setAttribute("class", "mystery") to add the mystery class
-      // bookItem.setAttribute("class", "biography") to add the biography class
-      bookItem.innerHTML = book.toString();
-      booksList.appendChild(bookItem);
-  }
-  </script>
-</body>
-</html>
-```
+![Photo details](https://dl.dropboxusercontent.com/u/26906414/silicon-villas/js-project-2-gallery-2.png)
