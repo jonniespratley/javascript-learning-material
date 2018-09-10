@@ -4,8 +4,8 @@
 * [Interview Guides](./interview-guides/README.md)
   * [Front End Interview](./interview-guides/front-end-interview.md)
     * [HTML & CSS Concepts](interview-guides/front-end-interview/html-and-css-concepts.md)
+    * [Computer Science Concepts](interview-guides/front-end-interview/computer-science-concepts.md)
     * [JavaScript Concepts](interview-guides/front-end-interview/javascript-concepts.md)
-    * Computer Science Concepts
 * [Introduction](README.md)
   * [Intro](./intro-session.md)
   * [Lesson Format](./lesson-format.md)
