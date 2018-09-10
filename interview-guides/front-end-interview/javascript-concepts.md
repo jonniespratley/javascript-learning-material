@@ -79,6 +79,7 @@ This behavior simulates classical inheritance, but it is really more of delegati
 
 When creating a new object/class, methods should normally be associated to the object's prototype rather than defined into the object constructor. The reason is that whenever the constructor is called, the methods would get reassigned (that is, for every object creation).
 
+<!-- js-console -->
 ```js
 function MyObject(name, message) {
   this.name = name.toString();
@@ -96,6 +97,7 @@ function MyObject(name, message) {
 
 Because the previous code does not take advantage of the benefits of using closures in this particular instance, we could instead rewrite it to avoid using closure as follows
 
+<!-- js-console -->
 ```js
 function MyObject(name, message) {
   this.name = name.toString();
@@ -130,6 +132,7 @@ JavaScript has two scopes – global and local. Any variable declared outside of
 #### 1.1.4.1. What is "this" Context
 Context is most often determined by how a function is invoked. When a function is called as a method of an object, `this` is set to the object the method is called on:
 
+<!-- js-console -->
 ```js
 var obj = {
     foo: function() {
@@ -149,6 +152,7 @@ The closure has three scope chains: it has access to its own scope (variables de
 
 > A closure is the combination of a function and the lexical environment within which that function was declared. 
 
+<!-- js-console -->
 ```js
 var Module = (function() {
     var privateProperty = 'foo';
@@ -196,7 +200,7 @@ while (queue.waitForMessage()) {
 `queue.waitForMessage()` waits synchronously for a message to arrive if there is none currently
 
 Function calls form a stack of frames.
-
+<!-- js-console -->
 ```js
 function foo(b) {
   var a = 10;
@@ -210,9 +214,7 @@ function bar(x) {
 
 console.log(bar(7)); //returns 42
 ```
-
-
-![event-loop](https://mdn.mozillademos.org/files/4617/default.svg)
+ 
 
 
 > Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
@@ -232,10 +234,7 @@ In the bubbling phase, the exact opposite occurs:
 
 - The browser checks to see if the element that was actually clicked on has an onclick event handler registered on it in the bubbling phase, and runs it if so.
 - Then it moves on to the next immediate ancestor element and does the same thing, then the next one, and so on until it reaches the `<html>` element.
-
-```js
-//code
-```
+ 
 
 ![bubbling-capturing](https://mdn.mozillademos.org/files/14075/bubbling-capturing.png)
 
@@ -249,7 +248,7 @@ These two methods inherent to all functions allow you to execute any function in
 
 - The `call` function requires the arguments as a comma seperated list.
 - The `apply` function requires the arguments as an array.
-
+<!-- js-console -->
 ```js
 function user(firstName, lastName, age) {
     // do something 
@@ -273,7 +272,7 @@ The result of both calls is exactly the same, the `user` function is invoked in 
 ECMAScript 5 (ES5) introduced the `Function.prototype.bind` method that is used for manipulating context. It returns a new function which is permanently bound to the first argument of `bind` regardless of how the function is being used. 
 
 For example: 
-
+<!-- js-console -->
 ```js
 function Widget() {
     this.element = document.createElement('div');
@@ -296,7 +295,7 @@ A Promise is in one of these states:
 - `rejected`: meaning that the operation failed.
 
 
-
+<!-- js-console -->
 ```js
 var promise1 = new Promise(function(resolve, reject) {
   setTimeout(resolve, 100, 'foo');
@@ -328,7 +327,7 @@ Hoisting is JavaScript's default behavior of moving all declarations to the top 
 - In other words; a variable can be used before it has been declared.
 
 > Variables and constants declared with let or const are not hoisted!
-
+<!-- js-console -->
 ```js
 myFunction();
 
@@ -342,7 +341,7 @@ Function declarations have the body hoisted while the function expressions (writ
 > `"use strict";` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 
 One of the advantages of JavaScript putting function declarations into memory before it executes any code segment is that it allows you to use a function before you declare it in your code. For example:
-
+<!-- js-console -->
 ```js
 function catName(name) {
   console.log("My cat's name is " + name);
@@ -352,7 +351,7 @@ catName("Tigger");
 ```
 
 The above code snippet is how you would expect to write the code for it to work. Now, let's see what happens when we call the function before we write it:
-
+<!-- js-console -->
 ```js
 catName("Chloe");
 
@@ -372,7 +371,7 @@ Hoisting works well with other data types and variables. The variables can be in
 JavaScript only hoists declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined. 
 
 For example:
-
+<!-- js-console -->
 ```js
 console.log(num); // Returns undefined 
 var num;
@@ -380,7 +379,7 @@ num = 6;
 ```
 
 If you declare the variable after it is used, but initialize it beforehand, it will return the value:
-
+<!-- js-console -->
 ```js
 num = 6;
 console.log(num); // returns 6
@@ -388,7 +387,7 @@ var num;
 ```
 
 The below two examples demonstrate the same behavior.
-
+<!-- js-console -->
 ```js
 var x = 1; // Initialize x
 console.log(x + " " + y); // '1 undefined'
@@ -405,7 +404,7 @@ y = 2; // Initialize y
 ```
 
 Function declarations have the body hoisted while the function expressions (written in the form of variable declarations) only has the variable declaration hoisted.
-
+<!-- js-console -->
 ```js
 // Function Declaration
 console.log(foo); // [Function: foo]
@@ -435,7 +434,7 @@ Currying is a pattern where a function with more than one parameter is broken in
 
 This technique can be useful for making code written in a functional style easier to read and compose. It's important to note that for a function to be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter.
 
-
+<!-- js-console -->
 ```js
 function curry(fn) {
   if (fn.length === 0) 
