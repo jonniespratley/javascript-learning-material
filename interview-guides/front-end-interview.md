@@ -225,6 +225,7 @@ Description
 The latest ECMAScript standard defines seven data types:
 
 Six data types that are primitives:
+
 * Boolean
 * Null
 * Undefined
