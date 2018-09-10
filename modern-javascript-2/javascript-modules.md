@@ -1,9 +1,24 @@
-# JavaScript Modules
+# 1. JavaScript Modules
 This lesson will cover the different ways you can create modules in JavaScript. A module is considered a reusable piece of code.
 
-<!-- toc -->
+<!-- TOC -->
 
-## Lesson Objectives
+- [1. JavaScript Modules](#1-javascript-modules)
+  - [1.1. Lesson Objectives](#11-lesson-objectives)
+  - [1.2. Overview](#12-overview)
+  - [1.3. Creating a Module](#13-creating-a-module)
+    - [1.3.1. Private Methods](#131-private-methods)
+    - [1.3.2. Public Methods](#132-public-methods)
+    - [1.3.3. Namespacing](#133-namespacing)
+  - [1.4. The Revealing Module Pattern](#14-the-revealing-module-pattern)
+  - [1.5. The Singleton Pattern](#15-the-singleton-pattern)
+    - [1.5.1. Singleton as IIFE](#151-singleton-as-iife)
+    - [1.5.2. Singleton with Lazy Initialization](#152-singleton-with-lazy-initialization)
+  - [1.6. Resources](#16-resources)
+
+<!-- /TOC -->
+
+## 1.1. Lesson Objectives
 When you complete this lesson you will be able to:
 
 - Creating a Module
@@ -13,18 +28,19 @@ When you complete this lesson you will be able to:
 - Use the Singleton pattern to create single instance module
 
 
-## Overview
+## 1.2. Overview
 Modules are an important piece of any applications architecture because they help in keeping code both organized and seperated.
 
 In JavaScript there are many ways to create modules, generally a module is just a function that returns a object, how that object is returned is up to the developer.
 
-## Creating a Module
+## 1.3. Creating a Module
 It is important to understanding the following `function` expression:
 
 <!-- js-console -->
 ```js
 (function () {
-  // logic
+	// logic
+	console.log('some logic')
 })();
 ```
 
@@ -35,14 +51,15 @@ You can also give your module a name so it can be used else where:
 <!-- js-console -->
 ```js
 var Module = (function () {
-  // logic
+	// logic
+	console.log('some logic')
 })();
 ```
 
 The preceeding code example simply declares a `Module` into the global scope, so it can be accessed and even extended.
 
 
-### Private Methods
+### 1.3.1. Private Methods
 JavaScript doesn't excactly have the notion of `private` methods but you can create a working equivalent.
 
 <!-- js-console -->
@@ -60,7 +77,7 @@ The preceding code example declares a function expression inside the methods bod
 > Note: Using an underscore (`_`) for private members is generally a best practice.
 
 
-### Public Methods
+### 1.3.2. Public Methods
 Typically Modules in JavaScript will use the `return` keyword and return an `Object` with methods and properties, which will be accessible from the Module's namespace. Take the following example:
 
 <!-- js-console -->
@@ -68,7 +85,8 @@ Typically Modules in JavaScript will use the `return` keyword and return an `Obj
 var Module = (function () {
   return {
     publicMethod: function () {
-      // logic
+			// logic
+			console.log('public')
     }
   };
 
@@ -77,7 +95,7 @@ var Module = (function () {
 This module simply returns an object literal that has a single public method.
 
 
-### Namespacing
+### 1.3.3. Namespacing
 Namespacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, it is very easy to wipe out a variable, a function, or even a complete class without even knowing it. These types of errors are extremely time-consuming to find:
 
 <!-- js-console -->
@@ -125,7 +143,7 @@ The preceeding code simply creates an empty object if the `MyNamespace` global i
 
 
 
-## The Revealing Module Pattern
+## 1.4. The Revealing Module Pattern
 The Revealing module pattern is used to emulate classes in a way that we are able to include both public and private methods and variables inside a single object. Hiding certiain parts of logic from the global scope. This pattern is similar to an immediately-invoked functional expression (IIFE) except an object is returned instead of a function.
 
 Since variables cannot technically be declared as either public or private the function scope is used to simulate this concept. In the module pattern variables or methods declared are only available inside the module itself thanks to a closure.
@@ -171,7 +189,7 @@ A disadvantage of this pattern is that if a private function refers to a public 
 
 
 
-## The Singleton Pattern
+## 1.5. The Singleton Pattern
 The Singleton pattern is a software design pattern that restricts instantiation of a class to a single object. This is useful when one object is needed to coorinate actions across an entire system.
 
 In JavaScript, Singletons serve as a shared resource namespace which isolate implementation code from the global namespace so as to provide a single point of access for functions.
@@ -197,7 +215,7 @@ console.log(MyNamespace.Singleton.someFunc());
 The preceeding code simply defines an object literal with some public properties and methods attached to it.
 
 
-### Singleton as IIFE
+### 1.5.1. Singleton as IIFE
 There are some cases where you want to create private members inside a class, but one drawback is how member-inefficient they are because a new copy of the method is created for each instance. With singleton objects, they are only instantiated once, so you can create private members without worring about memory consumption.
 
 A common way to create a singleton with private members is to create it as an IIFE (Immediately Invoked Function Expression), for example:
@@ -239,7 +257,7 @@ console.log(MyNamespace.Singleton.publicMethod2([5,6,7]));
 
 This particular singleton pattern is also known as the module pattern, referring to the fact that it modularizes and namespaces a set of related methods and attributes.
 
-### Singleton with Lazy Initialization
+### 1.5.2. Singleton with Lazy Initialization
 So far all of the examples we have covered on Singleton modules is that they all initialize once the script loads, if you want to perform lazy initialization you could do something like for example:
 
 <!-- js-console -->
@@ -304,7 +322,7 @@ One downside of a lazy loading singleton is the complexity, if you need a to cre
 
 
 
-## Resources
+## 1.6. Resources
 Here are some resources to help you build your knowledge.
 
 - [Using Objects to Organize Code](http://rmurphey.com/blog/2009/10/15/using-objects-to-organize-your-code)
