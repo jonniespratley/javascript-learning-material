@@ -1,6 +1,8 @@
 # Summary
 
 * [Getting Started](./getting-started.md)
+* [Interview Guides](./interview-guides/README.md)
+  * [Front End Interview](./interview-guides/front-end-interview.md)
 * [Introduction](README.md)
   * [Intro](./intro-session.md)
   * [Lesson Format](./lesson-format.md)
