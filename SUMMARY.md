@@ -3,17 +3,19 @@
 * [Getting Started](./getting-started.md)
 * [Interview Guides](./interview-guides/README.md)
   * [Front End Interview](./interview-guides/front-end-interview.md)
+    * [HTML & CSS Concepts](interview-guides/front-end-interview/html-and-css-concepts.md)
+    * [JavaScript Concepts](interview-guides/front-end-interview/javascript-concepts.md)
+    * Computer Science Concepts
 * [Introduction](README.md)
   * [Intro](./intro-session.md)
   * [Lesson Format](./lesson-format.md)
-
 * [Modern JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
   * [Assignments](./homework/README.md)
     * [Prototypes and Inheritance](./modern-javascript-1/assignments/javascript-prototypes-inheritance-project-1.md)
-
 * [Modern JavaScript II](./modern-javascript-2/README.md)
   * [JavaScript Modules](./modern-javascript-2/javascript-modules.md)
   * [Assignments](./homework/README.md)
     * [JavaScript Modules](./modern-javascript-2/assignments/javascript-modules-project.md)
+
