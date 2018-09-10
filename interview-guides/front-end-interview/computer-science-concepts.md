@@ -100,10 +100,10 @@ var q = new MyQueue();
     q.enqueue('Jonnie');
     q.enqueue('Spratley');
 
-console.assert(q.size() === 2, 'size is 2');
-console.assert(q.dequeue() === 'Jonnie', 'first in first out');
-console.assert(q.dequeue() === 'Spratley', 'last in last out')
-console.assert(q.size() === 0, 'size is 0');
+console.log(q.size() === 2, 'size is 2');
+console.log(q.dequeue() === 'Jonnie', 'first in first out');
+console.log(q.dequeue() === 'Spratley', 'last in last out')
+console.log(q.size() === 0, 'size is 0');
 ```
 
 
@@ -130,6 +130,9 @@ class MyStack {
         this._size = 0;
         this._storage = {};
     }
+    size(){
+        return this._size;
+    }
 
     push(data) {
         const size = ++this._size;
@@ -152,10 +155,10 @@ var s = new MyStack();
     s.push('Jonnie');
     s.push('Spratley');
 
-console.assert(s.size() === 2, 'size is 2');
-console.assert(s.pop() === 'Spratley', 'last in first out');
-console.assert(s.pop() === 'Jonnie', 'first in last out');
-console.assert(s.size() === 0, 'size is 0');
+console.log(s.size() === 2, 'size is 2');
+console.log(s.pop() === 'Spratley', 'last in first out');
+console.log(s.pop() === 'Jonnie', 'first in last out');
+console.log(s.size() === 0, 'size is 0');
 ```
 
 
