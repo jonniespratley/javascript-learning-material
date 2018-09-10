@@ -158,15 +158,13 @@ var Module = (function() {
     var privateProperty = 'foo';
 
     function privateMethod(args) {
-        // do something
+        console.log('privateMethod', args);
     }
 
     return {
-
-        publicProperty: '',
-
+        publicProperty: 'some value',
         publicMethod: function(args) {
-            // do something
+            console.log('do something', args);
         },
 
         privilegedMethod: function(args) {
@@ -174,6 +172,8 @@ var Module = (function() {
         }
     };
 })();
+console.log(Module);
+Module.publicMethod();
 ```
 
 #### 1.1.5.1. What is a closure, and how/why would you use one?
@@ -200,6 +200,7 @@ while (queue.waitForMessage()) {
 `queue.waitForMessage()` waits synchronously for a message to arrive if there is none currently
 
 Function calls form a stack of frames.
+
 <!-- js-console -->
 ```js
 function foo(b) {
@@ -248,6 +249,7 @@ These two methods inherent to all functions allow you to execute any function in
 
 - The `call` function requires the arguments as a comma seperated list.
 - The `apply` function requires the arguments as an array.
+
 <!-- js-console -->
 ```js
 function user(firstName, lastName, age) {
@@ -255,8 +257,8 @@ function user(firstName, lastName, age) {
     console.log(firstName, lastName, age);
 }
 
-user.call(window, 'John', 'Doe', 30);
-user.apply(window, ['John', 'Doe', 30]);
+console.log(user.call(window, 'John', 'Doe', 30))
+console.log(user.apply(window, ['John', 'Doe', 30]));
 
 function add(a, b) {
   return a + b;
@@ -264,6 +266,7 @@ function add(a, b) {
 console.log(add.call(null, 1, 2)); // 3
 console.log(add.apply(null, [1, 2])); // 3
 ```
+
 > An easy way to remember this is C for `call` and comma-separated and A for `apply` and an array of arguments.
 
 The result of both calls is exactly the same, the `user` function is invoked in the context of the window and provided the same three arguments.
@@ -272,6 +275,7 @@ The result of both calls is exactly the same, the `user` function is invoked in 
 ECMAScript 5 (ES5) introduced the `Function.prototype.bind` method that is used for manipulating context. It returns a new function which is permanently bound to the first argument of `bind` regardless of how the function is being used. 
 
 For example: 
+
 <!-- js-console -->
 ```js
 function Widget() {
@@ -327,6 +331,7 @@ Hoisting is JavaScript's default behavior of moving all declarations to the top 
 - In other words; a variable can be used before it has been declared.
 
 > Variables and constants declared with let or const are not hoisted!
+
 <!-- js-console -->
 ```js
 myFunction();
@@ -341,6 +346,7 @@ Function declarations have the body hoisted while the function expressions (writ
 > `"use strict";` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 
 One of the advantages of JavaScript putting function declarations into memory before it executes any code segment is that it allows you to use a function before you declare it in your code. For example:
+
 <!-- js-console -->
 ```js
 function catName(name) {
@@ -351,6 +357,7 @@ catName("Tigger");
 ```
 
 The above code snippet is how you would expect to write the code for it to work. Now, let's see what happens when we call the function before we write it:
+
 <!-- js-console -->
 ```js
 catName("Chloe");
@@ -371,6 +378,7 @@ Hoisting works well with other data types and variables. The variables can be in
 JavaScript only hoists declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined. 
 
 For example:
+
 <!-- js-console -->
 ```js
 console.log(num); // Returns undefined 
@@ -379,6 +387,7 @@ num = 6;
 ```
 
 If you declare the variable after it is used, but initialize it beforehand, it will return the value:
+
 <!-- js-console -->
 ```js
 num = 6;
@@ -387,6 +396,7 @@ var num;
 ```
 
 The below two examples demonstrate the same behavior.
+
 <!-- js-console -->
 ```js
 var x = 1; // Initialize x
@@ -404,6 +414,7 @@ y = 2; // Initialize y
 ```
 
 Function declarations have the body hoisted while the function expressions (written in the form of variable declarations) only has the variable declaration hoisted.
+
 <!-- js-console -->
 ```js
 // Function Declaration
@@ -458,6 +469,7 @@ function add(a, b) {
 var curriedAdd = curry(add);
 var addFive = curriedAdd(5);
 var result = [0, 1, 2, 3, 4, 5].map(addFive); // [5, 6, 7, 8, 9, 10]
+console.log(result);
 ```
 
 > Reference: https://www.sitepoint.com/currying-in-functional-javascript/
