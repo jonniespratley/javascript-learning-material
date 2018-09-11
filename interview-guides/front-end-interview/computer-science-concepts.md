@@ -14,8 +14,14 @@ The following concepts should be understood in JavaScript.
   - [3.1. Big-O Analysis](#31-big-o-analysis)
     - [3.1.1. How Big-O Analysis Works](#311-how-big-o-analysis-works)
     - [3.1.2. Which is Better?](#312-which-is-better)
-  - [Searching](#searching)
-    - [3.2.1. Binary search](#321-binary-search)
+- [4. Searching](#4-searching)
+  - [4.1. Binary search](#41-binary-search)
+- [5. Sorting](#5-sorting)
+  - [5.1. Bubble sort](#51-bubble-sort)
+  - [5.2. Insertion Sort](#52-insertion-sort)
+  - [5.3. Selection Sort](#53-selection-sort)
+  - [5.4. Quick Sort](#54-quick-sort)
+  - [5.5. Merge Sort](#55-merge-sort)
 
 <!-- /TOC -->
 
@@ -217,9 +223,9 @@ Now double it to n = 20:
 * 20! = 2.43×1018
 
 
-# Searching
+# 4. Searching
 
-## 3.2.1. Binary search
+## 4.1. Binary search
 In computer science, binary search, also known as half-interval 
 search, logarithmic search, or binary chop, is a search algorithm 
 that finds the position of a target value within a sorted 
@@ -239,7 +245,7 @@ next iteration.
 
 
 
-# 1. Sorting
+# 5. Sorting
 This is about sorting, here is what you should ask yourself:
 
 * What do we know about the data? Is the data already sorted or mostly sorted? How large are the data sets likely to be? Can there be duplicate key values?
@@ -258,7 +264,7 @@ This is about sorting, here is what you should ask yourself:
 <!-- /TOC -->
 
 
-## 1.1. Bubble sort
+## 5.1. Bubble sort
 
 Bubble sort, sometimes referred to as sinking sort, is a 
 simple sorting algorithm that repeatedly steps through 
@@ -279,7 +285,7 @@ Complexity
 
 
 
-## 1.2. Insertion Sort
+## 5.2. Insertion Sort
 
 Insertion sort is another simple sorting algorithm. It builds a sorted array (or list) one element at a time by comparing each new element to the already-sorted elements and inserting the new element into the correct location, similar to the way you sort a hand of playing cards.
 
@@ -300,11 +306,11 @@ sort.
 | **Insertion sort**    | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
 
 
-## 1.3. Selection Sort
+## 5.3. Selection Sort
 
 Selection sort is one of the simplest sorting algorithms. It starts with the first element in the array (or list) and scans through the array to find the element with the smallest key, which it swaps with the first element. The process is then repeated with each subsequent element until the last element is reached.
 
-## 1.4. Quick Sort
+## 5.4. Quick Sort
 Quicksort is a divide and conquer algorithm.
 Quicksort first divides a large array into two smaller 
 sub-arrays: the low elements and the high elements.
@@ -335,7 +341,7 @@ The horizontal lines are pivot values.
 | **Quick sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | No        |  Quicksort is usually done in-place with O(log(n)) stack space |
 
 
-## 1.5. Merge Sort
+## 5.5. Merge Sort
 
 Merge sort is another divide-and-conquer algorithm that works by splitting a data set into two or more subsets, sorting the subsets, and then merging them together into the final sorted set.
 
