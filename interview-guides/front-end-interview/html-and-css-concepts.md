@@ -162,10 +162,7 @@ A semantic element clearly describes its meaning to both the browser and the dev
 - Examples of non-semantic elements: `<div>` and `<span>` - Tells nothing about its content.
 - Examples of semantic elements: `<form>`, `<table>`, and `<article>` - Clearly defines its content.
 
-<details>
-  <summary>
-  HTML5 offers new semantic elements to define different parts of a web page:  
-  </summary>
+HTML5 offers new semantic elements to define different parts of a web page:  
 
 - `<article>`
 - `<aside>`
@@ -180,11 +177,6 @@ A semantic element clearly describes its meaning to both the browser and the dev
 - `<section>`
 - `<summary>`
 - `<time>`
-
-
-</details>
-
-
 
 > Reference: https://www.w3schools.com/html/html5_semantic_elements.asp
 

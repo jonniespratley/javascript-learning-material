@@ -12,6 +12,7 @@
     "gitbook-plugin-atoc": "^1.0.3",
     "gitbook-plugin-code-editor": "^1.2.1",
     "gitbook-plugin-exercises": "^3.0.0",
+    "gitbook-plugin-highlight-code": "^1.0.0",
     "gitbook-plugin-js-console": "^1.4.2",
     "gitbook-plugin-prism": "^2.4.0"
   },
@@ -23,7 +24,6 @@
     "pdf": "gitbook pdf",
     "epub": "gitbook epub",
     "mobil": "gitbook mobi"
-    
   },
   "repository": {
     "type": "git",

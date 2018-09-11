@@ -1,6 +1,6 @@
 {
     "plugins": [
-        "prism", "-highlight",
+        "prism", "highlight-code",
         "exercises",
         "code-editor", 
         "js-console", 

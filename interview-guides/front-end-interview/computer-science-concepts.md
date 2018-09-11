@@ -10,10 +10,15 @@ The following concepts should be understood in JavaScript.
   - [2.2. Queues & Stacks](#22-queues--stacks)
     - [2.2.1. Queue](#221-queue)
     - [2.2.2. Stack](#222-stack)
-- [3. Algorithms](#3-algorithms)
-  - [3.1. Big-O Analysis](#31-big-o-analysis)
-    - [3.1.1. How Big-O Analysis Works](#311-how-big-o-analysis-works)
-    - [3.1.2. Which is Better?](#312-which-is-better)
+- [3. Big-O Analysis](#3-big-o-analysis)
+    - [3.0.3. How Big-O Analysis Works](#303-how-big-o-analysis-works)
+    - [3.0.4. Which is Better?](#304-which-is-better)
+    - [3.0.5. Big O(1)](#305-big-o1)
+    - [3.0.6. Big O(N)](#306-big-on)
+    - [3.0.7. Big O(N2)](#307-big-on2)
+    - [3.0.8. Big O Performance Comparisons](#308-big-o-performance-comparisons)
+    - [3.0.9. Data Structure Operations Complexity](#309-data-structure-operations-complexity)
+    - [3.0.10. Array Sorting Algorithms Complexity](#3010-array-sorting-algorithms-complexity)
 - [4. Searching](#4-searching)
   - [4.1. Binary search](#41-binary-search)
 - [5. Sorting](#5-sorting)
@@ -166,13 +171,12 @@ console.log(s.size() === 0, 'size is 0');
 
 
 
-# 3. Algorithms
 
-## 3.1. Big-O Analysis
+# 3. Big-O Analysis
 
 Big-O analysis is a form of runtime analysis that measures the efficiency of an algorithm in terms of the time it takes for the algorithm to run as a function of the input size. It’s not a formal benchmark, just a simple way to classify algorithms by relative efficiency when dealing with very large input sizes.
 
-### 3.1.1. How Big-O Analysis Works
+### 3.0.3. How Big-O Analysis Works
 
 In Big-O analysis, input size is assumed to be an unknown value n. In this example, n simply represents the number of elements in an array. In other problems, n may represent the number of nodes in a linked list, the number of bits in a data type, or the number of entries in a hash table. After determining what n means in terms of the input, you must determine how many operations are performed for each of the n input items. “Operation” is a fuzzy word because algorithms differ greatly.
 
@@ -192,8 +196,7 @@ The general procedure for Big-O runtime analysis is as follows:
 
 For the algorithms you’ll encounter in interviews, Big-O analysis should be straightforward as long as you correctly identify the operations that are dependent on the input size.
 
-
-### 3.1.2. Which is Better?
+### 3.0.4. Which is Better?
 
 The performance of most algorithms depends on n, the size of the input. The algorithms can be classified as follows from best-to-worse performance:
 
@@ -222,6 +225,117 @@ Now double it to n = 20:
 * 220 = 1,048,576
 * 20! = 2.43×1018
 
+- Notation      - Name
+- O(1)          - Constant
+- O(log(n))     - Logarithmic
+- O((log(n))c)  - Poly-logarithmic
+- O(n)          - Linear
+- O(n2)         - Quadratic
+- O(nc)         - Polynomial
+- O(cn)         - Exponential
+
+### 3.0.5. Big O(1)
+Consider the following function:
+
+```js
+function increment(num){ 
+  return ++num; 
+}
+console.log(increment(2));
+```
+
+### 3.0.6. Big O(N)
+Now, let's use the sequential search algorithm:
+
+<!-- js-console -->
+```js
+function sequentialSearch(array, item) {
+    for (var i = 0; i < array.length; i++) {
+        if (item === array[i]) { //{1} 
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(sequentialSearch([9, 5, 2, 4, 3, 7, 6], 4));
+```
+
+### 3.0.7. Big O(N2)
+For the O(n2) example, let's use the bubble sort algorithm:
+
+<!-- js-console -->
+```js
+function swap(array, index1, index2) {
+    let aux = array[index1];
+    array[index1] = array[index2];
+    array[index2] = aux;
+}
+
+function bubbleSort(array) {
+    let length = array.length;
+    for (let i = 0; i < length; i++) { //{1} 
+        for (let j = 0; j < length - 1; j++) { //{2} 
+            if (array[j] > array[j + 1]) {
+                swap(array, j, j + 1);
+            }
+        }
+    }
+    return array;
+}
+console.log(bubbleSort([9, 5, 2, 4, 3, 7, 6]));
+```
+
+
+
+
+### 3.0.8. Big O Performance Comparisons
+Order of growth of algorithms specified in Big O notation.
+
+![Big O graphs](https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/big-o-graph.png)
+
+> Source: [Big O Cheat Sheet](http://bigocheatsheet.com/)
+
+Below is the list of some of the most used Big O notations and their performance comparisons against different sizes of the input data.
+
+| Big O Notation | Computations for 10 elements | Computations for 100 elements | Computations for 1000 elements  |
+| -------------- | ---------------------------- | ----------------------------- | ------------------------------- |
+| **O(1)**       | 1                            | 1                             | 1                               |
+| **O(log N)**   | 3                            | 6                             | 9                               |
+| **O(N)**       | 10                           | 100                           | 1000                            |
+| **O(N log N)** | 30                           | 600                           | 9000                            |
+| **O(N^2)**     | 100                          | 10000                         | 1000000                         |
+| **O(2^N)**     | 1024                         | 1.26e+29                      | 1.07e+301                       |
+| **O(N!)**      | 3628800                      | 9.3e+157                      | 4.02e+2567                      |
+
+### 3.0.9. Data Structure Operations Complexity
+
+| Data Structure          | Access    | Search    | Insertion | Deletion  | Comments  |
+| ----------------------- | :-------: | :-------: | :-------: | :-------: | :-------- |
+| **Array**               | 1         | n         | n         | n         |           |
+| **Stack**               | n         | n         | 1         | 1         |           |
+| **Queue**               | n         | n         | 1         | 1         |           |
+| **Linked List**         | n         | n         | 1         | 1         |           |
+| **Hash Table**          | -         | n         | n         | n         | In case of perfect hash function costs would be O(1) |
+| **Binary Search Tree**  | n         | n         | n         | n         | In case of balanced tree costs would be O(log(n)) |
+| **B-Tree**              | log(n)    | log(n)    | log(n)    | log(n)    |           |
+| **Red-Black Tree**      | log(n)    | log(n)    | log(n)    | log(n)    |           |
+| **AVL Tree**            | log(n)    | log(n)    | log(n)    | log(n)    |           |
+| **Bloom Filter**        | -         | 1         | 1         | -         | False positives are possible while searching |
+
+### 3.0.10. Array Sorting Algorithms Complexity
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Bubble sort**       | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
+| **Insertion sort**    | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
+| **Selection sort**    | n<sup>2</sup>   | n<sup>2</sup>       | n<sup>2</sup>       | 1         | No        |           |
+| **Heap sort**         | n&nbsp;log(n)   | n&nbsp;log(n)       | n&nbsp;log(n)       | 1         | No        |           |
+| **Merge sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n&nbsp;log(n)       | n         | Yes       |           |
+| **Quick sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | No        | Quicksort is usually done in-place with O(log(n)) stack space |
+| **Shell sort**        | n&nbsp;log(n)   | depends on gap sequence   | n&nbsp;(log(n))<sup>2</sup>  | 1         | No         |           |
+| **Counting sort**     | n + r           | n + r               | n + r               | n + r     | Yes       | r - biggest number in array |
+| **Radix sort**        | n * k           | n * k               | n * k               | n + k     | Yes       | k - length of longest key |
 
 # 4. Searching
 
@@ -242,6 +356,33 @@ in the array.
 
 **Time Complexity**: `O(log(n))` - since we split search area by two for every
 next iteration.
+
+<!-- js-console -->
+```js
+function binarySearch(arr, val) {
+    let lower_bound = 0;
+    let upper_bound = arr.length - 1;
+
+    while (lower_bound <= upper_bound) {
+        let midpoint = Math.floor(upper_bound + lower_bound / 2);
+        let value_at_midpoint = arr[midpoint];
+
+        console.log(midpoint, value_at_midpoint);
+
+        if (val < value_at_midpoint) {
+            upper_bound = midpoint - 1;
+        } else if (val > value_at_midpoint) {
+            lower_bound = midpoint + 1;
+        } else if (val == value_at_midpoint) {
+            return midpoint;
+        }
+    }
+    return null;
+}
+
+console.log(binarySearch([1, 3, 4, 5, 6, 21, 43, 54, 86], 21));
+console.log(binarySearch([1, 3, 4, 5, 6, 21, 43, 54, 86], 1));
+```
 
 
 
