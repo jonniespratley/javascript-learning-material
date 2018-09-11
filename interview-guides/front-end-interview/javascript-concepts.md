@@ -1,49 +1,34 @@
 # 1. JavaScript Concepts
 
-
-
 <!-- TOC -->
 
 - [1. JavaScript Concepts](#1-javascript-concepts)
-  - [1.1. JavaScript Concepts](#11-javascript-concepts)
-    - [1.1.1. Data types](#111-data-types)
-    - [1.1.2. Prototypal inheritance](#112-prototypal-inheritance)
-    - [1.1.3. How prototypal inheritance works](#113-how-prototypal-inheritance-works)
-    - [1.1.4. Scoping](#114-scoping)
-      - [1.1.4.1. What is "this" Context](#1141-what-is-this-context)
-    - [1.1.5. Closures](#115-closures)
-      - [1.1.5.1. What is a closure, and how/why would you use one?](#1151-what-is-a-closure-and-howwhy-would-you-use-one)
-    - [1.1.6. The event loop](#116-the-event-loop)
-    - [1.1.7. Event bubbling](#117-event-bubbling)
-      - [1.1.7.1. Bubbling and capturing explained](#1171-bubbling-and-capturing-explained)
-    - [1.1.8. Apply, call, and bind](#118-apply-call-and-bind)
-      - [1.1.8.1. Explain Bind](#1181-explain-bind)
-    - [1.1.9. Callbacks and promises](#119-callbacks-and-promises)
-      - [1.1.9.1. What are the pros and cons of using Promises instead of callbacks?](#1191-what-are-the-pros-and-cons-of-using-promises-instead-of-callbacks)
-    - [1.1.10. Variable and function hoisting](#1110-variable-and-function-hoisting)
-      - [1.1.10.1. Only declarations are hoisted](#11101-only-declarations-are-hoisted)
-    - [1.1.11. Currying](#1111-currying)
-  - [1.2. Design Patterns](#12-design-patterns)
+  - [1.1. Data types](#11-data-types)
+  - [1.2. Prototypal inheritance](#12-prototypal-inheritance)
+    - [1.2.1. How prototypal inheritance works](#121-how-prototypal-inheritance-works)
+  - [1.3. Scoping](#13-scoping)
+    - [1.3.1. Lexical Scope](#131-lexical-scope)
+    - [1.3.2. What is "this" Context](#132-what-is-this-context)
+  - [1.4. Closures](#14-closures)
+    - [1.4.1. What is a closure, and how/why would you use one?](#141-what-is-a-closure-and-howwhy-would-you-use-one)
+    - [1.4.2. The event loop](#142-the-event-loop)
+  - [1.5. Events](#15-events)
+    - [1.5.1. Event Handling](#151-event-handling)
+    - [1.5.2. Event Propagation](#152-event-propagation)
+    - [1.5.3. Event bubbling and capturing explained](#153-event-bubbling-and-capturing-explained)
+  - [1.6. Apply, call, and bind](#16-apply-call-and-bind)
+    - [1.6.1. Explain Bind](#161-explain-bind)
+  - [1.7. Callbacks and promises](#17-callbacks-and-promises)
+    - [1.7.1. What are the pros and cons of using Promises instead of callbacks?](#171-what-are-the-pros-and-cons-of-using-promises-instead-of-callbacks)
+  - [1.8. Variable and function hoisting](#18-variable-and-function-hoisting)
+    - [1.8.1. Only declarations are hoisted](#181-only-declarations-are-hoisted)
+    - [1.8.2. Function Declaration](#182-function-declaration)
+    - [1.8.3. Function Expression](#183-function-expression)
+  - [1.9. Currying](#19-currying)
 
 <!-- /TOC -->
 
----
-
-## 1.1. JavaScript Concepts
-
-* Data types
-* Prototypal inheritance
-* Scoping
-* Closures
-* The event loop
-* Event bubbling
-* Apply, call, and bind
-* Callbacks and promises
-* Variable and function hoisting
-* Currying
-
-
-### 1.1.1. Data types
+## 1.1. Data types
 The latest ECMAScript standard defines seven data types:
 
 Six data types that are primitives:
@@ -59,7 +44,7 @@ Six data types that are primitives:
 > Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 
 
-### 1.1.2. Prototypal inheritance
+## 1.2. Prototypal inheritance
 
 When it comes to inheritance, JavaScript only has one construct: objects. 
 
@@ -73,7 +58,7 @@ In JavaScript, any function can be added to an object in the form of a property.
 
 When an inherited function is executed, the value of `this` points to the inheriting object, not to the `prototype` object where the function is an own property.
 
-### 1.1.3. How prototypal inheritance works
+### 1.2.1. How prototypal inheritance works
 All JavaScript objects have a prototype property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's prototype, and the prototype's prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. 
 This behavior simulates classical inheritance, but it is really more of delegation than inheritance.
 
@@ -122,14 +107,57 @@ In the two previous examples, the inherited prototype can be shared by all objec
 
 
 
-### 1.1.4. Scoping
+## 1.3. Scoping
 JavaScript has two scopes – global and local. Any variable declared outside of a function belongs to the global scope, and is therefore accessible from anywhere in your code. Each function has its own scope, and any variable declared within that function is only accessible from that function and any nested functions.
 
+Consider the following:
+
+<!-- js-console -->
 ```js
-//code
+function foo(a) {
+    console.log( a + b );
+}
+
+var b = 2;
+
+console.log(foo( 2 )); // 4
 ```
 
-#### 1.1.4.1. What is "this" Context
+The reference for `b` cannot be resolved inside the function `foo`, but it can be resolved in the scope surrounding it (in this case, the global).
+
+
+### 1.3.1. Lexical Scope
+There are two predominant models for how scope works. The first of these is by far the most common, used by the vast majority of programming languages. It’s called **lexical scope**, and we will examine it in depth. The other model, which is still used by some languages (such as Bash scripting, some modes in Perl, etc) is called **dynamic scope**.
+
+Let’s consider this block of code:
+
+<!-- js-console -->
+```js
+function foo(a) {
+
+    var b = a * 2;
+
+    function bar(c) {
+        console.log( a, b, c );
+    }
+
+    bar( b * 3 );
+}
+
+console.log(foo( 2 )); // 2, 4, 12
+```
+
+There are three nested scopes inherent in this code example. It may be helpful to think about these scopes as bubbles inside of each other.
+
+![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/jssc_02in01.png)
+
+- Bubble 1 encompasses the global scope and has just one identifier in it: `foo`.
+- Bubble 2 encompasses the scope of `foo`, which includes the three identifiers: `a`, `bar`, and `b`.
+- Bubble 3 encompasses the scope of `bar`, and it includes just one identifier: `c`.
+
+
+
+### 1.3.2. What is "this" Context
 Context is most often determined by how a function is invoked. When a function is called as a method of an object, `this` is set to the object the method is called on:
 
 <!-- js-console -->
@@ -145,12 +173,30 @@ obj.foo() === obj; // true
 
 
 
-### 1.1.5. Closures
+
+
+## 1.4. Closures
 A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain. 
 
-The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function's variables, and it has access to the global variables.
 
 > A closure is the combination of a function and the lexical environment within which that function was declared. 
+
+<!-- js-console -->
+```js
+var a = 2;
+
+(function foo(){
+    var a = 3;
+    console.log( a ); // 3
+})();
+
+console.log( a ); // 2
+```
+
+This pattern is so common, a few years ago the community agreed on a term for it: IIFE, which stands for immediately invoked function expression.
+
+
+The following closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function's variables, and it has access to the global variables.
 
 <!-- js-console -->
 ```js
@@ -176,7 +222,7 @@ console.log(Module);
 Module.publicMethod();
 ```
 
-#### 1.1.5.1. What is a closure, and how/why would you use one?
+### 1.4.1. What is a closure, and how/why would you use one?
 A closure is the combination of a function and the lexical environment within which that function was declared. The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Closures are functions that have access to the outer (enclosing) function's variables—scope chain even after the outer function has returned.
 
 Why would you use one?
@@ -185,7 +231,7 @@ Why would you use one?
 
 > Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 
-### 1.1.6. The event loop
+### 1.4.2. The event loop
 The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.
 
 JavaScript has a concurrency model based on an "event loop". This model is quite different from models in other languages like C and Java.
@@ -220,9 +266,62 @@ console.log(bar(7)); //returns 42
 
 > Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 
-### 1.1.7. Event bubbling
+## 1.5. Events
+Events are occurrences that take place in the interaction between the user, the web page, and the browser. Event handling enables a script to detect and react to these occurrences, allowing the web page to become interactive.
 
-#### 1.1.7.1. Bubbling and capturing explained
+### 1.5.1. Event Handling
+
+There are three steps to handling an event. 
+
+1. First, you need to locate the element that will receive the event. Events always take place in the context of element nodes inside the DOM tree. 
+
+  ```html
+  <a href="http://www.google.com" id="mylink">My link</a>
+  ```
+
+2. The next step is to create an event handler, which is the code that will execute when the event occurs.
+
+  ```js
+  function myEventHandler() {
+    alert("Event triggered");
+  }
+  ```
+
+3. Finally, the last step is to register the event handler for the particular event that is to be handled. 
+
+  ```js
+  var mylink = document.getElementById("mylink");
+  mylink.onclick = myEventHandler;
+  ```
+
+
+### 1.5.2. Event Propagation
+
+Most DOM events have event propagation, meaning that an event triggered on an inner element will also trigger for outer elements. To illustrate, here is a paragraph element nested inside a div element.
+
+```html
+<div id="outer">Outer element
+  <p id="inner">Inner element</div>
+</div>
+```
+
+The following code registers click events for both of these elements using the traditional model.
+
+```js
+var inner = document.getElementById("inner");
+inner.onclick = function() { 
+  alert("Inner"); 
+};
+
+var outer = document.getElementById("outer");
+outer.onclick = function() { 
+  alert("Outer"); 
+};
+```
+
+After an event triggers on the inner element, it then continues to trigger any event handlers attached to parents in nesting order. Therefore, clicking on the inner element will here display the “Inner” message first, followed by the “Outer” message. This default event order is called bubbling.
+
+### 1.5.3. Event bubbling and capturing explained
 
 When an event is fired on an element that has parent elements (e.g. the `<video>` in our case), modern browsers run two different phases — the capturing phase and the bubbling phase.
 
@@ -243,7 +342,7 @@ In the bubbling phase, the exact opposite occurs:
 > Reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture
 
 
-### 1.1.8. Apply, call, and bind
+## 1.6. Apply, call, and bind
 
 These two methods inherent to all functions allow you to execute any function in any desired context. This makes for incredibly powerful capabilities. 
 
@@ -252,26 +351,19 @@ These two methods inherent to all functions allow you to execute any function in
 
 <!-- js-console -->
 ```js
-function user(firstName, lastName, age) {
-    // do something 
-    console.log(firstName, lastName, age);
-}
-
-console.log(user.call(window, 'John', 'Doe', 30))
-console.log(user.apply(window, ['John', 'Doe', 30]));
-
 function add(a, b) {
   return a + b;
 }
+
 console.log(add.call(null, 1, 2)); // 3
 console.log(add.apply(null, [1, 2])); // 3
 ```
 
 > An easy way to remember this is C for `call` and comma-separated and A for `apply` and an array of arguments.
 
-The result of both calls is exactly the same, the `user` function is invoked in the context of the window and provided the same three arguments.
+The result of both calls is exactly the same, the `add` function is invoked in the context of the window and provided the same two arguments.
 
-#### 1.1.8.1. Explain Bind
+### 1.6.1. Explain Bind
 ECMAScript 5 (ES5) introduced the `Function.prototype.bind` method that is used for manipulating context. It returns a new function which is permanently bound to the first argument of `bind` regardless of how the function is being used. 
 
 For example: 
@@ -289,7 +381,8 @@ Widget.prototype.onClick = function(e) {
 };
 ```
 
-### 1.1.9. Callbacks and promises
+
+## 1.7. Callbacks and promises
 The `Promise` object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
 
 A Promise is in one of these states:
@@ -308,7 +401,7 @@ var promise1 = new Promise(function(resolve, reject) {
 console.log(promise1);
 ```
 
-#### 1.1.9.1. What are the pros and cons of using Promises instead of callbacks?
+### 1.7.1. What are the pros and cons of using Promises instead of callbacks?
 
 Pros:
 
@@ -324,7 +417,7 @@ Cons:
 > Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 
-### 1.1.10. Variable and function hoisting
+## 1.8. Variable and function hoisting
 Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
 
 - In JavaScript, a variable can be declared after it has been used. 
@@ -341,7 +434,6 @@ function myFunction() {
 }
 ```
 Function declarations have the body hoisted while the function expressions (written in the form of variable declarations) only has the variable declaration hoisted.
-
 
 > `"use strict";` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 
@@ -373,8 +465,7 @@ Even though we call the function in our code first, before the function is writt
 Hoisting works well with other data types and variables. The variables can be initialized and used before they are declared.
 
 
-
-#### 1.1.10.1. Only declarations are hoisted
+### 1.8.1. Only declarations are hoisted
 JavaScript only hoists declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined. 
 
 For example:
@@ -415,9 +506,10 @@ y = 2; // Initialize y
 
 Function declarations have the body hoisted while the function expressions (written in the form of variable declarations) only has the variable declaration hoisted.
 
+### 1.8.2. Function Declaration
 <!-- js-console -->
+
 ```js
-// Function Declaration
 console.log(foo); // [Function: foo]
 foo(); // 'FOOOOO'
 
@@ -425,8 +517,12 @@ function foo() {
   console.log('FOOOOO');
 }
 console.log(foo); // [Function: foo]
+```
 
-// Function Expression
+### 1.8.3. Function Expression
+
+<!-- js-console -->
+```js
 console.log(bar); // undefined
 bar(); // Uncaught TypeError: bar is not a function
 
@@ -439,7 +535,7 @@ console.log(bar); // [Function: bar]
 > Reference: https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
 
 
-### 1.1.11. Currying
+## 1.9. Currying
 
 Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. 
 
@@ -473,18 +569,4 @@ console.log(result);
 ```
 
 > Reference: https://www.sitepoint.com/currying-in-functional-javascript/
-
---- 
-
-## 1.2. Design Patterns
-
-* Decorator
-* Factory
-* Singleton
-* Revealing module
-* Facade
-* Observer
-* MVC, MVP, MVVM
-
----
 

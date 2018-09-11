@@ -103,3 +103,78 @@ function exposedFunction {
     return 3;
 }
 {% endexercise %}
+
+
+
+# Markdown Reference
+
+*This text will be italic*
+_This will also be italic_
+**This text will be bold**
+__This will also be bold__
+*You **can** combine them*
+
+* Item 1
+* Item 2
+ * Item 2a
+ * Item 2b
+
+
+1. Item 1
+2. Item 2
+3. Item 3
+ * Item 3a
+ * Item 3b
+
+
+As Grace Hopper said:
+> I’ve always been more interested
+> in the future than in the past.
+
+### Headings 
+
+# This is an `<h1>` tag
+## This is an `<h2>` tag
+### This is an `<h3>` tag
+#### This is an `<h4>` tag
+##### This is an `<h5>` tag
+###### This is an `<h6>` tag
+
+
+### Links
+
+[GitHub](http://github.com)
+
+### Tables
+
+First Header | Second Header
+------------ | -------------
+Content cell 1 | Content cell 2
+Content column 1 | Content column 2
+
+### Details 
+
+<details>
+    <summary>stuff with *mark* **down**</summary>
+<p>
+
+## _formatted_ **heading** with [a](link)
+
+```js
+var name = 'jonnie';
+```
+
+Collapsible until here.
+</p>
+</details>
+
+---
+
+<details>
+<summary>Code Example</summary>
+
+```js
+var name = 'jonnie';
+```
+
+</details>
