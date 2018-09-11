@@ -10,17 +10,12 @@ The following concepts should be understood in JavaScript.
   - [2.2. Queues & Stacks](#22-queues--stacks)
     - [2.2.1. Queue](#221-queue)
     - [2.2.2. Stack](#222-stack)
-- [3. Algorithm](#3-algorithm)
+- [3. Algorithms](#3-algorithms)
   - [3.1. Big-O Analysis](#31-big-o-analysis)
     - [3.1.1. How Big-O Analysis Works](#311-how-big-o-analysis-works)
     - [3.1.2. Which is Better?](#312-which-is-better)
-  - [3.2. Sorting](#32-sorting)
+  - [Searching](#searching)
     - [3.2.1. Binary search](#321-binary-search)
-    - [3.2.2. Bubble sort](#322-bubble-sort)
-    - [3.2.3. Insertion Sort](#323-insertion-sort)
-    - [3.2.4. Selection Sort](#324-selection-sort)
-    - [3.2.5. Quick Sort](#325-quick-sort)
-    - [3.2.6. Merge Sort](#326-merge-sort)
 
 <!-- /TOC -->
 
@@ -165,7 +160,7 @@ console.log(s.size() === 0, 'size is 0');
 
 
 
-# 3. Algorithm
+# 3. Algorithms
 
 ## 3.1. Big-O Analysis
 
@@ -222,30 +217,152 @@ Now double it to n = 20:
 * 20! = 2.43×1018
 
 
-## 3.2. Sorting
+## Searching
+
+### 3.2.1. Binary search
+In computer science, binary search, also known as half-interval 
+search, logarithmic search, or binary chop, is a search algorithm 
+that finds the position of a target value within a sorted 
+array. Binary search compares the target value to the middle 
+element of the array; if they are unequal, the half in which 
+the target cannot lie is eliminated and the search continues 
+on the remaining half until it is successful. If the search 
+ends with the remaining half being empty, the target is not 
+in the array.
+
+![Binary Search](https://upload.wikimedia.org/wikipedia/commons/8/83/Binary_Search_Depiction.svg)
+
+
+
+**Time Complexity**: `O(log(n))` - since we split search area by two for every
+next iteration.
+
+# 1. Sorting
 This is about sorting, here is what you should ask yourself:
 
 * What do we know about the data? Is the data already sorted or mostly sorted? How large are the data sets likely to be? Can there be duplicate key values?
 * What are the requirements for the sort? Do you want to optimize for best-case, worst-case, or average-case performance? Does the sort need to be stable?
 * What do we know about the system? Is the largest data set to be sorted smaller than, the same size as, or larger than available memory?
 
+<!-- TOC -->
 
-### 3.2.1. Binary search
+- [1. Sorting](#1-sorting)
+  - [1.1. Bubble sort](#11-bubble-sort)
+  - [1.2. Insertion Sort](#12-insertion-sort)
+  - [1.3. Selection Sort](#13-selection-sort)
+  - [1.4. Quick Sort](#14-quick-sort)
+  - [1.5. Merge Sort](#15-merge-sort)
 
-### 3.2.2. Bubble sort
+<!-- /TOC -->
 
-### 3.2.3. Insertion Sort
+
+## 1.1. Bubble sort
+
+Bubble sort, sometimes referred to as sinking sort, is a 
+simple sorting algorithm that repeatedly steps through 
+the list to be sorted, compares each pair of adjacent 
+items and swaps them if they are in the wrong order. 
+The pass through the list is repeated until no swaps 
+are needed, which indicates that the list is sorted.
+
+![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
+
+Complexity
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Bubble sort**       | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
+
+
+
+
+
+## 1.2. Insertion Sort
 
 Insertion sort is another simple sorting algorithm. It builds a sorted array (or list) one element at a time by comparing each new element to the already-sorted elements and inserting the new element into the correct location, similar to the way you sort a hand of playing cards.
 
-### 3.2.4. Selection Sort
+Insertion sort is a simple sorting algorithm that builds 
+the final sorted array (or list) one item at a time. 
+It is much less efficient on large lists than more 
+advanced algorithms such as quicksort, heapsort, or merge 
+sort.
+
+![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif)
+
+![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
+
+
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Insertion sort**    | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
+
+
+## 1.3. Selection Sort
 
 Selection sort is one of the simplest sorting algorithms. It starts with the first element in the array (or list) and scans through the array to find the element with the smallest key, which it swaps with the first element. The process is then repeated with each subsequent element until the last element is reached.
 
-### 3.2.5. Quick Sort
+## 1.4. Quick Sort
+Quicksort is a divide and conquer algorithm.
+Quicksort first divides a large array into two smaller 
+sub-arrays: the low elements and the high elements.
+Quicksort can then recursively sort the sub-arrays
 
-Quicksort is a divide-and-conquer algorithm that involves choosing a pivot value from a data set and splitting the set into two subsets: a set that contains all values less than the pivot and a set that contains all values greater than or equal to the pivot. The pivot/split process is recursively applied to each subset until there are no more subsets to split. The results are combined to form the final sorted set.
+The steps are:
 
-### 3.2.6. Merge Sort
+1. Pick an element, called a pivot, from the array.
+2. Partitioning: reorder the array so that all elements with 
+values less than the pivot come before the pivot, while all 
+elements with values greater than the pivot come after it 
+(equal values can go either way). After this partitioning, 
+the pivot is in its final position. This is called the 
+partition operation.
+3. Recursively apply the above steps to the sub-array of 
+elements with smaller values and separately to the 
+sub-array of elements with greater values.
+
+Animated visualization of the quicksort algorithm.
+The horizontal lines are pivot values.
+
+![Quicksort](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+
+
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Quick sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | No        |  Quicksort is usually done in-place with O(log(n)) stack space |
+
+
+## 1.5. Merge Sort
 
 Merge sort is another divide-and-conquer algorithm that works by splitting a data set into two or more subsets, sorting the subsets, and then merging them together into the final sorted set.
+
+
+In computer science, merge sort (also commonly spelled 
+mergesort) is an efficient, general-purpose, 
+comparison-based sorting algorithm. Most implementations 
+produce a stable sort, which means that the implementation 
+preserves the input order of equal elements in the sorted 
+output. Mergesort is a divide and conquer algorithm that 
+was invented by John von Neumann in 1945.
+
+An example of merge sort. First divide the list into 
+the smallest unit (1 element), then compare each 
+element with the adjacent list to sort and merge the 
+two adjacent lists. Finally all the elements are sorted 
+and merged.
+
+![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
+
+A recursive merge sort algorithm used to sort an array of 7 
+integer values. These are the steps a human would take to 
+emulate merge sort (top-down).
+
+![Merge Sort](https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/merge-sort.png)
+
+
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Merge sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n&nbsp;log(n)       | n         | Yes       |           |
+

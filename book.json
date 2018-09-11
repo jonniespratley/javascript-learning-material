@@ -1,13 +1,17 @@
 {
     "plugins": [
-      "prism",
-      "-highlight",
-      "exercises",
-      "atoc", "code-editor", "js-console", "alerts"],
+        "prism", "-highlight",
+        "exercises",
+        "code-editor", 
+        "js-console", 
+        "alerts"
+    ],
     "pluginsConfig": {
-        "atoc": {
-            "addClass": true,
-            "className": "atoc"
-        }
+        
+        "prism": {
+            "css": [
+              "prismjs/themes/prism-okaidia.css"
+            ]
+          }
     }
 }

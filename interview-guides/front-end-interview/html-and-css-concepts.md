@@ -6,15 +6,14 @@
   - [1.2. CSS sprites](#12-css-sprites)
   - [1.3. Pseudo classes](#13-pseudo-classes)
   - [1.4. Semantic markup](#14-semantic-markup)
-    - [1.4.1. What are Semantic Elements?](#141-what-are-semantic-elements)
     - [1.4.2. Example: A Semantic Outline](#142-example-a-semantic-outline)
   - [1.5. CSS pre-processors](#15-css-pre-processors)
   - [1.6. Grid systems](#16-grid-systems)
 - [2. Document Object Model](#2-document-object-model)
   - [2.1. Selecting Nodes](#21-selecting-nodes)
-  - [Traversing DOM Tree](#traversing-dom-tree)
-  - [Creating Nodes](#creating-nodes)
-  - [Removing Nodes](#removing-nodes)
+  - [2.2. Traversing DOM Tree](#22-traversing-dom-tree)
+  - [2.3. Creating Nodes](#23-creating-nodes)
+  - [2.4. Removing Nodes](#24-removing-nodes)
 
 <!-- /TOC -->
 
@@ -158,17 +157,15 @@ div:hover {
 
 
 ## 1.4. Semantic markup
-Semantics is the study of the meanings of words and phrases in a language.
-
-> Semantic elements = elements with a meaning.
-
-### 1.4.1. What are Semantic Elements?
 A semantic element clearly describes its meaning to both the browser and the developer.
 
 - Examples of non-semantic elements: `<div>` and `<span>` - Tells nothing about its content.
 - Examples of semantic elements: `<form>`, `<table>`, and `<article>` - Clearly defines its content.
 
-HTML5 offers new semantic elements to define different parts of a web page:  
+<details>
+  <summary>
+  HTML5 offers new semantic elements to define different parts of a web page:  
+  </summary>
 
 - `<article>`
 - `<aside>`
@@ -183,6 +180,10 @@ HTML5 offers new semantic elements to define different parts of a web page:
 - `<section>`
 - `<summary>`
 - `<time>`
+
+
+</details>
+
 
 
 > Reference: https://www.w3schools.com/html/html5_semantic_elements.asp
@@ -329,7 +330,7 @@ var mynodes = document.querySelectorAll(".myclass");
 
 
 
-## Traversing DOM Tree
+## 2.2. Traversing DOM Tree
 The following list can be used to illustrate.
 
 ```html
@@ -353,7 +354,7 @@ var first = mylist.children[0];
 first = mylist.firstElementChild;
 ```
 
-## Creating Nodes
+## 2.3. Creating Nodes
 Nodes in the DOM can be dynamically added, removed, or changed. To illustrate, a new list item will be added to the previous list. The first step is to create the element and text nodes, using the `createElement` and `createTextNode` methods respectively.
 
 ```js
@@ -363,15 +364,21 @@ var mytext = document.createTextNode('New list item');
 
 The text node is then added to the element node, using the `appendChild` method on the list item node.
 
-```js
+```javascript
 myitem.appendChild(mytext);
 mylist.appendChild(myitem);
 ```
 
-## Removing Nodes
+## 2.4. Removing Nodes
 
 A node can be removed using the `removeChild` method. This method returns a reference to the removed node: in this case, the last child in the list. Keep in mind that catching return values in JavaScript is optional.
 
-```js
+```javascript
 var removedNode = mylist.removeChild(mylist.lastElementChild);
+```
+
+Another way to remove a node is to replace it with a different node. This is done with the replaceChild method, which also returns the replaced node. The following code replaces the first child of the list with the previously removed node.
+
+```javascript
+mylist.replaceChild(removedNode, mylist.firstElementChild);
 ```
