@@ -10,7 +10,7 @@
     * [JavaScript Concepts](interview-guides/front-end-interview/javascript-concepts.md)
     * [Computer Science Concepts](interview-guides/front-end-interview/computer-science-concepts.md)
 * [Interview Questions](./interview-questions/README.md)
-  * [Questions](interview-questions/questions.md)
+  * [Questions](./interview-questions/questions.md)
 * [Modern JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
