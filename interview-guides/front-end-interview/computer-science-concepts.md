@@ -217,9 +217,9 @@ Now double it to n = 20:
 * 20! = 2.43×1018
 
 
-## Searching
+# Searching
 
-### 3.2.1. Binary search
+## 3.2.1. Binary search
 In computer science, binary search, also known as half-interval 
 search, logarithmic search, or binary chop, is a search algorithm 
 that finds the position of a target value within a sorted 
@@ -236,6 +236,8 @@ in the array.
 
 **Time Complexity**: `O(log(n))` - since we split search area by two for every
 next iteration.
+
+
 
 # 1. Sorting
 This is about sorting, here is what you should ask yourself:
