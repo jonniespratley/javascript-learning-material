@@ -16,7 +16,9 @@
     "gitbook-plugin-js-console": "^1.4.2",
     "gitbook-plugin-prism": "^2.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "svgexport": "^0.3.2"
+  },
   "scripts": {
     "start": "gitbook serve",
     "postinstall": "gitbook install",
