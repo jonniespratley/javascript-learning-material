@@ -1,58 +1,27 @@
-
 # single-number.js
 
-/**
- * 
-
- ## Single Number
 Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 
 > Note: Your algorithm should have a linear runtime complexity O(n). 
 
-#### Example 1:
+Example 1:
 
 ```
 Input: [2,2,1]
 Output: 1
 ```
 
-#### Example 2:
+Example 2:
 
 ```
 Input: [4,1,2,1,2]
 Output: 4
 ```
-*//**
- * @param {number[]} nums
- * @return {number}
- */undefinedundefined
 
 **Solution:**
 
 <!-- js-console -->
 ```javascript
-/**
- * 
-
- ## Single Number
-Given a non-empty array of integers, every element appears twice except for one. Find that single one.
-
-> Note: Your algorithm should have a linear runtime complexity O(n). 
-
-#### Example 1:
-
-```
-Input: [2,2,1]
-Output: 1
-```
-
-#### Example 2:
-
-```
-Input: [4,1,2,1,2]
-Output: 4
-```
-*/
 /**
  * @param {number[]} nums
  * @return {number}
@@ -65,17 +34,15 @@ var singleNumber = function (nums) {
         }
     }
 };
+console.log(singleNumber([2, 2, 1]));
+console.log(singleNumber([4, 1, 2, 1, 2]));
+console.log(singleNumber([1, 1, 1, 1, 1, 5]));
 
 function singleNumber2(nums) {
     return nums.reduce((sum, num) => sum ^ num); // ^ is XOR
 }
-console.log(singleNumber([2, 2, 1]));
-console.log(singleNumber2([2, 2, 1]));
-//console.log(singleNumber([4,1,2,1,2]));
 
-console.log(singleNumber([1, 1, 1, 1, 1, 5]));
+console.log(singleNumber2([2, 2, 1]));
+console.log(singleNumber2([4, 1, 2, 1, 2]));
 console.log(singleNumber2([1, 1, 1, 1, 1, 5]));
 ```
-
-> Reference: ..
-
