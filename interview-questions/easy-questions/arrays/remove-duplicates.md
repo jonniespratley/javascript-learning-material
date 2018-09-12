@@ -1,10 +1,4 @@
-
-# remove-duplicates.js
-
-undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined/**
- * @param {number[]} nums
- * @return {number}
- */
+# remove-duplicates
 
 **Solution:**
 
