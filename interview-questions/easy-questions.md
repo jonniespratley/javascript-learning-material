@@ -1,10 +1,10 @@
 ## Easy Questions
 
-Here is a list of "easy" questions from LeetCode. 
+Here is a list of "easy" questions from LeetCode.
 
-> Reference: https://leetcode.com/explore/interview/card/top-interview-questions-easy/
+> Reference: [https://leetcode.com/explore/interview/card/top-interview-questions-easy/](https://leetcode.com/explore/interview/card/top-interview-questions-easy/)
 
-**Array**
+#### **Array**
 
 * [ ] Remove Duplicates from Sorted Array
 * [ ] Best Time to Buy and Sell Stock II
@@ -18,7 +18,7 @@ Here is a list of "easy" questions from LeetCode.
 * [ ] Valid Sudoku
 * [ ] Rotate Image
 
-**Strings**
+#### **Strings**
 
 * [ ] Reverse String
 * [ ] Reverse Integer
@@ -30,7 +30,7 @@ Here is a list of "easy" questions from LeetCode.
 * [ ] Count and Say
 * [ ] Longest Common Prefix
 
-**Linked List**
+#### **Linked List**
 
 * [ ] Delete Node in a Linked List
 * [ ] Remove Nth Node From End of List
@@ -39,7 +39,7 @@ Here is a list of "easy" questions from LeetCode.
 * [ ] Palindrome Linked List
 * [ ] Linked List Cycle
 
-**Trees**
+#### **Trees**
 
 * [ ] Maximum Depth of Binary Tree
 * [ ] Validate Binary Search Tree
@@ -50,26 +50,26 @@ Here is a list of "easy" questions from LeetCode.
 * [ ] Merge Sorted Array
 * [ ] First Bad Version
 
-**Dynamic Programming**
+#### **Dynamic Programming**
 
 * [ ] Climbing Stairs
 * [ ] Best Time to Buy and Sell Stock
 * [ ] Maximum Subarray
 * [ ] House Robber
 
-**Design**
+#### **Design**
 
 * [ ] Shuffle an Array
 * [ ] Min Stack
 
-**Math**
+#### **Math**
 
 * [ ] Fizz Buzz
 * [ ] Count Primes
 * [ ] Power of Three
 * [ ] Roman to Integer
 
-**Others**
+#### **Others**
 
 * [ ] Number of 1 Bits
 * [ ] Hamming Distance
