@@ -12,6 +12,7 @@
 * [Interview Questions](./interview-questions/README.md)
   * [Questions](./interview-questions/questions.md)
   * [Array and Strings](interview-questions/array-and-strings.md)
+  * [Easy Questions](interview-questions/easy-questions.md)
 * [Modern JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
