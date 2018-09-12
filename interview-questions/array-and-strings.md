@@ -6,11 +6,15 @@
 
 
 ## Move Zeroes
+
 ## Intersection of Two Arrays
+
 ## Add Binary
+
 ## Valid Palindrome
+
 ## Valid Number
-## Add Binary
+
 
 ## 3Sum
 Given an array `nums` of `n` integers, are there elements a, b, c in nums such that a + b + c = 0? 
