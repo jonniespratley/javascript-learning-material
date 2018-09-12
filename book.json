@@ -1,17 +1,17 @@
 {
     "plugins": [
-        "prism", 
+        "prism",
         "highlight-code",
         "exercises",
-        "code-editor", 
-        "js-console", 
+        "code-editor",
+        "js-console",
         "alerts"
     ],
     "pluginsConfig": {
         "prism": {
             "css": [
-              "prismjs/themes/prism-okaidia.css"
+                "prismjs/themes/prism-okaidia.css"
             ]
-      }
+        }
     }
 }
