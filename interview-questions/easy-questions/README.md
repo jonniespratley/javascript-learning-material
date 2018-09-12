@@ -6,18 +6,18 @@ Here is a list of "easy" questions from LeetCode.
 
 #### **Array**
 
-* [ ] Remove Duplicates from Sorted Array
-* [ ] Best Time to Buy and Sell Stock II
-* [ ] Rotate Array
-* [ ] Contains Duplicate
-* [ ] Single Number
+* [ ] [Remove Duplicates from Sorted Array](/interview-questions/easy-questions/arrays/remove-duplicates.md)
+* [ ] [Best Time to Buy and Sell Stock II](/interview-questions/easy-questions/arrays/best-time-to-buy-sell-stock-2.md)
+* [ ] [Rotate Array](/interview-questions/easy-questions/arrays/rotate-array.md)
+* [ ] [Contains Duplicate](/interview-questions/easy-questions/arrays/contains-duplicate.md)
+* [ ] [Single Number](/interview-questions/easy-questions/arrays/single-number.md)
 * [ ] Intersection of Two Arrays II
-* [ ] Plus One
-* [ ] Move Zeroes
-* [ ] Two Sum
+* [ ] [Plus One](/interview-questions/easy-questions/arrays/plus-one.md)
+* [ ] [Move Zeroes](/interview-questions/easy-questions/arrays/move-zeros.md)
+* [ ] [Two Sum](/interview-questions/easy-questions/arrays/two-sum.md)
 * [ ] Valid Sudoku
-* [ ] Rotate Image
-* [ ] 
+* [ ] [Rotate Image](/interview-questions/easy-questions/arrays/rotate-image.md)
+
 #### **Strings**
 
 * [ ] Reverse String
