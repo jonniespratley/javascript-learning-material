@@ -3,7 +3,7 @@
 The following interview sections are available. This is a list taken from Leetcode and made into a problem solution articles.
 
 * Array and Strings
-  * Move mZeroes
+  * Move Zeroes
   * Intersection of Two Arrays
   * Add Binary
   * Valid Palindrome
@@ -27,6 +27,7 @@ The following interview sections are available. This is a list taken from Leetco
   * Number of Islands
 * Sorting and Searching
 * Backtracking
+  * Subsets
 * Dynamic Programming
 * Design
 * Others
