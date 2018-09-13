@@ -1,4 +1,9 @@
-# Modern JavaScript - Part II
-The following are topics on Modern JavaScript.
+# JavaScript - Part II
 
-* [JavaScript Modules](./javascript-modules.md)
+The following are topics on JavaScript.
+
+* [Modules](./javascript-modules.md)
+* Design Patterns
+
+
+

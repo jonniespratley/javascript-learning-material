@@ -29,7 +29,7 @@
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
   * [Assignment](./homework/README.md)
     * [Prototypes and Inheritance](./modern-javascript-1/assignments/javascript-prototypes-inheritance-project-1.md)
-* [Modern JavaScript II](./modern-javascript-2/README.md)
+* [JavaScript II](./modern-javascript-2/README.md)
   * [JavaScript Modules](./modern-javascript-2/javascript-modules.md)
   * [Assignment](./homework/README.md)
     * [JavaScript Modules](./modern-javascript-2/assignments/javascript-modules-project.md)
