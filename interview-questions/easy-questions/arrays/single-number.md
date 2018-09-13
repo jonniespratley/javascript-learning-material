@@ -1,5 +1,4 @@
-# single-number.js
-
+# Single Number
 Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 
 > Note: Your algorithm should have a linear runtime complexity O(n). 
@@ -22,10 +21,6 @@ Output: 4
 
 <!-- js-console -->
 ```javascript
-/**
- * @param {number[]} nums
- * @return {number}
- */
 function singleNumber(nums) {
     for (let i = 0; i < nums.length; i++) {
         let n1 = nums[i];
@@ -37,12 +32,17 @@ function singleNumber(nums) {
 console.log(singleNumber([2, 2, 1]));
 console.log(singleNumber([4, 1, 2, 1, 2]));
 console.log(singleNumber([1, 1, 1, 1, 1, 5]));
+```
 
+**Solution 2:**
+
+<!-- js-console -->
+```javascript
 function singleNumber2(nums) {
-    return nums.reduce((sum, num) => sum ^ num); // ^ is XOR
+    return nums.reduce((sum, num) => sum ^ num);
 }
-
 console.log(singleNumber2([2, 2, 1]));
 console.log(singleNumber2([4, 1, 2, 1, 2]));
 console.log(singleNumber2([1, 1, 1, 1, 1, 5]));
 ```
+- // ^ is XOR
