@@ -25,6 +25,7 @@
       * [Valid Sudoku](interview-questions/easy-questions/arrays/valid-sudoku.md)
       * [Rotate Image](./interview-questions/easy-questions/arrays/rotate-image.md)
     * [Strings](strings.md)
+    * [Reverse String](reverse-string.md)
 * [JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
