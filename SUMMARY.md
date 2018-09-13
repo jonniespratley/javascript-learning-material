@@ -12,7 +12,7 @@
 * [Interview Questions](./interview-questions/README.md)
   * [Questions](./interview-questions/questions.md)
   * [Easy Questions](./interview-questions/easy-questions/README.md)
-    * Arrays
+    * [Arrays](arrays.md)
       * [Remove Duplicates from Sorted Array](./interview-questions/easy-questions/arrays/remove-duplicates.md)
       * [Best Time to Buy and Sell Stock II](./interview-questions/easy-questions/arrays/best-time-to-buy-sell-stock-2.md)
       * [Rotate Array](./interview-questions/easy-questions/arrays/rotate-array.md)
