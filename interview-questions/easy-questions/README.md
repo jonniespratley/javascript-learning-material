@@ -6,77 +6,77 @@ Here is a list of "easy" questions from LeetCode.
 
 #### **Array**
 
-* [ ] [Remove Duplicates from Sorted Array](/interview-questions/easy-questions/arrays/remove-duplicates.md)
-* [ ] [Best Time to Buy and Sell Stock II](/interview-questions/easy-questions/arrays/best-time-to-buy-sell-stock-2.md)
-* [ ] [Rotate Array](/interview-questions/easy-questions/arrays/rotate-array.md)
-* [ ] [Contains Duplicate](/interview-questions/easy-questions/arrays/contains-duplicate.md)
-* [ ] [Single Number](/interview-questions/easy-questions/arrays/single-number.md)
-* [ ] Intersection of Two Arrays II
-* [ ] [Plus One](/interview-questions/easy-questions/arrays/plus-one.md)
-* [ ] [Move Zeroes](/interview-questions/easy-questions/arrays/move-zeros.md)
-* [ ] [Two Sum](/interview-questions/easy-questions/arrays/two-sum.md)
-* [ ] Valid Sudoku
-* [ ] [Rotate Image](/interview-questions/easy-questions/arrays/rotate-image.md)
+1. [Remove Duplicates from Sorted Array](/interview-questions/easy-questions/arrays/remove-duplicates.md)
+2. [Best Time to Buy and Sell Stock II](/interview-questions/easy-questions/arrays/best-time-to-buy-sell-stock-2.md)
+3. [Rotate Array](/interview-questions/easy-questions/arrays/rotate-array.md)
+4. [Contains Duplicate](/interview-questions/easy-questions/arrays/contains-duplicate.md)
+5. [Single Number](/interview-questions/easy-questions/arrays/single-number.md)
+6. Intersection of Two Arrays II
+7. [Plus One](/interview-questions/easy-questions/arrays/plus-one.md)
+8. [Move Zeroes](/interview-questions/easy-questions/arrays/move-zeros.md)
+9. [Two Sum](/interview-questions/easy-questions/arrays/two-sum.md)
+10. Valid Sudoku
+11. [Rotate Image](/interview-questions/easy-questions/arrays/rotate-image.md)
 
 #### **Strings**
 
-* [ ] Reverse String
-* [ ] Reverse Integer
-* [ ] First Unique Character in a String
-* [ ] Valid Anagram
-* [ ] Valid Palindrome
-* [ ] String to Integer \(atoi\)
-* [ ] Implement strStr\(\)
-* [ ] Count and Say
-* [ ] Longest Common Prefix
+1. Reverse String
+2. Reverse Integer
+3. First Unique Character in a String
+4. Valid Anagram
+5. Valid Palindrome
+6. String to Integer \(atoi\)
+7. Implement strStr\(\)
+8. Count and Say
+9. Longest Common Prefix
 
 #### **Linked List**
 
-* [ ] Delete Node in a Linked List
-* [ ] Remove Nth Node From End of List
-* [ ] Reverse Linked List
-* [ ] Merge Two Sorted Lists
-* [ ] Palindrome Linked List
-* [ ] Linked List Cycle
+1. Delete Node in a Linked List
+2. Remove Nth Node From End of List
+3. Reverse Linked List
+4. Merge Two Sorted Lists
+5. Palindrome Linked List
+6. Linked List Cycle
 
 #### **Trees**
 
-* [ ] Maximum Depth of Binary Tree
-* [ ] Validate Binary Search Tree
-* [ ] Symmetric Tree
-* [ ] Binary Tree Level Order Traversal
-* [ ] Convert Sorted Array to Binary Search Tree
-* [ ] Sorting and Searching
-* [ ] Merge Sorted Array
-* [ ] First Bad Version
+1. Maximum Depth of Binary Tree
+2. Validate Binary Search Tree
+3. Symmetric Tree
+4. Binary Tree Level Order Traversal
+5. Convert Sorted Array to Binary Search Tree
+6. Sorting and Searching
+7. Merge Sorted Array
+8. First Bad Version
 
 #### **Dynamic Programming**
 
-* [ ] Climbing Stairs
-* [ ] Best Time to Buy and Sell Stock
-* [ ] Maximum Subarray
-* [ ] House Robber
+1. Climbing Stairs
+2. Best Time to Buy and Sell Stock
+3. Maximum Subarray
+4. House Robber
 
 #### **Design**
 
-* [ ] Shuffle an Array
-* [ ] Min Stack
+1. Shuffle an Array
+2. Min Stack
 
 #### **Math**
 
-* [ ] Fizz Buzz
-* [ ] Count Primes
-* [ ] Power of Three
-* [ ] Roman to Integer
+1. Fizz Buzz
+2. Count Primes
+3. Power of Three
+4. Roman to Integer
 
 #### **Others**
 
-* [ ] Number of 1 Bits
-* [ ] Hamming Distance
-* [ ] Reverse Bits
-* [ ] Pascal's Triangle
-* [ ] Valid Parentheses
-* [ ] Missing Number
+1. Number of 1 Bits
+2. Hamming Distance
+3. Reverse Bits
+4. Pascal's Triangle
+5. Valid Parentheses
+6. Missing Number
 
 
 

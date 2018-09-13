@@ -22,7 +22,7 @@
       * [Plus One](./interview-questions/easy-questions/arrays/plus-one.md)
       * [Move Zeroes](./interview-questions/easy-questions/arrays/move-zeros.md)
       * [Two Sum](./interview-questions/easy-questions/arrays/two-sum.md)
-      * Valid Sudoku
+      * [Valid Sudoku](interview-questions/easy-questions/arrays/valid-sudoku.md)
       * [Rotate Image](./interview-questions/easy-questions/arrays/rotate-image.md)
 * [JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
