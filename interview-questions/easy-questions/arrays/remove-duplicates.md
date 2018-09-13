@@ -1,4 +1,4 @@
-# remove-duplicates
+# Remove Duplicates
 Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
@@ -39,7 +39,6 @@ It doesn't matter what values are set beyond the returned length.
 
 <!-- js-console -->
 ```javascript
-
 /**
  * @param {number[]} nums
  * @return {number}
@@ -61,3 +60,7 @@ function removeDuplicates(nums) {
 console.log(removeDuplicates([1, 1, 2]));
 console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
 ```
+
+**Explaination:**
+
+...TODO
