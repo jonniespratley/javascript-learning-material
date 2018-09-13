@@ -24,7 +24,7 @@
       * [Two Sum](./interview-questions/easy-questions/arrays/two-sum.md)
       * Valid Sudoku
       * [Rotate Image](./interview-questions/easy-questions/arrays/rotate-image.md)
-* [Modern JavaScript I](./modern-javascript-1/README.md)
+* [JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
   * [Assignment](./homework/README.md)
