@@ -376,10 +376,11 @@ function myFunction() {
 ## 1.4. JavaScript "Classes"
 Classes are a way to blueprint functionality. There are many ways to create a "class" in JavaScript, we will focus on the most common ways.
 
-
-
+ 
 ### 1.4.0.8. Class declarations
 One way to define a class is using a class declaration. To declare a class, you use the class keyword with the name of the class ("Rectangle" here).
+
+A class is defined like this in ECMAScript 6:
 
 ```js
 class Rectangle {
@@ -387,25 +388,67 @@ class Rectangle {
     this.height = height;
     this.width = width;
   }
+  toString() {
+      return `(${this.height}, ${this.width})`;
+  }
 }
 ```
 
 ### 1.4.0.9. Class expressions
-A class expression is another way to define a class. Class expressions can be named or unnamed. The name given to a named class expression is local to the class's body.
+There are two kinds of class definitions: class declarations and class expressions.
+
+A class expression is another way to define a class. Class expressions can be named or unnamed. The name given to a class expression is local to the class's body.
+
+Similarly to function expressions, class expressions can be anonymous:
 
 ```js
-// unnamed
-var Rectangle = class {
-  constructor(height, width) {
-    this.height = height;
-    this.width = width;
-  }
+const MyClass = class {
+    
 };
+const inst = new MyClass();
 ```
 
+Also similarly to function expressions, class expressions can have names that are only visible inside them:
 
+```js
+const MyClass = class Me {
+    getClassName() {
+        return Me.name;
+    }
+};
+const inst = new MyClass();
 
-### 1.4.0.10. Function Based Class
+console.log(inst.getClassName()); // Me
+console.log(Me.name); // ReferenceError: Me is not defined
+```
+
+The last two lines demonstrate that `Me` does not become a variable outside of the class, but can be used inside it.
+
+#### Body of a class definition
+Let’s examine three kinds of methods that you often find in class definitions.
+
+```js
+class Foo {
+    constructor(prop) {
+        this.prop = prop;
+    }
+    static staticMethod() {
+        return 'classy';
+    }
+    prototypeMethod() {
+        return 'prototypical';
+    }
+}
+const foo = new Foo(123);
+```
+
+1. **Pseudo-method constructor**: This method is special, as it defines the function that represents the class:
+2. **Static methods**: Static properties (or class properties) are properties of Foo itself. If you prefix a method definition with `static`, you create a class method:
+3. **Prototype methods:** The prototype properties of `Foo` are the properties of `Foo.prototype`. They are usually methods and inherited by instances of `Foo`.
+
+> Reference: http://exploringjs.com/es6/ch_classes.html
+
+### 1.4.0.10. Function based
 
 <!-- js-console -->
 
