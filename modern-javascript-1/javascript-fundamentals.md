@@ -5,37 +5,39 @@ While the information here is not the full list, the information provided will h
 <!-- TOC -->
 
 - [1. JavaScript Fundamentals](#1-javascript-fundamentals)
-  - [1.1. Overview](#11-overview)
-    - [1.1.1. JavaScript Statements](#111-javascript-statements)
-    - [1.1.2. Values](#112-values)
-        - [1.1.2.0.1. Literals](#11201-literals)
-    - [1.1.3. Variables](#113-variables)
-      - [1.1.3.1. Variable naming](#1131-variable-naming)
-    - [1.1.4. Operators](#114-operators)
-      - [1.1.4.1. Expressions](#1141-expressions)
-    - [1.1.5. Code Comments](#115-code-comments)
-      - [1.1.5.1. JavaScript is Case Sensitive](#1151-javascript-is-case-sensitive)
-      - [1.1.5.2. JavaScript Keywords](#1152-javascript-keywords)
-    - [1.1.6. JavaScript Function Definitions](#116-javascript-function-definitions)
-      - [1.1.6.1. Function Declarations](#1161-function-declarations)
-      - [1.1.6.2. Function Expressions](#1162-function-expressions)
-  - [1.2. JavaScript Closures](#12-javascript-closures)
-      - [1.2.0.3. Global Variables](#1203-global-variables)
-      - [1.2.0.4. Closure Example](#1204-closure-example)
-      - [1.2.0.5. The this Keyword](#1205-the-this-keyword)
-  - [1.3. JavaScript Scope](#13-javascript-scope)
-      - [1.3.0.6. Local Scope](#1306-local-scope)
-      - [1.3.0.7. Global Scope](#1307-global-scope)
-  - [1.4. JavaScript Classes](#14-javascript-classes)
-      - [1.4.0.8. Class declarations](#1408-class-declarations)
-      - [1.4.0.9. Class expressions](#1409-class-expressions)
-      - [1.4.0.10. Function Based Class](#14010-function-based-class)
-      - [1.4.0.11. Sub-Classing](#14011-sub-classing)
-  - [1.5. JavaScript Best Practices](#15-javascript-best-practices)
-      - [1.5.0.12. Declarations on Top](#15012-declarations-on-top)
-      - [1.5.0.13. Initialize Variables](#15013-initialize-variables)
-      - [1.5.0.14. Don't Use new Object()](#15014-dont-use-new-object)
-      - [1.5.0.15. Avoid Using eval()](#15015-avoid-using-eval)
+    - [1.1. Overview](#11-overview)
+        - [1.1.1. JavaScript Types](#111-javascript-types)
+        - [1.1.2. JavaScript Statements](#112-javascript-statements)
+        - [1.1.3. Values](#113-values)
+            - [1.1.3.1. Literals](#1131-literals)
+        - [1.1.4. Variables](#114-variables)
+            - [1.1.4.1. Variable naming](#1141-variable-naming)
+        - [1.1.5. Operators](#115-operators)
+        - [1.1.6. Expressions](#116-expressions)
+        - [1.1.7. Code Comments](#117-code-comments)
+        - [1.1.8. JavaScript is Case Sensitive](#118-javascript-is-case-sensitive)
+        - [1.1.9. JavaScript Keywords](#119-javascript-keywords)
+        - [1.1.10. JavaScript Function Definitions](#1110-javascript-function-definitions)
+            - [1.1.10.1. Function Declarations](#11101-function-declarations)
+            - [1.1.10.2. Function Expressions](#11102-function-expressions)
+    - [1.2. JavaScript Closures](#12-javascript-closures)
+        - [1.2.1. Closure Example](#121-closure-example)
+        - [1.2.2. Global Variables](#122-global-variables)
+        - [1.2.3. The this Keyword](#123-the-this-keyword)
+    - [1.3. JavaScript Scope](#13-javascript-scope)
+        - [1.3.1. Local Scope](#131-local-scope)
+        - [1.3.2. Global Scope](#132-global-scope)
+    - [1.4. JavaScript "Classes"](#14-javascript-classes)
+        - [1.4.1. Class declarations](#141-class-declarations)
+        - [1.4.2. Class expressions](#142-class-expressions)
+            - [1.4.2.1. Body of a class definition](#1421-body-of-a-class-definition)
+        - [1.4.3. Function based](#143-function-based)
+        - [1.4.4. Sub-Classing](#144-sub-classing)
+    - [1.5. JavaScript Best Practices](#15-javascript-best-practices)
+        - [1.5.1. Declarations on Top](#151-declarations-on-top)
+        - [1.5.2. Initialize Variables](#152-initialize-variables)
+        - [1.5.3. Don't Use new Object()](#153-dont-use-new-object)
+        - [1.5.4. Avoid Using eval()](#154-avoid-using-eval)
 
 <!-- /TOC -->
 <!-- toc -->
@@ -49,7 +51,7 @@ JavaScript also supports functional programming — functions are objects, givin
 
 Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. 
 
-### JavaScript Types
+### 1.1.1. JavaScript Types
 
 * Number
 * String
@@ -65,7 +67,7 @@ Let's start off by looking at the building blocks of any language: the types. Ja
 * undefined
 
 
-### 1.1.1. JavaScript Statements
+### 1.1.2. JavaScript Statements
 JavaScript statements are composed of values, operators, expressions, keywords, comments and they are separated by semicolons:
 
 
@@ -80,13 +82,13 @@ console.log(z);
 ```
 
 
-### 1.1.2. Values
+### 1.1.3. Values
 The JavaScript syntax defines two types of values: Fixed values and variable values.
 
 * Fixed values are called literals.
 * Variable values are called variables.
 
-#### 1.1.2.0.1. Literals
+#### 1.1.3.1. Literals
 Numbers are written with or without decimals:
 
 ```js
@@ -101,7 +103,7 @@ Strings are text, written within double or single quotes:
 'John Doe'
 ```
 
-### 1.1.3. Variables
+### 1.1.4. Variables
 In a programming language, **variables** are used to **store** data values.
 New variables in JavaScript are declared using one of three keywords: `let`, `const`, or `var`.
 An **equal sign** is used to **assign values** to variables.
@@ -140,14 +142,14 @@ var x;
 x = 6;
 ```
 
-#### 1.1.3.1. Variable naming
+#### 1.1.4.1. Variable naming
 There are two limitations for a variable name in JavaScript:
 
  * The name must contain only letters, digits, symbols `$` and `_`.
  * The first character must not be a digit.
 
 
-### 1.1.4. Operators
+### 1.1.5. Operators
 JavaScript's numeric operators are `+`, `-`, `*`, `/` and `%` which is the remainder operator.
 
 JavaScript uses arithmetic operators (`+ - * /`) to compute values:
@@ -176,7 +178,7 @@ The `+` operator also does string concatenation:
 ```
 
 
-### 1.1.4.1. Expressions
+### 1.1.6. Expressions
 An expression is a combination of values, variables, and operators, which computes to a value. The computation is called an **evaluation**.
 
 For example, `5 * 10` evaluates to `50`:
@@ -186,7 +188,7 @@ For example, `5 * 10` evaluates to `50`:
 ```
 
 
-### 1.1.5. Code Comments
+### 1.1.7. Code Comments
 Not all JavaScript statements are "executed". Code after double slashes `//` or between `/*` and `*/` is treated as a **comment**.
 
 Comments are ignored, and will not be executed:
@@ -196,7 +198,7 @@ var x = 5; // I will be executed
 // var x = 6; I will NOT be executed
 ```
 
-### 1.1.5.1. JavaScript is Case Sensitive
+### 1.1.8. JavaScript is Case Sensitive
 All JavaScript identifiers are **case sensitive**.
 For example the variables `lastName` and `lastname`, are two different variables:
 
@@ -207,7 +209,7 @@ lastName = "Doe";
 lastname = "Peterson";
 ```
 
-### 1.1.5.2. JavaScript Keywords
+### 1.1.9. JavaScript Keywords
 JavaScript statements often start with a keyword to identify the JavaScript action to be performed. JavaScript **keywords** are used to identify actions to be performed. The `var` keyword tells the browser to create variables:
 
 ```js
@@ -231,7 +233,7 @@ Here is a list of some keywords:
 * **var** - Declares a variable
 
 
-### 1.1.6. JavaScript Function Definitions
+### 1.1.10. JavaScript Function Definitions
 JavaScript functions are **defined** with the `function` keyword. You can use a function **declaration** or a function **expression**.
 
 ```js
@@ -241,7 +243,7 @@ function add(a,b) {return a + b};
 var add = function(a,b) {return a + b};
 ```
 
-#### 1.1.6.1. Function Declarations
+#### 1.1.10.1. Function Declarations
 Functions are declared with the following syntax:
 
 ```js
@@ -258,7 +260,7 @@ function myFunction(a, b) {
 }
 ```
 
-#### 1.1.6.2. Function Expressions
+#### 1.1.10.2. Function Expressions
 A Function Expression defines a function as a part of a larger expression syntax (typically a variable assignment).
 The function name (if any) is not visible outside of it’s scope (contrast with Function Declarations).
 
@@ -286,7 +288,7 @@ JavaScript variables can belong to the **local** or **global** scope. Global var
 
 > A closure is a function having access to the parent scope, even after the parent function has closed.
 
-### 1.2.0.4. Closure Example
+### 1.2.1. Closure Example
 Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
 
 ```js
@@ -304,7 +306,7 @@ add();
 ```
 
 
-### 1.2.0.3. Global Variables
+### 1.2.2. Global Variables
 A function can access all variables defined inside the function, for example:
 
 ```js
@@ -330,7 +332,7 @@ Local variables have short lives. They are created when the function is invoked,
 
 
 
-### 1.2.0.5. The this Keyword
+### 1.2.3. The this Keyword
 In JavaScript, the thing called `this`, is the object that "owns" the current code.
 The value of `this`, when used in a `function`, is the object that "owns" the function.
 
@@ -344,7 +346,7 @@ In JavaScript, scope is the set of variables, objects, and functions you have ac
 > *Did you know?* Your global variables (or functions) can overwrite window variables (or functions).
 Any function, including the window object, can overwrite your global variables and functions.
 
-### 1.3.0.6. Local Scope
+### 1.3.1. Local Scope
 Variables declared within a JavaScript function, become LOCAL to the function. Local variables have local scope: They can only be accessed within the function.
 
 ```js
@@ -357,7 +359,7 @@ function myFunction() {
 
 > Local variables are created when a function starts, and deleted when the function is completed.
 
-### 1.3.0.7. Global Scope
+### 1.3.2. Global Scope
 A variable declared outside a function, becomes GLOBAL. A global variable has global scope: All scripts and functions on a web page can access it.
 
 ```js
@@ -377,7 +379,7 @@ function myFunction() {
 Classes are a way to blueprint functionality. There are many ways to create a "class" in JavaScript, we will focus on the most common ways.
 
  
-### 1.4.0.8. Class declarations
+### 1.4.1. Class declarations
 One way to define a class is using a class declaration. To declare a class, you use the class keyword with the name of the class ("Rectangle" here).
 
 A class is defined like this in ECMAScript 6:
@@ -394,7 +396,7 @@ class Rectangle {
 }
 ```
 
-### 1.4.0.9. Class expressions
+### 1.4.2. Class expressions
 There are two kinds of class definitions: class declarations and class expressions.
 
 A class expression is another way to define a class. Class expressions can be named or unnamed. The name given to a class expression is local to the class's body.
@@ -424,7 +426,7 @@ console.log(Me.name); // ReferenceError: Me is not defined
 
 The last two lines demonstrate that `Me` does not become a variable outside of the class, but can be used inside it.
 
-#### Body of a class definition
+#### 1.4.2.1. Body of a class definition
 Let’s examine three kinds of methods that you often find in class definitions.
 
 ```js
@@ -448,7 +450,7 @@ const foo = new Foo(123);
 
 > Reference: http://exploringjs.com/es6/ch_classes.html
 
-### 1.4.0.10. Function based
+### 1.4.3. Function based
 
 <!-- js-console -->
 
@@ -471,7 +473,7 @@ let eat = Animal.eat;
 eat(); // global object
 ```
 
-### 1.4.0.11. Sub-Classing
+### 1.4.4. Sub-Classing
 
 <!-- js-console -->
 
@@ -550,7 +552,7 @@ d.speak(); // Mitzie makes a noise.
 ## 1.5. JavaScript Best Practices
 Here are some best practices to consider when writing in JavaScript. Avoid global variables, avoid `new`, avoid `==`, avoid `eval()`.
 
-### 1.5.0.12. Declarations on Top
+### 1.5.1. Declarations on Top
 It is a good coding practice to put all declarations at the top of each script or function.
 
 This will:
@@ -560,7 +562,7 @@ This will:
   * Make it easier to avoid unwanted (implied) global variables
   * Reduce the possibility of unwanted re-declarations
 
-### 1.5.0.13. Initialize Variables
+### 1.5.2. Initialize Variables
 It is a good coding practice to initialize variables when you declare them.
 
 This will:
@@ -580,7 +582,7 @@ var firstName = "",
     myObject = {};
 ```
 
-### 1.5.0.14. Don't Use new Object()
+### 1.5.3. Don't Use new Object()
 
 * Use `{}` instead of new Object()
 * Use `""` instead of new String()
@@ -600,5 +602,5 @@ var x6 = /()/; // new regexp object
 var x7 = function(){}; // new function object
 ```
 
-### 1.5.0.15. Avoid Using eval()
+### 1.5.4. Avoid Using eval()
 The `eval()` function is used to run text as code. In almost all cases, it should not be necessary to use it. Because it allows arbitrary code to be run, it also represents a security problem.
