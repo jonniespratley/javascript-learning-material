@@ -105,6 +105,9 @@ Strings are text, written within double or single quotes:
 
 ### 1.1.4. Variables
 In a programming language, **variables** are used to **store** data values.
+
+
+
 New variables in JavaScript are declared using one of three keywords: `let`, `const`, or `var`.
 An **equal sign** is used to **assign values** to variables.
 
@@ -113,6 +116,21 @@ An **equal sign** is used to **assign values** to variables.
 ```js
 let age;
 let name = 'jonnie';
+```
+
+### Ways of declaring variables 
+
+The following table gives an overview of six ways in which variables can be declared in ES6 (inspired by a table by kangax):
+
+```
+
+Hoisting	Scope	Creates global properties
+var	Declaration	Function	Yes
+let	Temporal dead zone	Block	No
+const	Temporal dead zone	Block	No
+function	Complete	Block	Yes
+class	No	Block	No
+import	Complete	Module-global	No
 ```
 
 The following is an example of scope with a variable declared with `let`:
