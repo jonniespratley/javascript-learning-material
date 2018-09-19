@@ -18,7 +18,7 @@
       * [Rotate Array](./interview-questions/easy-questions/arrays/rotate-array.md)
       * [Contains Duplicate](./interview-questions/easy-questions/arrays/contains-duplicate.md)
       * [Single Number](./interview-questions/easy-questions/arrays/single-number.md)
-      * Intersection of Two Arrays II
+      * [Intersection of Two Arrays II](interview-questions/easy-questions/arrays/intersection-of-two-arrays-ii.md)
       * [Plus One](./interview-questions/easy-questions/arrays/plus-one.md)
       * [Move Zeroes](./interview-questions/easy-questions/arrays/move-zeros.md)
       * [Two Sum](./interview-questions/easy-questions/arrays/two-sum.md)
