@@ -1,6 +1,7 @@
 # 1. JavaScript Fundamentals
 This is an overview of JavaScript, beginner usage and suggested tooling to help streamline development process and learning.
 While the information here is not the full list, the information provided will help you get up to speed quickly as possible
+
 <!-- TOC -->
 
 - [1. JavaScript Fundamentals](#1-javascript-fundamentals)
@@ -40,9 +41,15 @@ While the information here is not the full list, the information provided will h
 <!-- toc -->
 
 ## 1.1. Overview
-JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with object prototypes, instead of classes (see more about prototypical inheritance and ES2015 Classes). JavaScript also supports functional programming — functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
+JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. 
 
-Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. JavaScript's types are:
+JavaScript supports object-oriented programming with object prototypes, instead of classes (see more about prototypical inheritance and ES2015 Classes). 
+
+JavaScript also supports functional programming — functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
+
+Let's start off by looking at the building blocks of any language: the types. JavaScript programs manipulate values, and those values all belong to a type. 
+
+### JavaScript Types
 
 * Number
 * String
@@ -79,7 +86,7 @@ The JavaScript syntax defines two types of values: Fixed values and variable val
 * Fixed values are called literals.
 * Variable values are called variables.
 
-##### 1.1.2.0.1. Literals
+#### 1.1.2.0.1. Literals
 Numbers are written with or without decimals:
 
 ```js
@@ -169,7 +176,7 @@ The `+` operator also does string concatenation:
 ```
 
 
-#### 1.1.4.1. Expressions
+### 1.1.4.1. Expressions
 An expression is a combination of values, variables, and operators, which computes to a value. The computation is called an **evaluation**.
 
 For example, `5 * 10` evaluates to `50`:
@@ -189,7 +196,7 @@ var x = 5; // I will be executed
 // var x = 6; I will NOT be executed
 ```
 
-#### 1.1.5.1. JavaScript is Case Sensitive
+### 1.1.5.1. JavaScript is Case Sensitive
 All JavaScript identifiers are **case sensitive**.
 For example the variables `lastName` and `lastname`, are two different variables:
 
@@ -200,7 +207,7 @@ lastName = "Doe";
 lastname = "Peterson";
 ```
 
-#### 1.1.5.2. JavaScript Keywords
+### 1.1.5.2. JavaScript Keywords
 JavaScript statements often start with a keyword to identify the JavaScript action to be performed. JavaScript **keywords** are used to identify actions to be performed. The `var` keyword tells the browser to create variables:
 
 ```js
@@ -275,13 +282,29 @@ var a = function bar() {
 ---
 
 ## 1.2. JavaScript Closures
-JavaScript variables can belong to the **local** or **global** scope.
-
-Global variables can be made local (private) with **closures**.
+JavaScript variables can belong to the **local** or **global** scope. Global variables can be made local (private) with **closures**.
 
 > A closure is a function having access to the parent scope, even after the parent function has closed.
 
-#### 1.2.0.3. Global Variables
+### 1.2.0.4. Closure Example
+Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
+
+```js
+var add = (function () {
+  var counter = 0;
+  return function () {
+    return counter += 1;
+  }
+})();
+
+add();
+add();
+add();
+// the counter is now 3
+```
+
+
+### 1.2.0.3. Global Variables
 A function can access all variables defined inside the function, for example:
 
 ```js
@@ -305,24 +328,9 @@ function myFunction() {
 Global variables live as long as your application (your window / your web page) lives.
 Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
 
-#### 1.2.0.4. Closure Example
-Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
 
-```js
-var add = (function () {
-  var counter = 0;
-  return function () {
-    return counter += 1;
-  }
-})();
 
-add();
-add();
-add();
-// the counter is now 3
-```
-
-#### 1.2.0.5. The this Keyword
+### 1.2.0.5. The this Keyword
 In JavaScript, the thing called `this`, is the object that "owns" the current code.
 The value of `this`, when used in a `function`, is the object that "owns" the function.
 
@@ -336,7 +344,7 @@ In JavaScript, scope is the set of variables, objects, and functions you have ac
 > *Did you know?* Your global variables (or functions) can overwrite window variables (or functions).
 Any function, including the window object, can overwrite your global variables and functions.
 
-#### 1.3.0.6. Local Scope
+### 1.3.0.6. Local Scope
 Variables declared within a JavaScript function, become LOCAL to the function. Local variables have local scope: They can only be accessed within the function.
 
 ```js
@@ -349,7 +357,7 @@ function myFunction() {
 
 > Local variables are created when a function starts, and deleted when the function is completed.
 
-#### 1.3.0.7. Global Scope
+### 1.3.0.7. Global Scope
 A variable declared outside a function, becomes GLOBAL. A global variable has global scope: All scripts and functions on a web page can access it.
 
 ```js
@@ -365,12 +373,12 @@ function myFunction() {
 ---
 
 
-## 1.4. JavaScript Classes
-Classes are a way to blueprint functionality. There are many ways to create a class in JavaScript, we will focus on the most comment ways.
+## 1.4. JavaScript "Classes"
+Classes are a way to blueprint functionality. There are many ways to create a "class" in JavaScript, we will focus on the most common ways.
 
 
 
-#### 1.4.0.8. Class declarations
+### 1.4.0.8. Class declarations
 One way to define a class is using a class declaration. To declare a class, you use the class keyword with the name of the class ("Rectangle" here).
 
 ```js
@@ -382,7 +390,7 @@ class Rectangle {
 }
 ```
 
-#### 1.4.0.9. Class expressions
+### 1.4.0.9. Class expressions
 A class expression is another way to define a class. Class expressions can be named or unnamed. The name given to a named class expression is local to the class's body.
 
 ```js
@@ -397,7 +405,9 @@ var Rectangle = class {
 
 
 
-#### 1.4.0.10. Function Based Class
+### 1.4.0.10. Function Based Class
+
+<!-- js-console -->
 
 ```js
 function Animal() { }
@@ -418,7 +428,9 @@ let eat = Animal.eat;
 eat(); // global object
 ```
 
-#### 1.4.0.11. Sub-Classing
+### 1.4.0.11. Sub-Classing
+
+<!-- js-console -->
 
 ```js
 class Animal {
@@ -443,6 +455,8 @@ d.speak(); // Mitzie barks.
 
 One may also extend traditional function-based "classes":
 
+<!-- js-console -->
+
 ```js
 function Animal (name) {
   this.name = name;
@@ -463,8 +477,9 @@ d.speak(); // Mitzie barks.
 
 ```
 
-Note that classes cannot extend regular (non-constructible) objects. If you want to inherit from a regular object, you can instead use Object.setPrototypeOf():
+Note that classes cannot extend regular (non-constructible) objects. If you want to inherit from a regular object, you can instead use `Object.setPrototypeOf()`:
 
+<!-- js-console -->
 ```js
 var Animal = {
   speak() {
@@ -484,12 +499,15 @@ var d = new Dog('Mitzie');
 d.speak(); // Mitzie makes a noise.
 ```
 
-> Reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+> Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+
+--- 
 
 ## 1.5. JavaScript Best Practices
 Here are some best practices to consider when writing in JavaScript. Avoid global variables, avoid `new`, avoid `==`, avoid `eval()`.
 
-#### 1.5.0.12. Declarations on Top
+### 1.5.0.12. Declarations on Top
 It is a good coding practice to put all declarations at the top of each script or function.
 
 This will:
@@ -499,7 +517,7 @@ This will:
   * Make it easier to avoid unwanted (implied) global variables
   * Reduce the possibility of unwanted re-declarations
 
-#### 1.5.0.13. Initialize Variables
+### 1.5.0.13. Initialize Variables
 It is a good coding practice to initialize variables when you declare them.
 
 This will:
@@ -519,7 +537,7 @@ var firstName = "",
     myObject = {};
 ```
 
-#### 1.5.0.14. Don't Use new Object()
+### 1.5.0.14. Don't Use new Object()
 
 * Use `{}` instead of new Object()
 * Use `""` instead of new String()
@@ -539,5 +557,5 @@ var x6 = /()/; // new regexp object
 var x7 = function(){}; // new function object
 ```
 
-#### 1.5.0.15. Avoid Using eval()
+### 1.5.0.15. Avoid Using eval()
 The `eval()` function is used to run text as code. In almost all cases, it should not be necessary to use it. Because it allows arbitrary code to be run, it also represents a security problem.
