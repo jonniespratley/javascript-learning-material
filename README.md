@@ -6,7 +6,7 @@ This book will try and build your knowledge of using JavaScript.
 
 1. [Interview Guides](/./interview-guides/README.md)
 2. [Interview Questions](/./interview-questions/README.md)
-3. Modern JavaScript
+3. [Basic JavaScript](/./modern-javascript-1/README.md)
 
 ## Resources
 
