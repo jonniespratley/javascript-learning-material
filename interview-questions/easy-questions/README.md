@@ -41,21 +41,21 @@ Here is a list of "easy" questions from LeetCode.
 
 #### **Trees**
 
-1. Maximum Depth of Binary Tree
-2. Validate Binary Search Tree
+1. [Maximum Depth of Binary Tree](/interview-questions/easy-questions/trees/max-depth-of-binary-tree.md)
+2. [Validate Binary Search Tree](/interview-questions/easy-questions/trees/is-valid-bst.md)
 3. Symmetric Tree
 4. Binary Tree Level Order Traversal
 5. Convert Sorted Array to Binary Search Tree
 6. Sorting and Searching
-7. Merge Sorted Array
-8. First Bad Version
+7. [Merge Sorted Array](/interview-questions/easy-questions/trees/merge-arrays.md)
+8. [First Bad Version](/interview-questions/easy-questions/trees/first-bad-version.md)
 
 #### **Dynamic Programming**
 
-1. Climbing Stairs
-2. Best Time to Buy and Sell Stock
-3. Maximum Subarray
-4. House Robber
+1. [Climbing Stairs](/interview-questions/easy-questions/dynamic-programming/climb-stairs.md)
+2. [Best Time to Buy and Sell Stock](/interview-questions/easy-questions/dynamic-programming/best-time-to-buy-sell-stock.md)
+3. [Maximum Subarray](/interview-questions/easy-questions/dynamic-programming/maximum-sub-array.md)
+4. [House Robber](/interview-questions/easy-questions/dynamic-programming/house-robber.md)
 
 #### **Design**
 
