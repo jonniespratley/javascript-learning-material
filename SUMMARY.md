@@ -31,6 +31,7 @@
       * [Longest Common Prefix](./interview-questions/easy-questions/strings/longest-common-prefix.md)
     * [Trees](trees.md)
     * [Linked List](linked-list.md)
+    * [Dynamic Programming](dynamic-programming.md)
 * [JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
