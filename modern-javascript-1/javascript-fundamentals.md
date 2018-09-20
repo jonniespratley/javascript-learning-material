@@ -103,29 +103,29 @@ Strings are text, written within double or single quotes:
 'John Doe'
 ```
 
-### 1.1.4. Variables
-In a programming language, **variables** are used to **store** data values.
+### 1.1.4. Declarations
+
+There are three kinds of declarations in JavaScript.
+
+1. **var** - Declares a variable, optionally initializing it to a value.
+2. **let** - Declares a block-scoped, local variable, optionally initializing it to a value.
+3. **const** - Declares a block-scoped, read-only named constant.
+
+#### Variables
+You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.
+
+A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).
 
 
 
-New variables in JavaScript are declared using one of three keywords: `let`, `const`, or `var`.
-An **equal sign** is used to **assign values** to variables.
-
-`let` allows you to declare block-level variables. The declared variable is available from the block it is enclosed in.
-
-```js
-let age;
-let name = 'jonnie';
-```
-
-### Ways of declaring variables 
+#### Declaring variables 
 
 The following table gives an overview of six ways in which variables can be declared in ES6 (inspired by a table by kangax):
 
 ```
 
-Hoisting	Scope	Creates global properties
-var	Declaration	Function	Yes
+Hoisting  Scope	Creates global properties
+var	       Declaration	Function	Yes
 let	Temporal dead zone	Block	No
 const	Temporal dead zone	Block	No
 function	Complete	Block	Yes
