@@ -32,6 +32,7 @@
     * [Trees](trees.md)
     * [Linked List](linked-list.md)
     * [Dynamic Programming](dynamic-programming.md)
+    * [Math](math.md)
 * [JavaScript I](./modern-javascript-1/README.md)
   * [JavaScript Fundamentals](./modern-javascript-1/javascript-fundamentals.md)
   * [JavaScript Prototype](./modern-javascript-1/javascript-prototypes.md)
