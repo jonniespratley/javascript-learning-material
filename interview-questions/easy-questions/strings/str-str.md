@@ -27,11 +27,6 @@ Output: -1
 
 <!-- js-console -->
 ```javascript
-/**
- * @param {string} haystack
- * @param {string} needle
- * @return {number}
- */
 var strStr = function (haystack, needle) {
   let result = 0;
   if (needle === "") {
@@ -40,24 +35,32 @@ var strStr = function (haystack, needle) {
   let index = haystack.indexOf(needle);
   return index >= -1 ? index : result;
 };
+console.log(strStr('hello', 'll'));
+console.log(strStr('aaaaa', 'bba'));
+```
 
-/** 1) Cheating */
-function strStr1(haystack, needle) {
+**Built-in:**
+
+<!-- js-console -->
+```javascript
+function strStr2(haystack, needle) {
   return haystack.indexOf(needle);
 }
+console.log(strStr2('hello', 'll'));
+console.log(strStr2('aaaaa', 'bba'));
+```
 
-/** 2) Brute force */
-function strStr2(haystack, needle) {
+**Brute force:**
+
+<!-- js-console -->
+```javascript
+function strStr3(haystack, needle) {
   for (let i = 0; i < haystack.length - needle.length + 1; i++) {
     if (haystack.substr(i, needle.length) === needle) return i;
   }
   return -1;
 }
-
-console.log(strStr('aaaaa', 'bba'));
-console.log(strStr1('aaaaa', 'bba'));
-console.log(strStr2('aaaaa', 'bba'));
-
-
+console.log(strStr3('hello', 'll'));
+console.log(strStr3('aaaaa', 'bba'));
 ```
 
