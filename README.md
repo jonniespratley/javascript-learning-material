@@ -1,12 +1,13 @@
-# JavaScript Learning Material
+# Learning JavaScript
 
 This book will try and build your knowledge of using JavaScript.
 
-## Contents 
+## Contents
 
-1. Interview Guides
-2. Interview Questions
-3. Modern JavaScript
+1. [Interview Guides](/./interview-guides/README.md)
+2. [Interview Questions](/./interview-questions/README.md)
+3. [JavaScrip](/./modern-javascript-1/README.md)t I
+4. [JavaScript II](/./modern-javascript-2/README.md)
 
 ## Resources
 

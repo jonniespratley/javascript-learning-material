@@ -9,6 +9,7 @@
     * [HTML & CSS Concepts](./interview-guides/front-end-interview/html-and-css-concepts.md)
     * [JavaScript Concepts](./interview-guides/front-end-interview/javascript-concepts.md)
     * [Computer Science Concepts](./interview-guides/front-end-interview/computer-science-concepts.md)
+    * [Data Structures](interview-guides/front-end-interview/data-structures.md)
 * [Interview Questions](./interview-questions/README.md)
   * [Questions](./interview-questions/questions.md)
   * [Easy Questions](./interview-questions/easy-questions/README.md)
