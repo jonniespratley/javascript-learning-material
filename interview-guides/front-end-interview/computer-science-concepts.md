@@ -221,11 +221,6 @@ and merged.
 
 ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
 
-A recursive merge sort algorithm used to sort an array of 7
-integer values. These are the steps a human would take to
-emulate merge sort (top-down).
-
-![Merge Sort](https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/merge-sort.png)
 
 
 
