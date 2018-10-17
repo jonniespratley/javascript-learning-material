@@ -1,5 +1,5 @@
 # 1. Computer Science Concepts
- 
+
 The following concepts should be understood in JavaScript.
 
 <!-- TOC -->
@@ -99,8 +99,8 @@ Now double it to n = 20:
 Consider the following function:
 
 ```js
-function increment(num){ 
-  return ++num; 
+function increment(num){
+  return ++num;
 }
 console.log(increment(2));
 ```
@@ -112,7 +112,7 @@ Now, let's use the sequential search algorithm:
 ```js
 function sequentialSearch(array, item) {
     for (var i = 0; i < array.length; i++) {
-        if (item === array[i]) { //{1} 
+        if (item === array[i]) { //{1}
             return i;
         }
     }
@@ -135,8 +135,8 @@ function swap(array, index1, index2) {
 
 function bubbleSort(array) {
     let length = array.length;
-    for (let i = 0; i < length; i++) { //{1} 
-        for (let j = 0; j < length - 1; j++) { //{2} 
+    for (let i = 0; i < length; i++) { //{1}
+        for (let j = 0; j < length - 1; j++) { //{2}
             if (array[j] > array[j + 1]) {
                 swap(array, j, j + 1);
             }
@@ -201,14 +201,14 @@ Below is the list of some of the most used Big O notations and their performance
 # 4. Searching
 
 ## 4.1. Binary search
-In computer science, binary search, also known as half-interval 
-search, logarithmic search, or binary chop, is a search algorithm 
-that finds the position of a target value within a sorted 
-array. Binary search compares the target value to the middle 
-element of the array; if they are unequal, the half in which 
-the target cannot lie is eliminated and the search continues 
-on the remaining half until it is successful. If the search 
-ends with the remaining half being empty, the target is not 
+In computer science, binary search, also known as half-interval
+search, logarithmic search, or binary chop, is a search algorithm
+that finds the position of a target value within a sorted
+array. Binary search compares the target value to the middle
+element of the array; if they are unequal, the half in which
+the target cannot lie is eliminated and the search continues
+on the remaining half until it is successful. If the search
+ends with the remaining half being empty, the target is not
 in the array.
 
 ![Binary Search](https://upload.wikimedia.org/wikipedia/commons/8/83/Binary_Search_Depiction.svg)
@@ -268,11 +268,11 @@ This is about sorting, here is what you should ask yourself:
 
 ## 5.1. Bubble sort
 
-Bubble sort, sometimes referred to as sinking sort, is a 
-simple sorting algorithm that repeatedly steps through 
-the list to be sorted, compares each pair of adjacent 
-items and swaps them if they are in the wrong order. 
-The pass through the list is repeated until no swaps 
+Bubble sort, sometimes referred to as sinking sort, is a
+simple sorting algorithm that repeatedly steps through
+the list to be sorted, compares each pair of adjacent
+items and swaps them if they are in the wrong order.
+The pass through the list is repeated until no swaps
 are needed, which indicates that the list is sorted.
 
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
@@ -291,10 +291,10 @@ Complexity
 
 Insertion sort is another simple sorting algorithm. It builds a sorted array (or list) one element at a time by comparing each new element to the already-sorted elements and inserting the new element into the correct location, similar to the way you sort a hand of playing cards.
 
-Insertion sort is a simple sorting algorithm that builds 
-the final sorted array (or list) one item at a time. 
-It is much less efficient on large lists than more 
-advanced algorithms such as quicksort, heapsort, or merge 
+Insertion sort is a simple sorting algorithm that builds
+the final sorted array (or list) one item at a time.
+It is much less efficient on large lists than more
+advanced algorithms such as quicksort, heapsort, or merge
 sort.
 
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif)
@@ -314,21 +314,21 @@ Selection sort is one of the simplest sorting algorithms. It starts with the fir
 
 ## 5.4. Quick Sort
 Quicksort is a divide and conquer algorithm.
-Quicksort first divides a large array into two smaller 
+Quicksort first divides a large array into two smaller
 sub-arrays: the low elements and the high elements.
 Quicksort can then recursively sort the sub-arrays
 
 The steps are:
 
 1. Pick an element, called a pivot, from the array.
-2. Partitioning: reorder the array so that all elements with 
-values less than the pivot come before the pivot, while all 
-elements with values greater than the pivot come after it 
-(equal values can go either way). After this partitioning, 
-the pivot is in its final position. This is called the 
+2. Partitioning: reorder the array so that all elements with
+values less than the pivot come before the pivot, while all
+elements with values greater than the pivot come after it
+(equal values can go either way). After this partitioning,
+the pivot is in its final position. This is called the
 partition operation.
-3. Recursively apply the above steps to the sub-array of 
-elements with smaller values and separately to the 
+3. Recursively apply the above steps to the sub-array of
+elements with smaller values and separately to the
 sub-array of elements with greater values.
 
 Animated visualization of the quicksort algorithm.
@@ -348,24 +348,24 @@ The horizontal lines are pivot values.
 Merge sort is another divide-and-conquer algorithm that works by splitting a data set into two or more subsets, sorting the subsets, and then merging them together into the final sorted set.
 
 
-In computer science, merge sort (also commonly spelled 
-mergesort) is an efficient, general-purpose, 
-comparison-based sorting algorithm. Most implementations 
-produce a stable sort, which means that the implementation 
-preserves the input order of equal elements in the sorted 
-output. Mergesort is a divide and conquer algorithm that 
+In computer science, merge sort (also commonly spelled
+mergesort) is an efficient, general-purpose,
+comparison-based sorting algorithm. Most implementations
+produce a stable sort, which means that the implementation
+preserves the input order of equal elements in the sorted
+output. Mergesort is a divide and conquer algorithm that
 was invented by John von Neumann in 1945.
 
-An example of merge sort. First divide the list into 
-the smallest unit (1 element), then compare each 
-element with the adjacent list to sort and merge the 
-two adjacent lists. Finally all the elements are sorted 
+An example of merge sort. First divide the list into
+the smallest unit (1 element), then compare each
+element with the adjacent list to sort and merge the
+two adjacent lists. Finally all the elements are sorted
 and merged.
 
 ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
 
-A recursive merge sort algorithm used to sort an array of 7 
-integer values. These are the steps a human would take to 
+A recursive merge sort algorithm used to sort an array of 7
+integer values. These are the steps a human would take to
 emulate merge sort (top-down).
 
 ![Merge Sort](https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/merge-sort.png)
