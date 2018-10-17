@@ -152,10 +152,9 @@ const quickSort = arr => {
     if (arr.length < 2) return arr;
 
     const pivot = arr[Math.floor(Math.random() * arr.length)];
-
-    let left = [];
-    let equal = [];
-    let right = [];
+    const left = [];
+    const equal = [];
+    const right = [];
 
     for (let element of arr) {
         if (element > pivot)
@@ -165,9 +164,6 @@ const quickSort = arr => {
         else
             equal.push(element);
     }
-    console.table(left);
-    console.table(right);
-
     return [
         ...quickSort(left),
         ...equal,
