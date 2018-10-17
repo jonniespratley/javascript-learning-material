@@ -6,7 +6,6 @@ This is about sorting, here is what you should ask yourself:
 * What do we know about the system? Is the largest data set to be sorted smaller than, the same size as, or larger than available memory?
 
 <!-- TOC -->
-
 - [1. Sorting](#1-sorting)
     - [1.1. Bubble sort](#11-bubble-sort)
         - [1.1.1. Example](#111-example)
