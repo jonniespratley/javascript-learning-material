@@ -126,7 +126,7 @@ function insertionSort(items) {
     return items;
 }
 
-console.log(insertionSort(testArray))
+console.log(insertionSort([6,5,2,4,1,0,9,10]))
 ```
 
 
@@ -199,8 +199,8 @@ const quickSort = arr => {
     ];
 };
 
-const tmpArr = [6,5,2,4,1,0,9,10];
-quickSort(tmpArr);
+ 
+quickSort([6,5,2,4,1,0,9,10]);
 ```
 
 
