@@ -12,6 +12,7 @@
     * [Computer Science Concepts](./interview-guides/front-end-interview/computer-science-concepts.md)
       * [Big O](/interview-guides/front-end-interview/big_o.md)
       * [Data Structures](interview-guides/front-end-interview/data_structures.md)
+      * Sorting
 * [Interview Questions](./interview-questions/README.md)
   * [Questions](./interview-questions/questions.md)
   * [Easy Questions](./interview-questions/easy-questions/README.md)
@@ -46,6 +47,4 @@
   * [Assignment](./homework/README.md)
     * [JavaScript Modules](./modern-javascript-2/assignments/javascript-modules-project.md)
 * [readme.md](readmemd.md)
-
-
 
