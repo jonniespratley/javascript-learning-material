@@ -4,14 +4,7 @@ The following concepts should be understood in JavaScript.
 
 <!-- TOC -->
 
-- [1. Computer Science Concepts](#1-computer-science-concepts)
-- [2. Data Structures](#2-data-structures)
-  - [2.1. Hashtables (Map)](#21-hashtables-map)
-  - [2.2. Queues & Stacks](#22-queues--stacks)
-    - [2.2.1. Queue](#221-queue)
-    - [2.2.2. Stack](#222-stack)
-- [4. Searching](#4-searching)
-  - [4.1. Binary search](#41-binary-search)
+
 - [5. Sorting](#5-sorting)
   - [5.1. Bubble sort](#51-bubble-sort)
   - [5.2. Insertion Sort](#52-insertion-sort)
