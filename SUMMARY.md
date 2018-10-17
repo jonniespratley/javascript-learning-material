@@ -11,7 +11,7 @@
     * [JavaScript Concepts](./interview-guides/front-end-interview/javascript-concepts.md)
     * [Computer Science Concepts](./interview-guides/front-end-interview/computer-science-concepts.md)
       * [Big O](/interview-guides/front-end-interview/big_o.md)
-      * [Data Structures](interview-guides/front-end-interview/data_structures.md)
+      * [Data Structures](interview-guides/front-end-interview/data-structures.md)
       * [Sorting](interview-guides/front-end-interview/sorting.md)
 * [Interview Questions](./interview-questions/README.md)
   * [Questions](./interview-questions/questions.md)
