@@ -62,6 +62,30 @@ Complexity
 
 
 
+> Reference: ...
+
+
+### Example
+
+<!-- js-console -->
+```javascript
+const bubbleSort = arr => {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let change = false;
+        for (let j = 0; j < arr.length - (i + 1); j++) {
+            if (arr[j] > arr[j + 1]) {
+                change = true;
+                //swap
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+        if (!change) break;
+    }
+    return arr;
+};
+
+bubbleSort([6,5,2,4,1,0,9,10]);
+```
 
 
 ## 5.2. Insertion Sort
@@ -132,9 +156,12 @@ const quickSort = arr => {
     const right = [];
 
     for (const element of arr) {
-        if (element > pivot) right.push(element);
-        else if (element < pivot) left.push(element);
-        else equal.push(element);
+        if (element > pivot) 
+          right.push(element);
+        else if (element < pivot) 
+          left.push(element);
+        else 
+          equal.push(element);
     }
 
     return [
@@ -143,6 +170,9 @@ const quickSort = arr => {
         ...quickSort(right)
     ];
 };
+
+const tmpArr = [6,5,2,4,1,0,9,10];
+quickSort(tmpArr);
 ```
 
 
