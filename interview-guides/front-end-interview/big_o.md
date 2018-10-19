@@ -195,6 +195,16 @@ in the array.
 ![Binary Search](https://upload.wikimedia.org/wikipedia/commons/8/83/Binary_Search_Depiction.svg)
 
 
+Here's how algorithm works.
+
+1. At every step, consider the array between `low` and `high` indices
+- Calculate the `mid` index.
+- If element at the `mid` index is the key, return `mid`.
+- If element at `mid` is greater than the `key`, then reduce the array size such that `high` becomes `mid - 1`. - Index at low remains the same.
+- If element at `mid` is less than the `key`, then reduce the array size such that `low` becomes `mid + 1`. Index at high remains the same.
+- When `low` is greater than `high`, key doesn't exist. Return -1.
+ 
+
 **Time Complexity**: `O(log(n))` - since we split search area by two for every
 next iteration.
 
