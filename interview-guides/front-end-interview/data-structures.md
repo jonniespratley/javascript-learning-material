@@ -23,7 +23,8 @@
 ## 1.1. Queue
 A queue is an ordered collection of items that follows the FIFO (First In First Out), also known as the first-come first-served principle. The addition of new elements in a queue is at the tail, and the removal is from the front. The newest element added to the queue must wait at the end of the queue.
 
-![Queue](https://camo.githubusercontent.com/7fecf0b843d5f7b26e4514b4e9e047d6c84ee76b/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f352f35322f446174615f51756575652e737667)
+![Queue](https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/queue-image.png)
+
 
 > Reference: https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/queue
 
