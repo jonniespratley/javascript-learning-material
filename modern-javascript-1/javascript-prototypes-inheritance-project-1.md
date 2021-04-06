@@ -1,4 +1,4 @@
-# Prototypes and Inheritance - Project 1
+# Project 1 - Prototypes and Inheritance
 
 Write a program that uses one constructor:
 
@@ -11,7 +11,7 @@ Create a `window.onload` handler function that creates an array of book objects,
 
 Create a new file \(`assignment-1.html`\) in your /homework folder and use the following HTML and JavaScript to get started:
 
-```html
+```markup
 <!DOCTYPE html>
 <html >
 <head>
@@ -56,6 +56,4 @@ Create a new file \(`assignment-1.html`\) in your /homework folder and use the f
 </body>
 </html>
 ```
-
-
 

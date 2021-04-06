@@ -1,14 +1,14 @@
+# Count and Say
 
-# count-and-say.js
+undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined/\*\*
 
-undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined/**
- * @param {number} n
- * @return {string}
- */
+* @param {number} n
+* @return {string}
+
+  \*/
 
 **Solution:**
 
-<!-- js-console -->
 ```javascript
 // The count-and-say sequence is the sequence of integers with the first five terms as following:
 //

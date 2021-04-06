@@ -32,5 +32,3 @@ The following interview sections are available. This is a list taken from Leetco
 * Design
 * Others
 
-
-

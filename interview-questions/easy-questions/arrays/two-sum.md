@@ -1,22 +1,20 @@
-
 # Two Sum
+
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 Example:
 
-```
+```text
 Given nums = [2, 7, 11, 15], target = 9,
 
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 ```
 
+## Solution 1
 
-#### Solution 1
-
-<!-- js-console -->
 ```javascript
 const input = [0,1,2,5,11,15,8,23,13,7,8];
 
@@ -37,9 +35,8 @@ var twoSum = function (nums, target) {
 console.log(twoSum(input, 9));
 ```
 
-#### Solution 2
+## Solution 2
 
-<!-- js-console -->
 ```javascript
 /**
  * @param {number[]} numbers
@@ -61,17 +58,15 @@ var twoSum = function (numbers, target) {
 console.log(twoSum(input, 9));
 ```
 
+## Solution 4
 
-#### Solution 4
-
-<!-- js-console -->
 ```javascript
 function twoSum2(nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = 0; j < nums.length; j++) {
             if (i === j) 
                 continue;
-            
+
             if (nums[i] + nums[j] === target) 
                 return [i, j];
             }
@@ -80,10 +75,8 @@ function twoSum2(nums, target) {
 console.log(twoSum2(input, 9));
 ```
 
+## Solution 5
 
-#### Solution 5
-
-<!-- js-console -->
 ```javascript
 //fastest
 function twoSum3(nums, target) {
@@ -104,10 +97,8 @@ function twoSum3(nums, target) {
 console.log(twoSum3(input, 9));
 ```
 
-#### Solution 6
+## Solution 6
 
-
-<!-- js-console -->
 ```javascript
 // find_sum_of_two_2 function return true if
 // there are two values in array who
@@ -129,7 +120,7 @@ let find_sum_of_two_2 = function(A, val) {
       j--;
     }
   }
-  
+
   return false;
 };
 
@@ -152,9 +143,6 @@ test_sol_2(array_for_sum_two_values, 1, false);
 test_sol_2(array_for_sum_two_values, 2, false);
 test_sol_2(array_for_sum_two_values, 7, true);
 ```
-
-
-
 
 > Reference: ..
 

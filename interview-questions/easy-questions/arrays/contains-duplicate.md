@@ -1,33 +1,32 @@
 # Contains Duplicate
+
 Given an array of integers, find if the array contains any duplicates.
 
 Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
 
 Example 1:
 
-```
+```text
 Input: [1,2,3,1]
 Output: true
 ```
 
 Example 2:
 
-```
+```text
 Input: [1,2,3,4]
 Output: false
 ```
 
 Example 3:
 
-```
+```text
 Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
 ```
 
-
 **Solution:**
 
-<!-- js-console -->
 ```javascript
 /**
  * @param {number[]} nums
@@ -60,7 +59,6 @@ console.log(containsDuplicate([1, 2, 3]));
 
 **Solution 2:**
 
-<!-- js-console -->
 ```javascript
 /**
  * @param {number[]} nums
@@ -77,13 +75,9 @@ var containsDuplicate2 = function(nums) {
 console.log(containsDuplicate2([9, 9, 1]));
 console.log(containsDuplicate2([1, 2, 3]));
 ```
- 
 
 **Explanation:**
 
 1. This solution uses a object to store all of the numbers as keys.
 2. Then it checks to see if a key already exists, if it does then we now know that we have a duplicated value in the array.
-
-
-
 

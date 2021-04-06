@@ -1,4 +1,4 @@
-# 1. Computer Science Concepts
+# Computer Science Concepts
 
 The following concepts should be understood in JavaScript.
 

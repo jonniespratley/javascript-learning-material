@@ -1,47 +1,34 @@
-# 1. Sorting
+# Sorting
+
 This is about sorting, here is what you should ask yourself:
 
 * What do we know about the data? Is the data already sorted or mostly sorted? How large are the data sets likely to be? Can there be duplicate key values?
 * What are the requirements for the sort? Do you want to optimize for best-case, worst-case, or average-case performance? Does the sort need to be stable?
 * What do we know about the system? Is the largest data set to be sorted smaller than, the same size as, or larger than available memory?
-
-<!-- TOC -->
-- [1. Sorting](#1-sorting)
-    - [1.1. Bubble sort](#11-bubble-sort)
-        - [1.1.1. Example](#111-example)
-    - [1.2. Insertion Sort](#12-insertion-sort)
-    - [1.3. Selection Sort](#13-selection-sort)
-    - [1.4. Quick Sort](#14-quick-sort)
-    - [1.5. Merge Sort](#15-merge-sort)
-
-<!-- /TOC -->
-
+* [1. Sorting](sorting.md#1-sorting)
+  * [1.1. Bubble sort](sorting.md#11-bubble-sort)
+    * [1.1.1. Example](sorting.md#111-example)
+  * [1.2. Insertion Sort](sorting.md#12-insertion-sort)
+  * [1.3. Selection Sort](sorting.md#13-selection-sort)
+  * [1.4. Quick Sort](sorting.md#14-quick-sort)
+  * [1.5. Merge Sort](sorting.md#15-merge-sort)
 
 ## 1.1. Bubble sort
 
-Bubble sort, sometimes referred to as sinking sort, is a
-simple sorting algorithm that repeatedly steps through
-the list to be sorted, compares each pair of adjacent
-items and swaps them if they are in the wrong order.
-The pass through the list is repeated until no swaps
-are needed, which indicates that the list is sorted.
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.
 
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
 
 Complexity
 
 | Name | Best | Average | Worst | Memory | Stable | Comments |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **Bubble sort** | n | n<sup>2</sup> | n<sup>2</sup> | 1 | Yes | |
-
-
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Bubble sort** | n | n2 | n2 | 1 | Yes |  |
 
 > Reference: ...
 
-
 ### 1.1.1. Example
 
-<!-- js-console -->
 ```javascript
 const bubbleSort = arr => {
     for (let i = 0; i < arr.length - 1; i++) {
@@ -60,28 +47,20 @@ const bubbleSort = arr => {
 bubbleSort([6,5,2,4,1,0,9,10]);
 ```
 
-
 ## 1.2. Insertion Sort
 
-Insertion sort is another simple sorting algorithm. It builds a sorted array (or list) one element at a time by comparing each new element to the already-sorted elements and inserting the new element into the correct location, similar to the way you sort a hand of playing cards.
+Insertion sort is another simple sorting algorithm. It builds a sorted array \(or list\) one element at a time by comparing each new element to the already-sorted elements and inserting the new element into the correct location, similar to the way you sort a hand of playing cards.
 
-Insertion sort is a simple sorting algorithm that builds
-the final sorted array (or list) one item at a time.
-It is much less efficient on large lists than more
-advanced algorithms such as quicksort, heapsort, or merge
-sort.
+Insertion sort is a simple sorting algorithm that builds the final sorted array \(or list\) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
 
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif)
 
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
 
-
-
 | Name | Best | Average | Worst | Memory | Stable | Comments |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **Insertion sort** | n | n<sup>2</sup> | n<sup>2</sup> | 1 | Yes | |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Insertion sort** | n | n2 | n2 | 1 | Yes |  |
 
-<!-- js-console -->
 ```javascript
 function insertionSort(arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -97,56 +76,49 @@ function insertionSort(arr) {
 console.log(insertionSort([6,5,2,4,1,0,9,10]))
 ```
 
-
 > Reference: ...
-
-
-
-
-
 
 ## 1.3. Selection Sort
 
-Selection sort is one of the simplest sorting algorithms. It starts with the first element in the array (or list) and scans through the array to find the element with the smallest key, which it swaps with the first element. The process is then repeated with each subsequent element until the last element is reached.
+Selection sort is one of the simplest sorting algorithms. It starts with the first element in the array \(or list\) and scans through the array to find the element with the smallest key, which it swaps with the first element. The process is then repeated with each subsequent element until the last element is reached.
 
-
-<!-- js-console -->
 ```javascript
 
 ```
 
-
 ## 1.4. Quick Sort
-Quicksort is a divide and conquer algorithm.
-Quicksort first divides a large array into two smaller
-sub-arrays: the low elements and the high elements.
-Quicksort can then recursively sort the sub-arrays
+
+Quicksort is a divide and conquer algorithm. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays
 
 The steps are:
 
 1. Pick an element, called a pivot, from the array.
 2. Partitioning: reorder the array so that all elements with
-values less than the pivot come before the pivot, while all
-elements with values greater than the pivot come after it
-(equal values can go either way). After this partitioning,
-the pivot is in its final position. This is called the
-partition operation.
-3. Recursively apply the above steps to the sub-array of
-elements with smaller values and separately to the
-sub-array of elements with greater values.
 
-Animated visualization of the quicksort algorithm.
-The horizontal lines are pivot values.
+   values less than the pivot come before the pivot, while all
+
+   elements with values greater than the pivot come after it
+
+   \(equal values can go either way\). After this partitioning,
+
+   the pivot is in its final position. This is called the
+
+   partition operation.
+
+3. Recursively apply the above steps to the sub-array of
+
+   elements with smaller values and separately to the
+
+   sub-array of elements with greater values.
+
+Animated visualization of the quicksort algorithm. The horizontal lines are pivot values.
 
 ![Quicksort](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
-
-
 | Name | Best | Average | Worst | Memory | Stable | Comments |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **Quick sort** | n&nbsp;log(n) | n&nbsp;log(n) | n<sup>2</sup> | log(n) | No | Quicksort is usually done in-place with O(log(n)) stack space |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Quick sort** | n log\(n\) | n log\(n\) | n2 | log\(n\) | No | Quicksort is usually done in-place with O\(log\(n\)\) stack space |
 
-<!-- js-console -->
 ```javascript
 const quickSort = arr => {
     if (arr.length < 2) return arr;
@@ -174,33 +146,22 @@ const quickSort = arr => {
 quickSort([6,5,2,4,1,0,9,10]);
 ```
 
-
-
-
 ## 1.5. Merge Sort
 
 Merge sort is another divide-and-conquer algorithm that works by splitting a data set into two or more subsets, sorting the subsets, and then merging them together into the final sorted set.
 
-In computer science, merge sort (also commonly spelled
-mergesort) is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the implementation preserves the input order of equal elements in the sorted output. Mergesort is a divide and conquer algorithm that was invented by John von Neumann in 1945.
+In computer science, merge sort \(also commonly spelled mergesort\) is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the implementation preserves the input order of equal elements in the sorted output. Mergesort is a divide and conquer algorithm that was invented by John von Neumann in 1945.
 
-An example of merge sort. First divide the list into the smallest unit (1 element), then compare each element with the adjacent list to sort and merge the two adjacent lists. Finally all the elements are sorted and merged.
+An example of merge sort. First divide the list into the smallest unit \(1 element\), then compare each element with the adjacent list to sort and merge the two adjacent lists. Finally all the elements are sorted and merged.
 
 ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
 
-
-
-
 | Name | Best | Average | Worst | Memory | Stable | Comments |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **Merge sort** | n&nbsp;log(n) | n&nbsp;log(n) | n&nbsp;log(n) | n | Yes | |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Merge sort** | n log\(n\) | n log\(n\) | n log\(n\) | n | Yes |  |
 
+> Reference: [https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/sorting/merge-sort](https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/sorting/merge-sort)
 
-> Reference: https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/sorting/merge-sort
-
-
-
-<!-- js-console-->
 ```javascript
 function merge(leftArr, rightArr) {
     const sortedArr = [];
@@ -231,3 +192,4 @@ function mergeSort(arr) {
 
 mergeSort([5, 2, 1, 3, 4])
 ```
+

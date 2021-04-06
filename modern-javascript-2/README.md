@@ -1,9 +1,7 @@
-# JavaScript - Part II
+# JavaScript II
 
 The following are topics on JavaScript.
 
-* [Modules](./javascript-modules.md)
+* [Modules](javascript-modules.md)
 * Design Patterns
-
-
 

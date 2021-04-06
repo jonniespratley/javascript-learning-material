@@ -1,9 +1,10 @@
 # Rotate Array
+
 Given an array, rotate the array to the right by `k` steps, where `k` is non-negative.
 
 **Example 1:**
 
-```
+```text
 Input: [1,2,3,4,5,6,7] and k = 3
 Output: [5,6,7,1,2,3,4]
 
@@ -15,7 +16,7 @@ Explanation:
 
 **Example 2:**
 
-```
+```text
 Input: [-1,-100,3,99] and k = 2
 Output: [3,99,-1,-100]
 
@@ -25,13 +26,12 @@ Explanation:
 ```
 
 **Note:**
-- There is at least 3 ways to solve this problem.
-- Could you do it in-place with O(1) extra space?
 
+* There is at least 3 ways to solve this problem.
+* Could you do it in-place with O\(1\) extra space?
 
 **Solution:**
 
-<!-- js-console -->
 ```javascript
 var rotate = function (nums, k) {
     return nums.unshift.apply(nums, nums.splice(nums.length - k, k))
@@ -42,7 +42,6 @@ console.log(rotate([1,2,3], 4))
 
 **Solution 2:**
 
-<!-- js-console -->
 ```javascript
 function rotateArray(a, d) {
     let i = 0;
@@ -63,7 +62,5 @@ console.log(rotateArray([1, 2], 2));
 
 1. TODO....
 
+> Reference: [https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/)
 
-
-
-> Reference: https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/

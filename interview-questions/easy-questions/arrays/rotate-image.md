@@ -1,13 +1,15 @@
 # Rotate Image
-You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
+
+You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees \(clockwise\).
 
 > Note:
-- You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. 
-- DO NOT allocate another 2D matrix and do the rotation.
+>
+> * You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. 
+> * DO NOT allocate another 2D matrix and do the rotation.
 
 **Example 1:**
 
-```
+```text
  Given input matrix =
  [
     [1,2,3],
@@ -25,7 +27,7 @@ rotate the input matrix in-place such that it becomes:
 
 **Example 2:**
 
-```
+```text
 Given input matrix =
 [
     [ 5, 1, 9,11],
@@ -45,7 +47,6 @@ rotate the input matrix in-place such that it becomes:
 
 **Solution:**
 
-<!-- js-console -->
 ```javascript
 /**
 * @param {number[][]} matrix
@@ -66,32 +67,32 @@ function swap(m, x1, y1, x2, y2) {
     [m[x1][y1], m[x2][y2]] = [m[x2][y2], m[x1][y1]];
 }
 ```
+
 1. Swap three times from outside to inside
-    ```
+
+   ```text
     Step 1: 1 -> 3 -> 9 -> 7, then 2 -> 6 -> 8 -> 4
     1 2 3 3 2 1 9 2 1 7 2 1
     4 5 6 -> 4 5 6 => 4 5 6 -> 4 5 6
     7 8 9 7 8 9 7 8 3 9 8 3
-    ```
-- Step 2: from outside to inside
+   ```
 
-- Reverse up to down, then swap the symmetry
-
+2. Step 2: from outside to inside
+3. Reverse up to down, then swap the symmetry
 
 **Solution 2:**
 
-- To clockwise rotate, reverse up to down, then swap the symmetry
-- To anticlockwise rotate, reverse left to right, then swap the symmetry)
+* To clockwise rotate, reverse up to down, then swap the symmetry
+* To anticlockwise rotate, reverse left to right, then swap the symmetry\)
 
 Example
 
-```
+```text
 1 2 3 7 8 9 7 4 1
 4 5 6 -> 4 5 6 -> 8 5 2
 7 8 9 1 2 3 9 6 3
 ```
 
-<!-- js-console -->
 ```javascript
 function rotate(matrix) {
     matrix.reverse();
@@ -102,3 +103,4 @@ function rotate(matrix) {
     }
 }
 ```
+

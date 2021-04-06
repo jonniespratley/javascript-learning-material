@@ -1,18 +1,20 @@
-# React Component Tmpl
+# readme.md
+
+## React Component Tmpl
 
 The `<Tooltip/>` component enables you to create custom tooltips relative to a target element. The contents of the tooltip is customizable by the developer.
 
 > Note: For more advanced tooltips check out [https://popper.js.org/](https://popper.js.org/)
 
-## Usage
+### Usage
 
 The following is how to use this component as an un-controlled component.
 
-```js
+```javascript
 //Code Here
 ```
 
-## Properties
+### Properties
 
 The following properties are available for customization.
 
@@ -20,7 +22,7 @@ The following properties are available for customization.
 | :--- | :--- | :--- |
 |  |  |  |
 
-## Styling
+### Styling
 
 The following custom properties are available for styling via CSS variables:
 
@@ -32,25 +34,19 @@ The following custom properties are available for styling via CSS variables:
 | --tooltip-color | Color for the tooltip text |
 | --tooltip-transition | Transition of the tooltip |
 
-
-
-
-
-# Topic Format 
+## Topic Format
 
 Given an array of integers, do this and do that.
 
-## Description
+### Description
 
 Give a short description of the topic.
 
-## Example
+### Example
 
 Give an example of the topic.
 
-### Hints
+#### Hints
 
 * Give a hint \(ex. Divide and conquer, Stack, etc.\)
-
-
 

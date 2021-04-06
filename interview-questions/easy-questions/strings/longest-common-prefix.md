@@ -1,14 +1,14 @@
+# Longest Common Prefix
 
-# longest-common-prefix.js
+undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined/\*\*
 
-undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined/**
- * @param {string[]} strs
- * @return {string}
- */
+* @param {string\[\]} strs
+* @return {string}
+
+  \*/
 
 **Solution:**
 
-<!-- js-console -->
 ```javascript
 // ## Longest Common Prefix
 // Write a function to find the longest common prefix string amongst an array of strings.

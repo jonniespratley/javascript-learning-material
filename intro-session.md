@@ -1,4 +1,4 @@
-# Intro Session
+# Intro
 
 The following is the structure of the intro session.
 
@@ -27,11 +27,7 @@ I am obsessed with modern tooling that enables developers to rapidily start proj
 
 Some of the skills that you will learn are going to be mostly about front end web development and the tools and technologies used to create modern web applications.
 
-
-
 ## Introduce Assignment 1
 
 Assignment 1 will be on the topic of JavaScript prototypes.
-
-
 
